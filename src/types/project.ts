@@ -1,0 +1,23 @@
+export type ActionType = 'LINK-NT' | 'DOWNLOAD' | 'UNAVAILABLE';
+
+export interface ProjectAction {
+  type: ActionType;
+  link: string;
+}
+
+export interface LocalizedContent {
+  en: string;
+  fr: string;
+}
+
+export interface Project {
+  id: string;
+  pinned: boolean;
+  cover_img: string;
+  imgs: string[];
+  technologies: string[];
+  actions: ProjectAction[];
+  title: LocalizedContent;
+  description: LocalizedContent;
+  date?: LocalizedContent;
+}

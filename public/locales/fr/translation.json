@@ -1,0 +1,9 @@
+{
+  "welcome": "Bienvenue sur mon portfolio",
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact"
+  }
+}
