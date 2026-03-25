@@ -1,22 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Mail, Phone, ArrowUp, Link, Gamepad2Icon } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-
-interface ContactMethod {
-  href: string;
-  icon: LucideIcon;
-  labelKey: string;
-  value: string;
-  truncateValue?: boolean;
-}
-
-interface SocialLink {
-  key: string;
-  href: string;
-  label: string;
-  icon: LucideIcon;
-}
+import { contactMethods, socials, type ContactMethod, type SocialLink } from '@/data/contact';
 
 function ContactMethodCard({ method }: { method: ContactMethod }) {
   const { t } = useTranslation();
@@ -68,39 +53,6 @@ export function Contact() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const socials: SocialLink[] = [
-    { icon: Gamepad2Icon, href: 'https://adrikat-1.itch.io', label: 'Itch.io', key: 'itchio' },
-    // { icon: Network, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
-  ];
-
-  const contactMethods: ContactMethod[] = [
-    {
-      href: 'mailto:adrien.schroedel.pro@gmail.com',
-      icon: Mail,
-      labelKey: 'Email',
-      value: 'adrien.schroedel.pro@gmail.com',
-      truncateValue: true,
-    },
-    {
-      href: 'tel:+33781565695',
-      icon: Phone,
-      labelKey: 'sections.contact.phone-label',
-      value: '+33 7 81 56 56 95',
-    },
-    {
-      href: 'https://linkedin.com/in/adrien-schroedel',
-      icon: Link,
-      labelKey: 'LinkedIn',
-      value: 'Adrien SCHROEDEL',
-    },
-    {
-      href: 'https://github.com/AdriKat2022/',
-      icon: Link,
-      labelKey: 'GitHub',
-      value: 'Adrien SCHROEDEL',
-    },
-  ];
 
   return (
     <section id="contact" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
