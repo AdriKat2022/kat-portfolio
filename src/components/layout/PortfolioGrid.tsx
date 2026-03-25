@@ -21,13 +21,14 @@ export function PortfolioGrid() {
   return (
     <section id="portfolio" className="py-24 bg-[var(--bg)]">
       <div className="container mx-auto px-4">
+        <div className="section-shell px-6 py-10 md:px-10 md:py-12">
         {/* Header */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-h)] mb-4">
+            <h2 className="mb-4 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
               {t('sections.titles.games')}
             </h2>
-            <p className="text-[var(--text)] text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-[var(--text)]">
               {t('sections.portfolio.description')}
             </p>
           </div>
@@ -82,6 +83,7 @@ export function PortfolioGrid() {
             </Button>
           </motion.div>
         )}
+        </div>
       </div>
 
       <Modal

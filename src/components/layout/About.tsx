@@ -6,22 +6,16 @@ import cvFile from '@/assets/docs/CV_GAME_FIELD.pdf';
 export function About() {
   const { t } = useTranslation();
 
-  const skills = t('sections.profile.column-1-items', {
-    returnObjects: true,
-  }) as string[];
-  // const skills = t('sections.profile.column-1-items', { returnObjects: true }) as string[];
+  const skills = t('sections.profile.column-1-items', { returnObjects: true }) as string[];
   const tools = t('sections.profile.column-2-items', { returnObjects: true }) as string[];
 
-  // console.log(skills.length);
-  console.log(skills, typeof skills);
-
   return (
-    <section id="about" className="py-24 bg-[var(--social-bg)]">
+    <section id="about" className="bg-[var(--social-bg)] py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="section-shell grid grid-cols-1 gap-16 px-6 py-10 lg:grid-cols-2 md:px-10 md:py-12">
           {/* Left Column: Bio */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-h)] mb-8">
+            <h2 className="mb-8 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
               {t('sections.titles.about')}
             </h2>
             <div className="space-y-6 text-lg text-[var(--text)] leading-relaxed">
@@ -40,7 +34,7 @@ export function About() {
 
           {/* Right Column: Skills & Tools */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
-            <div className="bg-[var(--bg)] p-8 rounded-2xl border border-[var(--border)] shadow-sm">
+            <div className="rounded-2xl border border-[var(--border)] bg-[rgba(10,16,31,0.74)] p-8 shadow-[0_14px_36px_rgba(3,7,16,0.55)]">
               <h3 
                 className="text-xl font-bold text-[var(--text-h)] mb-6"
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-1-head') }}
@@ -55,7 +49,7 @@ export function About() {
               </ul>
             </div>
 
-            <div className="bg-[var(--bg)] p-8 rounded-2xl border border-[var(--border)] shadow-sm">
+            <div className="rounded-2xl border border-[var(--border)] bg-[rgba(10,16,31,0.74)] p-8 shadow-[0_14px_36px_rgba(3,7,16,0.55)]">
               <h3 
                 className="text-xl font-bold text-[var(--text-h)] mb-6"
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-2-head') }}

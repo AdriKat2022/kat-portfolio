@@ -5,19 +5,19 @@ export function Seeking() {
   const { t } = useTranslation();
 
   return (
-    <section id="seeking" className="py-24 bg-[var(--bg)] border-t border-[var(--border)]">
+    <section id="seeking" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-h)] mb-12">
+        <div className="section-shell flex flex-col items-center px-6 py-12 text-center md:px-10">
+          <h2 className="mb-12 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
             {t('sections.titles.seeking')}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
-            <div className="p-8 rounded-2xl bg-[var(--social-bg)] border border-[var(--border)] flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] flex items-center justify-center mb-6">
+            <div className="flex flex-col items-center rounded-2xl border border-[var(--border)] bg-[rgba(20,30,54,0.7)] p-8 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(26,40,74,0.75)]">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] shadow-[0_0_24px_rgba(88,243,255,0.2)]">
                 <Target className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--text-h)] mb-2">
+              <h3 className="mb-2 text-xl font-bold text-[var(--text-h)]">
                 {t('sections.seeking.position-title')}
               </h3>
               <p className="text-[var(--text)]">
@@ -25,11 +25,11 @@ export function Seeking() {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[var(--social-bg)] border border-[var(--border)] flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] flex items-center justify-center mb-6">
+            <div className="flex flex-col items-center rounded-2xl border border-[var(--border)] bg-[rgba(20,30,54,0.7)] p-8 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(26,40,74,0.75)]">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] shadow-[0_0_24px_rgba(88,243,255,0.2)]">
                 <Calendar className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--text-h)] mb-2">
+              <h3 className="mb-2 text-xl font-bold text-[var(--text-h)]">
                 {t('nav.profile') === 'Mon Profil' ? 'Disponibilité' : 'Availability'}
               </h3>
               <p className="text-[var(--text)]">
@@ -37,11 +37,11 @@ export function Seeking() {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[var(--social-bg)] border border-[var(--border)] flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] flex items-center justify-center mb-6">
+            <div className="flex flex-col items-center rounded-2xl border border-[var(--border)] bg-[rgba(20,30,54,0.7)] p-8 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(26,40,74,0.75)]">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] shadow-[0_0_24px_rgba(88,243,255,0.2)]">
                 <MapPin className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--text-h)] mb-2">
+              <h3 className="mb-2 text-xl font-bold text-[var(--text-h)]">
                 {t('nav.profile') === 'Mon Profil' ? 'Localisation' : 'Location'}
               </h3>
               <p className="text-[var(--text)]">

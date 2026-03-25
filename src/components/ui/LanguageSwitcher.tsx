@@ -15,7 +15,7 @@ export function LanguageSwitcher() {
       variant="ghost"
       size="sm"
       onClick={toggleLanguage}
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 rounded-full border border-[var(--border)] px-3 hover:border-[var(--accent-border)]"
     >
       <Languages className="h-4 w-4" />
       <span className="uppercase">{i18n.language}</span>

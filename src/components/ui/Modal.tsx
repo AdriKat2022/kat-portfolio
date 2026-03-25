@@ -39,10 +39,10 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg)] shadow-2xl"
+            className="relative z-10 max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--accent-border)] bg-[linear-gradient(170deg,rgba(13,21,39,0.98),rgba(7,11,22,0.98))] shadow-[0_18px_70px_rgba(3,7,16,0.85)]"
           >
             {/* Header */}
-            <div className="sticky top-0 z-20 flex items-center justify-between border-b border-[var(--border)] bg-[var(--bg)/80] p-4 backdrop-blur-md">
+            <div className="sticky top-0 z-20 flex items-center justify-between border-b border-[var(--border)] bg-[rgba(7,11,22,0.85)] p-4 backdrop-blur-md">
               <h2 className="text-xl font-bold text-[var(--text-h)] line-clamp-1">{title}</h2>
               <Button variant="ghost" size="icon" onClick={onClose} aria-label={t('projects.button-close')}>
                 <X className="h-5 w-5" />
@@ -58,7 +58,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                     key={idx}
                     src={img}
                     alt={`${title} - screenshot ${idx + 1}`}
-                    className="h-64 sm:h-96 w-auto rounded-lg object-contain bg-[var(--social-bg)]"
+                    className="h-64 w-auto rounded-xl border border-[var(--border)] bg-[var(--social-bg)] object-contain sm:h-96"
                   />
                 ))}
               </div>
@@ -108,7 +108,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                 {/* Description */}
                 <div className="lg:col-span-2">
                   <div 
-                    className="prose prose-slate dark:prose-invert max-w-none text-[var(--text)] leading-relaxed"
+                    className="prose max-w-none text-[var(--text)] leading-relaxed prose-headings:text-[var(--text-h)] prose-strong:text-[var(--text-h)] prose-a:text-[var(--accent)]"
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
                 </div>

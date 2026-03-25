@@ -52,7 +52,7 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
         isScrolled 
-          ? 'bg-[var(--bg)]/80 backdrop-blur-md border-b border-[var(--border)] py-2 shadow-sm' 
+          ? 'border-b border-[var(--border)] bg-[rgba(6,9,20,0.76)] py-2 backdrop-blur-md shadow-[0_10px_30px_rgba(3,8,18,0.45)]' 
           : 'bg-transparent py-4'
       )}
     >
@@ -60,7 +60,7 @@ export function Navbar() {
         {/* Logo/Brand */}
         <button 
           onClick={() => scrollTo('home')}
-          className="text-xl font-bold text-[var(--text-h)] hover:opacity-80 transition-opacity"
+          className="text-xl font-extrabold tracking-wider text-[var(--text-h)] text-glow transition-opacity hover:opacity-85"
         >
           @AdriKat
         </button>
@@ -75,12 +75,12 @@ export function Navbar() {
               onClick={() => scrollTo(item.id)}
               className={cn(
                 'relative px-4',
-                activeSection === item.id ? 'text-[var(--accent)]' : 'text-[var(--text)]'
+                activeSection === item.id ? 'text-[var(--accent)] text-glow' : 'text-[var(--text)]'
               )}
             >
               {item.label}
               {activeSection === item.id && (
-                <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[var(--accent)] rounded-full" />
+                <span className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-[linear-gradient(90deg,var(--accent),var(--accent-2))]" />
               )}
             </Button>
           ))}
@@ -105,7 +105,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'absolute top-full left-0 right-0 bg-[var(--bg)] border-b border-[var(--border)] p-4 md:hidden transition-all duration-300 origin-top',
+          'absolute left-0 right-0 top-full origin-top border-b border-[var(--border)] bg-[rgba(6,9,20,0.95)] p-4 backdrop-blur-md transition-all duration-300 md:hidden',
           isMobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'
         )}
       >

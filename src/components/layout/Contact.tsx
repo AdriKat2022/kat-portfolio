@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Mail, Phone, ArrowUp } from 'lucide-react';
+import { Mail, Phone, ArrowUp, Code2, Network } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export function Contact() {
@@ -9,31 +9,29 @@ export function Contact() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Lucide react doesn't have any brand logo
-  // const socials = [
-  //   { icon: Github, href: 'https://github.com/AdriKat2022', label: 'GitHub' },
-  //   { icon: Linkedin, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
-  //   { icon: Twitter, href: 'https://x.com/AdriKat_', label: 'Twitter' },
-  // ];
+  const socials = [
+    { icon: Code2, href: 'https://github.com/AdriKat2022', label: 'GitHub' },
+    { icon: Network, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
+  ];
 
   return (
-    <section id="contact" className="py-24 bg-[var(--bg)] border-t border-[var(--border)]">
+    <section id="contact" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-h)] mb-6">
+        <div className="section-shell flex flex-col items-center px-6 py-12 text-center md:px-10">
+          <h2 className="mb-6 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
             {t('sections.titles.contact')}
           </h2>
           
-          <p className="text-[var(--text)] text-lg mb-12 max-w-2xl leading-relaxed" 
+          <p className="mb-12 max-w-2xl text-lg leading-relaxed text-[var(--text)]" 
              dangerouslySetInnerHTML={{ __html: t('sections.contact.subtitle') }} 
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 w-full max-w-xl">
             <a 
               href="mailto:adrien.schroedel.pro@gmail.com"
-              className="flex items-center gap-4 p-4 rounded-xl bg-[var(--social-bg)] border border-transparent hover:border-[var(--accent-border)] hover:bg-[var(--accent-bg)] transition-all group"
+              className="group flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[rgba(18,28,52,0.78)] p-4 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(33,48,88,0.72)]"
             >
-              <div className="w-12 h-12 rounded-lg bg-[var(--bg)] flex items-center justify-center text-[var(--accent)] shadow-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg)] text-[var(--accent)] shadow-[0_0_18px_rgba(88,243,255,0.2)]">
                 <Mail className="h-6 w-6" />
               </div>
               <div className="text-left">
@@ -44,9 +42,9 @@ export function Contact() {
 
             <a 
               href="tel:+33781565695"
-              className="flex items-center gap-4 p-4 rounded-xl bg-[var(--social-bg)] border border-transparent hover:border-[var(--accent-border)] hover:bg-[var(--accent-bg)] transition-all group"
+              className="group flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[rgba(18,28,52,0.78)] p-4 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(33,48,88,0.72)]"
             >
-              <div className="w-12 h-12 rounded-lg bg-[var(--bg)] flex items-center justify-center text-[var(--accent)] shadow-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg)] text-[var(--accent)] shadow-[0_0_18px_rgba(88,243,255,0.2)]">
                 <Phone className="h-6 w-6" />
               </div>
               <div className="text-left">
@@ -57,7 +55,7 @@ export function Contact() {
           </div>
 
           <div className="flex gap-4 mb-16">
-            {/* {socials.map((social) => (
+            {socials.map((social) => (
               <Button
                 key={social.label}
                 variant="outline"
@@ -68,7 +66,7 @@ export function Contact() {
               >
                 <social.icon className="h-5 w-5" />
               </Button>
-            ))} */}
+            ))}
           </div>
 
           <div className="w-full pt-12 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6">

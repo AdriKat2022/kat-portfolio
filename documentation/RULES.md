@@ -27,6 +27,7 @@
 ## 7. Git Usage
 - When generating code, ensure that it is properly committed to the version control system (e.g., Git) with clear and descriptive commit messages for each small milestone. This helps maintain a clear history of changes and allows for easier collaboration with other developers.
 - Follow the established branching strategy and workflow for your project, such as using feature branches for new development and pull requests for code reviews.
+- NEVER REWRITE HISTORY (even local) except if EXPLICITLY INSTRUCTED.
 
 ## 8. Avoid Over-Engineering
 - The generated code should be as simple as possible while still meeting the requirements. Avoid adding unnecessary complexity or features that are not required, as this can make the code harder to maintain and understand.

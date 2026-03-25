@@ -9,7 +9,7 @@ export function TechBadge({ children, className }: TechBadgeProps) {
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full border border-[var(--accent-border)] bg-[var(--accent-bg)] px-2.5 py-0.5 text-xs font-medium text-[var(--accent)]',
+        'inline-flex items-center rounded-full border border-[var(--accent-border)] bg-[rgba(88,243,255,0.1)] px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--accent)]',
         className
       )}
     >

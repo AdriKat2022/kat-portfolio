@@ -19,32 +19,33 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
 
   return (
     <motion.div
-      whileHover={{ y: -5 }}
+      whileHover={{ y: -8 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg)] shadow-sm transition-all hover:shadow-md"
+      className="scanline-overlay group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[linear-gradient(165deg,rgba(16,25,45,0.92),rgba(9,14,28,0.95))] shadow-[0_16px_40px_rgba(4,8,18,0.5)] transition-all hover:border-[var(--accent-border)] hover:shadow-[0_18px_48px_rgba(88,243,255,0.2)]"
     >
       <div className="relative aspect-video overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.42)_100%)] z-10" />
         <img
           src={project.cover_img}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         {project.pinned && (
-          <div className="absolute top-2 right-2 rounded-full bg-[var(--accent)] p-1.5 text-white shadow-sm">
+          <div className="absolute right-3 top-3 z-20 rounded-full border border-[var(--accent-border)] bg-[var(--accent)] p-1.5 text-slate-950 shadow-[0_0_20px_rgba(88,243,255,0.5)]">
             <Pin className="h-4 w-4 fill-current" />
           </div>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-5">
         <div className="mb-2 flex items-start justify-between">
-          <h3 className="text-lg font-bold text-[var(--text-h)] line-clamp-1">
+          <h3 className="line-clamp-1 text-lg font-bold text-[var(--text-h)]">
             {title}
           </h3>
           {date && (
-            <span className="text-xs text-[var(--text)] whitespace-nowrap ml-2">
+            <span className="ml-2 whitespace-nowrap text-xs text-[var(--text)]">
               {date}
             </span>
           )}
