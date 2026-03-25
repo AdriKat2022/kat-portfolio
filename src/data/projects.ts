@@ -1,7 +1,7 @@
-import type { Project } from '../types/project';
+import type { Project } from '@/types/project';
 
 const getAssetUrl = (name: string) => {
-  return new URL(`../assets/portfolio/${name}`, import.meta.url).href;
+  return new URL(`@assets/portfolio/${name}`, import.meta.url).href;
 };
 
 export const projects: Project[] = [

@@ -1,13 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { Download, CheckCircle2 } from 'lucide-react';
-import { Button } from '../ui/Button';
-import cvFile from '../../assets/docs/CV_GAME_FIELD.pdf';
+import { Button } from '@components/ui/Button';
+import cvFile from '@/assets/docs/CV_GAME_FIELD.pdf';
 
 export function About() {
   const { t } = useTranslation();
 
-  const skills = t('sections.profile.column-1-items', { returnObjects: true }) as string[];
+  const skills = t('sections.profile.column-1-items', {
+    returnObjects: true,
+  }) as string[];
+  // const skills = t('sections.profile.column-1-items', { returnObjects: true }) as string[];
   const tools = t('sections.profile.column-2-items', { returnObjects: true }) as string[];
+
+  // console.log(skills.length);
+  console.log(skills, typeof skills);
 
   return (
     <section id="about" className="py-24 bg-[var(--social-bg)]">

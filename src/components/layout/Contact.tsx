@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { Mail, Phone, Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
-import { Button } from '../ui/Button';
+import { Mail, Phone, ArrowUp } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export function Contact() {
   const { t } = useTranslation();
@@ -9,11 +9,12 @@ export function Contact() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const socials = [
-    { icon: Github, href: 'https://github.com/AdriKat2022', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://x.com/AdriKat_', label: 'Twitter' },
-  ];
+  // Lucide react doesn't have any brand logo
+  // const socials = [
+  //   { icon: Github, href: 'https://github.com/AdriKat2022', label: 'GitHub' },
+  //   { icon: Linkedin, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
+  //   { icon: Twitter, href: 'https://x.com/AdriKat_', label: 'Twitter' },
+  // ];
 
   return (
     <section id="contact" className="py-24 bg-[var(--bg)] border-t border-[var(--border)]">
@@ -56,7 +57,7 @@ export function Contact() {
           </div>
 
           <div className="flex gap-4 mb-16">
-            {socials.map((social) => (
+            {/* {socials.map((social) => (
               <Button
                 key={social.label}
                 variant="outline"
@@ -67,7 +68,7 @@ export function Contact() {
               >
                 <social.icon className="h-5 w-5" />
               </Button>
-            ))}
+            ))} */}
           </div>
 
           <div className="w-full pt-12 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6">

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Home, Briefcase, User, Mail } from 'lucide-react';
-import { LanguageSwitcher } from '../ui/LanguageSwitcher';
-import { cn } from '../../lib/utils';
-import { Button } from '../ui/Button';
+import { cn } from '@/lib/utils';
+import { Button } from '@components/ui/Button';
+import { LanguageSwitcher } from '@components/ui/LanguageSwitcher';
 
 export function Navbar() {
   const { t } = useTranslation();

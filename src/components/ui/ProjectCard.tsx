@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Pin, ExternalLink } from 'lucide-react';
-import type { Project } from '../../types/project';
-import { TechBadge } from './TechBadge';
-import { Button } from './Button';
+import type { Project } from '@/types/project';
+import { TechBadge } from '@components/ui/TechBadge';
+import { Button } from '@components/ui/Button';
 
 interface ProjectCardProps {
   project: Project;

@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { Filter } from 'lucide-react';
-import { projects } from '../../data/projects';
-import { ProjectCard } from '../ui/ProjectCard';
-import { Modal } from '../ui/Modal';
-import { Button } from '../ui/Button';
-import type { Project } from '../../types/project';
+import type { Project } from '@/types/project';
+import { projects } from '@/data/projects';
+import { ProjectCard } from '@components/ui/ProjectCard';
+import { Button } from '@components/ui/Button';
+import { Modal } from '@components/ui/Modal';
 
 export function PortfolioGrid() {
   const { t } = useTranslation();

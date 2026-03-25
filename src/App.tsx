@@ -1,12 +1,11 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { Navbar } from './components/layout/Navbar';
-import { Hero } from './components/layout/Hero';
-import { Seeking } from './components/layout/Seeking';
-import { PortfolioGrid } from './components/layout/PortfolioGrid';
-import { About } from './components/layout/About';
-import { Contact } from './components/layout/Contact';
-import './App.css';
+import { Navbar } from '@/components/layout/Navbar';
+import { Hero } from '@/components/layout/Hero';
+import { Seeking } from '@/components/layout/Seeking';
+import { PortfolioGrid } from '@/components/layout/PortfolioGrid';
+import { About } from '@/components/layout/About';
+import { Contact } from '@/components/layout/Contact';
 
 function App() {
   const { t, i18n } = useTranslation();

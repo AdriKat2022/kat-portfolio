@@ -28,6 +28,11 @@
 - When generating code, ensure that it is properly committed to the version control system (e.g., Git) with clear and descriptive commit messages for each small milestone. This helps maintain a clear history of changes and allows for easier collaboration with other developers.
 - Follow the established branching strategy and workflow for your project, such as using feature branches for new development and pull requests for code reviews.
 
+## 8. Avoid Over-Engineering
+- The generated code should be as simple as possible while still meeting the requirements. Avoid adding unnecessary complexity or features that are not required, as this can make the code harder to maintain and understand.
+- Focus on delivering a functional solution that meets the requirements, and consider adding additional features or optimizations in future iterations if needed.
+- Avoid importing unnecessary libraries or dependencies that are not essential for the functionality of the code, as this can increase the complexity and potential security risks of the codebase. Only include if the library is needed, is greatly beneficial, serves the current objective and is not too heavy or has no known security issues. 
+
 # General Guidelines for Work Dispatching
 
 ## 1. Follow the Plan

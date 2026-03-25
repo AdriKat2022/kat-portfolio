@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ArrowDown } from 'lucide-react';
-import { Button } from '../ui/Button';
-import avatarImg from '../../assets/avatar.png';
-import reactLogo from '../../assets/react.svg';
-import viteLogo from '../../assets/vite.svg';
+import { Button } from '@components/ui/Button';
+import avatarImg from '@/assets/avatar.png';
 
 export function Hero() {
   const { t } = useTranslation();
@@ -49,7 +47,7 @@ export function Hero() {
           </motion.div>
 
           {/* Floating Logos */}
-          <motion.img
+          {/* <motion.img
             src={reactLogo}
             alt="React"
             className="absolute -top-4 -right-4 w-12 h-12 md:w-16 md:h-16 z-20 drop-shadow-lg"
@@ -77,7 +75,7 @@ export function Hero() {
               ease: "easeInOut",
               delay: 0.5
             }}
-          />
+          /> */}
         </div>
 
         <motion.h1 
