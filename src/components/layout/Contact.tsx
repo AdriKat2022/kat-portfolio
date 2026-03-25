@@ -48,7 +48,13 @@ function SocialIconButton({ social }: { social: SocialLink }) {
 }
 
 export function Contact() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const lastUpdated = new Date(document.lastModified).toLocaleDateString(i18n.language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -92,6 +98,10 @@ export function Contact() {
                 Made with React
               </span>
             </div>
+
+            <p className="text-theme text-xs md:ml-auto">
+              {t('common.last-updated')} {lastUpdated}
+            </p>
             
             <Button variant="ghost" size="sm" onClick={scrollToTop} className="group">
               {t('sections.contact.back-to-top')}
