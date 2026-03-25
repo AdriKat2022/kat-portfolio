@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project';
+import { getSkillsByIds } from '@/data/skills';
 
 const portfolioAssets = import.meta.glob('../assets/portfolio/*', {
   eager: true,
@@ -22,14 +23,14 @@ export const projects: Project[] = [
       getAssetUrl('medieval-racing_4.jpg'),
       getAssetUrl('medieval-racing_5.jpg')
     ],
-    technologies: [
-      'Mirror Networking',
-      'VM Scripting',
-      'CI/CD with git pipeline',
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds([
+      'mirror-networking',
+      'vm-scripting',
+      'ci-cd',
+      'unity',
+      'csharp',
+      'git'
+    ]),
     actions: [
       {
         type: 'LINK-NT',
@@ -60,13 +61,13 @@ export const projects: Project[] = [
       getAssetUrl('sorting-bubble_4.jpg'),
       getAssetUrl('sorting-bubble_5.jpg')
     ],
-    technologies: [
-      'Tool Programming',
-      'Problem Solving',
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds([
+      'tool-programming',
+      'problem-solving',
+      'unity',
+      'csharp',
+      'git'
+    ]),
     actions: [
       {
         type: 'LINK-NT',
@@ -96,13 +97,13 @@ export const projects: Project[] = [
       getAssetUrl('irma-rnark_3.jpg'),
       getAssetUrl('irma-rnark_4.jpg')
     ],
-    technologies: [
-      'Leadership',
-      'Problem Solving',
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds([
+      'leadership',
+      'problem-solving',
+      'unity',
+      'csharp',
+      'git'
+    ]),
     actions: [
       {
         type: 'LINK-NT',
@@ -131,14 +132,14 @@ export const projects: Project[] = [
       getAssetUrl('space_shooter_game_2.jpg'),
       getAssetUrl('space_shooter_game_3.jpg')
     ],
-    technologies: [
-      'Encapsulation',
-      'Flutter',
-      'Flame',
-      'Dart',
-      'GIT',
-      'CI/CD'
-    ],
+    technologies: getSkillsByIds([
+      'encapsulation',
+      'flutter',
+      'flame',
+      'dart',
+      'git',
+      'ci-cd'
+    ]),
     actions: [
       {
         type: 'LINK-NT',
@@ -172,11 +173,7 @@ export const projects: Project[] = [
       getAssetUrl('theKairiInvasion_3.jpg'),
       getAssetUrl('theKairiInvasion_4.jpg')
     ],
-    technologies: [
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',
@@ -206,11 +203,7 @@ export const projects: Project[] = [
       getAssetUrl('find_mocha_3.jpg'),
       getAssetUrl('find_mocha_4.jpg')
     ],
-    technologies: [
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',
@@ -241,13 +234,13 @@ export const projects: Project[] = [
       getAssetUrl('rupture_4.jpg'),
       getAssetUrl('rupture_5.jpg')
     ],
-    technologies: [
-      'Gameplay Programming',
-      'Unreal Engine 5',
-      'C++',
-      'GIT',
-      'GIT LFS'
-    ],
+    technologies: getSkillsByIds([
+      'gameplay-programming',
+      'unreal-engine-5',
+      'cpp',
+      'git',
+      'git-lfs'
+    ]),
     actions: [
       {
         type: 'LINK-NT',
@@ -274,11 +267,7 @@ export const projects: Project[] = [
     imgs: [
       getAssetUrl('shippingTime.jpg')
     ],
-    technologies: [
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',
@@ -305,11 +294,7 @@ export const projects: Project[] = [
     imgs: [
       getAssetUrl('theLegendOfBlo.jpg')
     ],
-    technologies: [
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',
@@ -336,12 +321,7 @@ export const projects: Project[] = [
     imgs: [
       getAssetUrl('magicCircus.jpg')
     ],
-    technologies:[
-      'Nav-Mesh',
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['nav-mesh', 'unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',
@@ -368,11 +348,7 @@ export const projects: Project[] = [
     imgs: [
       getAssetUrl('translimation.jpg')
     ],
-    technologies: [
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',
@@ -399,11 +375,7 @@ export const projects: Project[] = [
     imgs: [
       getAssetUrl('explodingTree.jpg')
     ],
-    technologies: [
-      'Unity',
-      'C#',
-      'GIT'
-    ],
+    technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
         type: 'LINK-NT',

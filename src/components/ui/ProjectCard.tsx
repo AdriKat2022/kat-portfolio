@@ -59,7 +59,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
 
         <div className="project-card-tech">
           {project.technologies.slice(0, 3).map((tech) => (
-            <TechBadge key={tech}>{tech}</TechBadge>
+            <TechBadge key={tech.id}>{tech.name}</TechBadge>
           ))}
           {project.technologies.length > 3 && (
             <span className="project-card-more-tech">

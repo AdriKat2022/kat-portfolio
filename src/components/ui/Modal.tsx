@@ -79,7 +79,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <TechBadge key={tech}>{tech}</TechBadge>
+                        <TechBadge key={tech.id}>{tech.name}</TechBadge>
                       ))}
                     </div>
                   </div>

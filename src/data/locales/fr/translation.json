@@ -37,22 +37,7 @@
     "profile": {
       "subtitle": "Vous avez un projet en tête dans le domaine du game dev ou du software ?<br>N'hésitez pas à me contacter par <a href=\"mailto:adrien.schroedel.pro@gmail.com\">mail</a> ou par <a href=\"tel:+33781565695\">téléphone</a> !",
       "column-1-head": "Maîtrise de multiples <strong>languages de programmation</strong> parmi...",
-      "column-1-items": [
-        "C++ (<em>Unreal Engine 5</em>)",
-        "C# (<em>Unity</em>)",
-        "C",
-        "Python",
-        "Java",
-        "Bash (environnement <em>Linux</em>)",
-        "HTML/CSS/PHP/JavaScript (avec Symfony pour le web)"
-      ],
-      "column-2-head": "Maîtrise de multiples <strong>outils</strong> de gestion de projet et burautique parmi...",
-      "column-2-items": [
-        "Gestionnaire de version GIT (+ LFS)",
-        "Suite Microsoft Office",
-        "Suite Google",
-        "Microsoft Office"
-      ]
+      "column-2-head": "Maîtrise de multiples <strong>outils</strong> de gestion de projet et burautique parmi..."
     },
     "portfolio": {
       "description": "Mon portfolio regorge des projets importants auxquels j'ai participé, seul ou en équipe, durant mes études d'ingénieur du numérique à Télécom SudParis, en tant que projet scolaire ou personnel. Vous y trouverez principalement des jeux vidéo dans cette section !",

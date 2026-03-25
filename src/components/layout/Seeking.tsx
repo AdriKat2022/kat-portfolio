@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Target, Calendar, MapPin, Gamepad2 } from 'lucide-react';
+import { Calendar, MapPin, Gamepad2 } from 'lucide-react';
 
 export function Seeking() {
   const { t } = useTranslation();

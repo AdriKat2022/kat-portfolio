@@ -2,12 +2,12 @@ import { useTranslation } from 'react-i18next';
 import { Download, CheckCircle2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import cvFile from '@/assets/docs/CV_GAME_FIELD.pdf';
+import { aboutSkills } from '@/data/skills';
 
 export function About() {
   const { t } = useTranslation();
-
-  const skills = t('sections.profile.column-1-items', { returnObjects: true }) as string[];
-  const tools = t('sections.profile.column-2-items', { returnObjects: true }) as string[];
+  const skills = aboutSkills.filter((skill) => skill.skillType !== 'tool');
+  const tools = aboutSkills.filter((skill) => skill.skillType === 'tool');
 
   return (
     <section id="about" className="bg-[var(--social-bg)] py-24">
@@ -40,10 +40,10 @@ export function About() {
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-1-head') }}
               />
               <ul className="space-y-3">
-                {skills.map((skill, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-[var(--text)]">
+                {skills.map((skill) => (
+                  <li key={skill.id} className="flex items-start gap-3 text-[var(--text)]">
                     <CheckCircle2 className="h-5 w-5 text-[var(--accent)] shrink-0 mt-0.5" />
-                    <span dangerouslySetInnerHTML={{ __html: skill }} />
+                    <span>{skill.name}</span>
                   </li>
                 ))}
               </ul>
@@ -55,10 +55,10 @@ export function About() {
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-2-head') }}
               />
               <ul className="space-y-3">
-                {tools.map((tool, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-[var(--text)]">
+                {tools.map((tool) => (
+                  <li key={tool.id} className="flex items-start gap-3 text-[var(--text)]">
                     <CheckCircle2 className="h-5 w-5 text-[var(--accent)] shrink-0 mt-0.5" />
-                    <span dangerouslySetInnerHTML={{ __html: tool }} />
+                    <span>{tool.name}</span>
                   </li>
                 ))}
               </ul>

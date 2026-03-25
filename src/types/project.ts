@@ -1,5 +1,7 @@
 export type ActionType = 'LINK-NT' | 'DOWNLOAD' | 'UNAVAILABLE';
 
+import type { Skill } from '@/types/skill';
+
 export interface ProjectAction {
   type: ActionType;
   link: string;
@@ -15,7 +17,7 @@ export interface Project {
   pinned: boolean;
   cover_img: string;
   imgs: string[];
-  technologies: string[];
+  technologies: Skill[];
   actions: ProjectAction[];
   title: LocalizedContent;
   description: LocalizedContent;

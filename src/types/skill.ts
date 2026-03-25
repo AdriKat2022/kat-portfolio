@@ -1,7 +1,9 @@
-export type SkillType = "Tool" | "Frontend" | "Backend";
+export type SkillType = 'tool' | 'skill' | 'frontend' | 'backend' | 'language';
 
-export type Skill = {
+export interface Skill {
+	id: string;
 	name: string;
 	skillType: SkillType;
 	percentage: number;
-};
+	showInAbout: boolean;
+}
