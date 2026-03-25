@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Atom } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { contactMethods, socials, type ContactMethod, type SocialLink } from '@/data/contact';
 
@@ -83,9 +83,15 @@ export function Contact() {
           </div>
 
           <div className="w-full pt-12 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-theme text-sm">
-              © {new Date().getFullYear()} @AdriKat. {t('sections.contact.rights-reserved')}
-            </p>
+            <div className="flex items-center gap-3">
+              <p className="text-theme text-sm">
+                © {new Date().getFullYear()} @AdriKat. {t('sections.contact.rights-reserved')}
+              </p>
+              <span className="react-badge">
+                <Atom className="h-3.5 w-3.5" />
+                Made with React
+              </span>
+            </div>
             
             <Button variant="ghost" size="sm" onClick={scrollToTop} className="group">
               {t('sections.contact.back-to-top')}
