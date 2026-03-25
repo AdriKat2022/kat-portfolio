@@ -526,6 +526,56 @@ a {
 		background: var(--social-bg);
 	}
 
+	.social-icon-btn {
+		height: 3rem;
+		width: 3rem;
+		border-radius: 9999px;
+	}
+
+	.social-tooltip-wrap {
+		position: relative;
+		display: inline-flex;
+	}
+
+	.social-tooltip {
+		position: absolute;
+		left: 50%;
+		top: calc(100% + 0.55rem);
+		z-index: 30;
+		transform: translateX(-50%) translateY(-2px);
+		white-space: nowrap;
+		border-radius: 0.5rem;
+		border: 1px solid var(--border);
+		background: rgba(6, 9, 20, 0.95);
+		padding: 0.4rem 0.65rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--text-h);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+	}
+
+	.social-tooltip-arrow {
+		position: absolute;
+		left: 50%;
+		top: -0.32rem;
+		height: 0.6rem;
+		width: 0.6rem;
+		transform: translateX(-50%) rotate(45deg);
+		border-left: 1px solid var(--border);
+		border-top: 1px solid var(--border);
+		background: rgba(6, 9, 20, 0.95);
+	}
+
+	.social-tooltip-wrap:hover .social-tooltip,
+	.social-tooltip-wrap:focus-within .social-tooltip {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(-50%) translateY(0);
+	}
+
 	.project-card {
 		position: relative;
 		display: flex;

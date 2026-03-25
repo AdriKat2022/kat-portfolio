@@ -1,6 +1,66 @@
 import { useTranslation } from 'react-i18next';
-import { Mail, Phone, ArrowUp, Code2, Network } from 'lucide-react';
+import { Mail, Phone, ArrowUp, Link, Gamepad2Icon } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+
+interface ContactMethod {
+  href: string;
+  icon: LucideIcon;
+  labelKey: string;
+  value: string;
+  truncateValue?: boolean;
+}
+
+interface SocialLink {
+  key: string;
+  href: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+function ContactMethodCard({ method }: { method: ContactMethod }) {
+  const { t } = useTranslation();
+  const valueClassName = method.truncateValue
+    ? 'text-theme-strong font-medium truncate'
+    : 'text-theme-strong font-medium';
+
+  return (
+    <a
+      href={method.href}
+      className="surface-card surface-card-hover contact-link-card group"
+    >
+      <div className="icon-chip">
+        <method.icon className="h-6 w-6" />
+      </div>
+      <div className="text-left">
+        <p className="text-theme text-xs font-semibold uppercase tracking-wider">
+          {t(method.labelKey)}
+        </p>
+        <p className={valueClassName}>{method.value}</p>
+      </div>
+    </a>
+  );
+}
+
+function SocialIconButton({ social }: { social: SocialLink }) {
+  return (
+    <div className="social-tooltip-wrap">
+      <Button
+        variant="outline"
+        size="icon"
+        className="social-icon-btn"
+        onClick={() => window.open(social.href, '_blank', 'noopener,noreferrer')}
+        aria-label={social.label}
+      >
+        <social.icon className="h-5 w-5" />
+      </Button>
+      <div role="tooltip" className="social-tooltip">
+        {social.label}
+        <div className="social-tooltip-arrow" />
+      </div>
+    </div>
+  );
+}
 
 export function Contact() {
   const { t } = useTranslation();
@@ -9,9 +69,37 @@ export function Contact() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const socials = [
-    { icon: Code2, href: 'https://github.com/AdriKat2022', label: 'GitHub' },
-    { icon: Network, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
+  const socials: SocialLink[] = [
+    { icon: Gamepad2Icon, href: 'https://adrikat-1.itch.io', label: 'Itch.io', key: 'itchio' },
+    // { icon: Network, href: 'https://www.linkedin.com/in/adrien-schroedel/', label: 'LinkedIn' },
+  ];
+
+  const contactMethods: ContactMethod[] = [
+    {
+      href: 'mailto:adrien.schroedel.pro@gmail.com',
+      icon: Mail,
+      labelKey: 'Email',
+      value: 'adrien.schroedel.pro@gmail.com',
+      truncateValue: true,
+    },
+    {
+      href: 'tel:+33781565695',
+      icon: Phone,
+      labelKey: 'sections.contact.phone-label',
+      value: '+33 7 81 56 56 95',
+    },
+    {
+      href: 'https://linkedin.com/in/adrien-schroedel',
+      icon: Link,
+      labelKey: 'LinkedIn',
+      value: 'Adrien SCHROEDEL',
+    },
+    {
+      href: 'https://github.com/AdriKat2022/',
+      icon: Link,
+      labelKey: 'GitHub',
+      value: 'Adrien SCHROEDEL',
+    },
   ];
 
   return (
@@ -26,46 +114,19 @@ export function Contact() {
              dangerouslySetInnerHTML={{ __html: t('sections.contact.subtitle') }} 
           />
 
-          <div className="grid grid-cols md:grid-cols-2 gap-6 mb-12 w-full max-w-2xl">
-            <a 
-              href="mailto:adrien.schroedel.pro@gmail.com"
-              className="surface-card surface-card-hover contact-link-card group"
-            >
-              <div className="icon-chip">
-                <Mail className="h-6 w-6" />
-              </div>
-              <div className="text-left">
-                <p className="text-theme text-xs font-semibold uppercase tracking-wider">{t('sections.contact.email-label')}</p>
-                <p className="text-theme-strong font-medium truncate">adrien.schroedel.pro@gmail.com</p>
-              </div>
-            </a>
+          {/* Contact Cards */}
 
-            <a 
-              href="tel:+33781565695"
-              className="surface-card surface-card-hover contact-link-card group"
-            >
-              <div className="icon-chip">
-                <Phone className="h-6 w-6" />
-              </div>
-              <div className="text-left">
-                <p className="text-theme text-xs font-semibold uppercase tracking-wider">{t('sections.contact.phone-label')}</p>
-                <p className="text-theme-strong font-medium">+33 7 81 56 56 95</p>
-              </div>
-            </a>
+          <div className="grid grid-cols md:grid-cols-2 gap-6 mb-12 w-full max-w-2xl">
+            {contactMethods.map((method) => (
+              <ContactMethodCard key={method.href} method={method} />
+            ))}
           </div>
+
+          {/* Socials */}
 
           <div className="flex gap-4 mb-16">
             {socials.map((social) => (
-              <Button
-                key={social.label}
-                variant="outline"
-                size="icon"
-                className="rounded-full w-12 h-12"
-                onClick={() => window.open(social.href, '_blank')}
-                aria-label={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-              </Button>
+              <SocialIconButton key={social.key} social={social} />
             ))}
           </div>
 
