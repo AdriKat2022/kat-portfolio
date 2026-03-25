@@ -1,16 +1,20 @@
 import type { Project } from '../types/project';
 
+const getAssetUrl = (name: string) => {
+  return new URL(`../assets/portfolio/${name}`, import.meta.url).href;
+};
+
 export const projects: Project[] = [
   {
     id: 'medieval-racing',
     pinned: true,
-    cover_img: '/assets/portfolio/medieval-racing_cover.jpg',
+    cover_img: getAssetUrl('medieval-racing_cover.jpg'),
     imgs: [
-      '/assets/portfolio/medieval-racing_1.jpg',
-      '/assets/portfolio/medieval-racing_2.jpg',
-      '/assets/portfolio/medieval-racing_3.jpg',
-      '/assets/portfolio/medieval-racing_4.jpg',
-      '/assets/portfolio/medieval-racing_5.jpg'
+      getAssetUrl('medieval-racing_1.jpg'),
+      getAssetUrl('medieval-racing_2.jpg'),
+      getAssetUrl('medieval-racing_3.jpg'),
+      getAssetUrl('medieval-racing_4.jpg'),
+      getAssetUrl('medieval-racing_5.jpg')
     ],
     technologies: [
       'Mirror Networking',
@@ -23,7 +27,7 @@ export const projects: Project[] = [
     actions: [
       {
         type: 'LINK-NT',
-        link: ''
+        link: 'https://adrikat-1.itch.io/medieval-racing'
       }
     ],
     title: {
@@ -42,13 +46,13 @@ export const projects: Project[] = [
   {
     id: 'sorting-bubble',
     pinned: false,
-    cover_img: '/assets/portfolio/sorting-bubble_cover.jpg',
+    cover_img: getAssetUrl('sorting-bubble_cover.jpg'),
     imgs: [
-      '/assets/portfolio/sorting-bubble_1.jpg',
-      '/assets/portfolio/sorting-bubble_2.jpg',
-      '/assets/portfolio/sorting-bubble_3.jpg',
-      '/assets/portfolio/sorting-bubble_4.jpg',
-      '/assets/portfolio/sorting-bubble_5.jpg'
+      getAssetUrl('sorting-bubble_1.jpg'),
+      getAssetUrl('sorting-bubble_2.jpg'),
+      getAssetUrl('sorting-bubble_3.jpg'),
+      getAssetUrl('sorting-bubble_4.jpg'),
+      getAssetUrl('sorting-bubble_5.jpg')
     ],
     technologies: [
       'Tool Programming',
@@ -79,12 +83,12 @@ export const projects: Project[] = [
   {
     id: 'irma-rnark',
     pinned: false,
-    cover_img: '/assets/portfolio/irma-rnark_cover.jpg',
+    cover_img: getAssetUrl('irma-rnark_cover.jpg'),
     imgs: [
-      '/assets/portfolio/irma-rnark_1.jpg',
-      '/assets/portfolio/irma-rnark_2.jpg',
-      '/assets/portfolio/irma-rnark_3.jpg',
-      '/assets/portfolio/irma-rnark_4.jpg'
+      getAssetUrl('irma-rnark_1.jpg'),
+      getAssetUrl('irma-rnark_2.jpg'),
+      getAssetUrl('irma-rnark_3.jpg'),
+      getAssetUrl('irma-rnark_4.jpg')
     ],
     technologies: [
       'Leadership',
@@ -115,11 +119,11 @@ export const projects: Project[] = [
   {
     id: 'space-shooter-game',
     pinned: false,
-    cover_img: '/assets/portfolio/space_shooter_game_cover.jpg',
+    cover_img: getAssetUrl('space_shooter_game_cover.jpg'),
     imgs: [
-      '/assets/portfolio/space_shooter_game_1.jpg',
-      '/assets/portfolio/space_shooter_game_2.jpg',
-      '/assets/portfolio/space_shooter_game_3.jpg'
+      getAssetUrl('space_shooter_game_1.jpg'),
+      getAssetUrl('space_shooter_game_2.jpg'),
+      getAssetUrl('space_shooter_game_3.jpg')
     ],
     technologies: [
       'Encapsulation',
@@ -155,12 +159,12 @@ export const projects: Project[] = [
   {
     id: 'the-kairi-invasion',
     pinned: false,
-    cover_img: '/assets/portfolio/theKairiInvasionCover.jpg',
+    cover_img: getAssetUrl('theKairiInvasionCover.jpg'),
     imgs: [
-      '/assets/portfolio/theKairiInvasion_1.jpg',
-      '/assets/portfolio/theKairiInvasion_2.jpg',
-      '/assets/portfolio/theKairiInvasion_3.jpg',
-      '/assets/portfolio/theKairiInvasion_4.jpg'
+      getAssetUrl('theKairiInvasion_1.jpg'),
+      getAssetUrl('theKairiInvasion_2.jpg'),
+      getAssetUrl('theKairiInvasion_3.jpg'),
+      getAssetUrl('theKairiInvasion_4.jpg')
     ],
     technologies: [
       'Unity',
@@ -183,18 +187,18 @@ export const projects: Project[] = [
     },
     description: {
       en: '<p><strong>The Kairi Invasion</strong> was at first a simple school exercice. We were excpected to build a small SCHMUP project to warm up for the year. Once the project was completed I decided to continue the project just a bit to have better visuals (background, enemies, projectiles...).</p><p>In this project I mainly focused on the <em>game juice</em>, that includes for example a satisfaying and pleasant UI, player feedback and good user experience. All the animations you can see while playing the game was coded in Unity mainly with Coroutines</p>',
-      fr: '<p><strong>The Kairi Invasion</strong> tient son origine d\'un simple travail pratique d\'école où nous étions attendu de faire un jeu de tir (SCHMUP). Une fois le projet terminé du point de vue scolaire, j\'ai voulu continuer à le paufiner afin d\'avoir de meilleurs images (fond d\'écran, ennemis, projectiles..).</p><p>Je me suis surtout concentré sur le côté <em>game juice</em>, incluant par exemple, une interface utilisateur agréable et satisfaisante, un bon retour et bonne expérience utilisateur.. Les animations que vous pouvez apercevoir en jouant ont été codé dans Unity, notamment grâce à des coroutines.</p>'
+      fr: '<p><strong>The Kairi Invasion</strong> tient son origine d\'un simple travail pratique d\'école où nous étions attendu de faire un jeu de tir (SCHMUP). Une fois le projet terminé du point de vue scolaire, j\'ai voulu continuer à le paufiner afin d\'avoir de meilleurs images (fond d\'écran, ennemis, projectiles..).. Les animations que vous pouvez apercevoir en jouant ont été codé dans Unity, notamment grâce à des coroutines.</p>'
     }
   },
   {
     id: 'find-mocha',
     pinned: true,
-    cover_img: '/assets/portfolio/find_mocha_cover.jpg',
+    cover_img: getAssetUrl('find_mocha_cover.jpg'),
     imgs: [
-      '/assets/portfolio/find_mocha_1.jpg',
-      '/assets/portfolio/find_mocha_2.jpg',
-      '/assets/portfolio/find_mocha_3.jpg',
-      '/assets/portfolio/find_mocha_4.jpg'
+      getAssetUrl('find_mocha_1.jpg'),
+      getAssetUrl('find_mocha_2.jpg'),
+      getAssetUrl('find_mocha_3.jpg'),
+      getAssetUrl('find_mocha_4.jpg')
     ],
     technologies: [
       'Unity',
@@ -223,13 +227,13 @@ export const projects: Project[] = [
   {
     id: 'rupture',
     pinned: true,
-    cover_img: '/assets/portfolio/rupture_cover.jpg',
+    cover_img: getAssetUrl('rupture_cover.jpg'),
     imgs: [
-      '/assets/portfolio/rupture_1.jpg',
-      '/assets/portfolio/rupture_2.jpg',
-      '/assets/portfolio/rupture_3.jpg',
-      '/assets/portfolio/rupture_4.jpg',
-      '/assets/portfolio/rupture_5.jpg'
+      getAssetUrl('rupture_1.jpg'),
+      getAssetUrl('rupture_2.jpg'),
+      getAssetUrl('rupture_3.jpg'),
+      getAssetUrl('rupture_4.jpg'),
+      getAssetUrl('rupture_5.jpg')
     ],
     technologies: [
       'Gameplay Programming',
@@ -260,9 +264,9 @@ export const projects: Project[] = [
   {
     id: 'shipping-time',
     pinned: false,
-    cover_img: '/assets/portfolio/shippingTimeCover.jpg',
+    cover_img: getAssetUrl('shippingTimeCover.jpg'),
     imgs: [
-      '/assets/portfolio/shippingTime.jpg'
+      getAssetUrl('shippingTime.jpg')
     ],
     technologies: [
       'Unity',
@@ -291,9 +295,9 @@ export const projects: Project[] = [
   {
     id: 'the-legend-of-blo',
     pinned: false,
-    cover_img: '/assets/portfolio/theLegendOfBloCover.jpg',
+    cover_img: getAssetUrl('theLegendOfBloCover.jpg'),
     imgs: [
-      '/assets/portfolio/theLegendOfBlo.jpg'
+      getAssetUrl('theLegendOfBlo.jpg')
     ],
     technologies: [
       'Unity',
@@ -322,9 +326,9 @@ export const projects: Project[] = [
   {
     id: 'magic-circus',
     pinned: false,
-    cover_img: '/assets/portfolio/magicCircusCover.jpg',
+    cover_img: getAssetUrl('magicCircusCover.jpg'),
     imgs: [
-      '/assets/portfolio/magicCircus.jpg'
+      getAssetUrl('magicCircus.jpg')
     ],
     technologies:[
       'Nav-Mesh',
@@ -354,9 +358,9 @@ export const projects: Project[] = [
   {
     id: 'translimation',
     pinned: false,
-    cover_img: '/assets/portfolio/translimationCover.jpg',
+    cover_img: getAssetUrl('translimationCover.jpg'),
     imgs: [
-      '/assets/portfolio/translimation.jpg'
+      getAssetUrl('translimation.jpg')
     ],
     technologies: [
       'Unity',
@@ -385,9 +389,9 @@ export const projects: Project[] = [
   {
     id: 'exploding-tree',
     pinned: false,
-    cover_img: '/assets/portfolio/explodingTreeCover.jpg',
+    cover_img: getAssetUrl('explodingTreeCover.jpg'),
     imgs: [
-      '/assets/portfolio/explodingTree.jpg'
+      getAssetUrl('explodingTree.jpg')
     ],
     technologies: [
       'Unity',

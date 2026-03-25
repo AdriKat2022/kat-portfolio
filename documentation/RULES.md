@@ -26,7 +26,7 @@
 
 ## 7. Git Usage
 - When generating code, ensure that it is properly committed to the version control system (e.g., Git) with clear and descriptive commit messages for each small milestone. This helps maintain a clear history of changes and allows for easier collaboration with other developers.
-- Follow the established branching strategy and workflow for your project, such as using feature branches for new development and pull requests for code reviews. 
+- Follow the established branching strategy and workflow for your project, such as using feature branches for new development and pull requests for code reviews.
 
 # General Guidelines for Work Dispatching
 
