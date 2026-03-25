@@ -15,10 +15,10 @@ export function About() {
         <div className="section-shell grid grid-cols-1 gap-16 px-6 py-10 lg:grid-cols-2 md:px-10 md:py-12">
           {/* Left Column: Bio */}
           <div>
-            <h2 className="mb-8 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
+            <h2 className="text-theme-strong mb-8 text-3xl font-bold text-glow md:text-4xl">
               {t('sections.titles.about')}
             </h2>
-            <div className="space-y-6 text-lg text-[var(--text)] leading-relaxed">
+            <div className="text-theme space-y-6 text-lg leading-relaxed">
               <p dangerouslySetInnerHTML={{ __html: t('sections.about.p1') }} />
               <p dangerouslySetInnerHTML={{ __html: t('sections.about.p2') }} />
               <p dangerouslySetInnerHTML={{ __html: t('sections.about.p3') }} />
@@ -34,31 +34,47 @@ export function About() {
 
           {/* Right Column: Skills & Tools */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
-            <div className="rounded-2xl border border-[var(--border)] bg-[rgba(10,16,31,0.74)] p-8 shadow-[0_14px_36px_rgba(3,7,16,0.55)]">
+            <div className="surface-card p-8">
               <h3 
-                className="text-xl font-bold text-[var(--text-h)] mb-6"
+                className="text-theme-strong mb-6 text-xl font-bold"
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-1-head') }}
               />
-              <ul className="space-y-3">
+              <ul className="skill-list">
                 {skills.map((skill) => (
-                  <li key={skill.id} className="flex items-start gap-3 text-[var(--text)]">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--accent)] shrink-0 mt-0.5" />
-                    <span>{skill.name}</span>
+                  <li key={skill.id} className="skill-item">
+                    <div className="skill-item-head">
+                      <span className="skill-item-name">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
+                        {skill.name}
+                      </span>
+                      <span className="skill-item-percent">{skill.percentage}%</span>
+                    </div>
+                    <div className="skill-meter" aria-hidden="true">
+                      <div className="skill-meter-fill" style={{ width: `${skill.percentage}%` }} />
+                    </div>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-[var(--border)] bg-[rgba(10,16,31,0.74)] p-8 shadow-[0_14px_36px_rgba(3,7,16,0.55)]">
+            <div className="surface-card p-8">
               <h3 
-                className="text-xl font-bold text-[var(--text-h)] mb-6"
+                className="text-theme-strong mb-6 text-xl font-bold"
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-2-head') }}
               />
-              <ul className="space-y-3">
+              <ul className="skill-list">
                 {tools.map((tool) => (
-                  <li key={tool.id} className="flex items-start gap-3 text-[var(--text)]">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--accent)] shrink-0 mt-0.5" />
-                    <span>{tool.name}</span>
+                  <li key={tool.id} className="skill-item">
+                    <div className="skill-item-head">
+                      <span className="skill-item-name">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
+                        {tool.name}
+                      </span>
+                      <span className="skill-item-percent">{tool.percentage}%</span>
+                    </div>
+                    <div className="skill-meter" aria-hidden="true">
+                      <div className="skill-meter-fill" style={{ width: `${tool.percentage}%` }} />
+                    </div>
                   </li>
                 ))}
               </ul>

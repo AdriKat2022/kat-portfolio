@@ -18,38 +18,38 @@ export function Contact() {
     <section id="contact" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
       <div className="container mx-auto px-4">
         <div className="section-shell flex flex-col items-center px-6 py-12 text-center md:px-10">
-          <h2 className="mb-6 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
+          <h2 className="text-theme-strong mb-6 text-3xl font-bold text-glow md:text-4xl">
             {t('sections.titles.contact')}
           </h2>
           
-          <p className="mb-12 max-w-2xl text-lg leading-relaxed text-[var(--text)]" 
+          <p className="text-theme mb-12 max-w-2xl text-lg leading-relaxed" 
              dangerouslySetInnerHTML={{ __html: t('sections.contact.subtitle') }} 
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 w-full max-w-xl">
             <a 
               href="mailto:adrien.schroedel.pro@gmail.com"
-              className="group flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[rgba(18,28,52,0.78)] p-4 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(33,48,88,0.72)]"
+              className="surface-card surface-card-hover contact-link-card group"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg)] text-[var(--accent)] shadow-[0_0_18px_rgba(88,243,255,0.2)]">
+              <div className="icon-chip">
                 <Mail className="h-6 w-6" />
               </div>
               <div className="text-left">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text)]">{t('sections.contact.email-label')}</p>
-                <p className="text-[var(--text-h)] font-medium truncate">adrien.schroedel.pro@gmail.com</p>
+                <p className="text-theme text-xs font-semibold uppercase tracking-wider">{t('sections.contact.email-label')}</p>
+                <p className="text-theme-strong font-medium truncate">adrien.schroedel.pro@gmail.com</p>
               </div>
             </a>
 
             <a 
               href="tel:+33781565695"
-              className="group flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[rgba(18,28,52,0.78)] p-4 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(33,48,88,0.72)]"
+              className="surface-card surface-card-hover contact-link-card group"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--bg)] text-[var(--accent)] shadow-[0_0_18px_rgba(88,243,255,0.2)]">
+              <div className="icon-chip">
                 <Phone className="h-6 w-6" />
               </div>
               <div className="text-left">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text)]">{t('sections.contact.phone-label')}</p>
-                <p className="text-[var(--text-h)] font-medium">+33 7 81 56 56 95</p>
+                <p className="text-theme text-xs font-semibold uppercase tracking-wider">{t('sections.contact.phone-label')}</p>
+                <p className="text-theme-strong font-medium">+33 7 81 56 56 95</p>
               </div>
             </a>
           </div>
@@ -70,7 +70,7 @@ export function Contact() {
           </div>
 
           <div className="w-full pt-12 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-[var(--text)] text-sm">
+            <p className="text-theme text-sm">
               © {new Date().getFullYear()} @AdriKat. {t('sections.contact.rights-reserved')}
             </p>
             
