@@ -39,19 +39,11 @@ export function About() {
                 className="text-theme-strong mb-6 text-xl font-bold"
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-1-head') }}
               />
-              <ul className="skill-list">
+              <ul className="skill-grid">
                 {skills.map((skill) => (
-                  <li key={skill.id} className="skill-item">
-                    <div className="skill-item-head">
-                      <span className="skill-item-name">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
-                        {skill.name}
-                      </span>
-                      <span className="skill-item-percent">{skill.percentage}%</span>
-                    </div>
-                    <div className="skill-meter" aria-hidden="true">
-                      <div className="skill-meter-fill" style={{ width: `${skill.percentage}%` }} />
-                    </div>
+                  <li key={skill.id} className="skill-grid-item">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
+                    <span>{skill.name}</span>
                   </li>
                 ))}
               </ul>
@@ -62,19 +54,11 @@ export function About() {
                 className="text-theme-strong mb-6 text-xl font-bold"
                 dangerouslySetInnerHTML={{ __html: t('sections.profile.column-2-head') }}
               />
-              <ul className="skill-list">
+              <ul className="skill-grid">
                 {tools.map((tool) => (
-                  <li key={tool.id} className="skill-item">
-                    <div className="skill-item-head">
-                      <span className="skill-item-name">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
-                        {tool.name}
-                      </span>
-                      <span className="skill-item-percent">{tool.percentage}%</span>
-                    </div>
-                    <div className="skill-meter" aria-hidden="true">
-                      <div className="skill-meter-fill" style={{ width: `${tool.percentage}%` }} />
-                    </div>
+                  <li key={tool.id} className="skill-grid-item">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
+                    <span>{tool.name}</span>
                   </li>
                 ))}
               </ul>
