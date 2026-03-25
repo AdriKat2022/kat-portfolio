@@ -22,11 +22,11 @@ export function Contact() {
             {t('sections.titles.contact')}
           </h2>
           
-          <p className="text-theme mb-12 max-w-2xl text-lg leading-relaxed" 
+          <p className="text-theme mb-12 max-w-4xl text-xl leading-relaxed" 
              dangerouslySetInnerHTML={{ __html: t('sections.contact.subtitle') }} 
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 w-full max-w-xl">
+          <div className="grid grid-cols md:grid-cols-2 gap-6 mb-12 w-full max-w-2xl">
             <a 
               href="mailto:adrien.schroedel.pro@gmail.com"
               className="surface-card surface-card-hover contact-link-card group"

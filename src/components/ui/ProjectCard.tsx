@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Pin, ExternalLink } from 'lucide-react';
+import { Pin, Eye } from 'lucide-react';
 import type { Project } from '@/types/project';
 import { TechBadge } from '@components/ui/TechBadge';
 import { Skeleton } from '@components/ui/Skeleton';
@@ -29,7 +29,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       viewport={{ once: true }}
       className="scanline-overlay project-card group"
     >
-      <div className="project-card-media">
+      <div className="project-card-media" onClick={() => onClick(project)}>
         <div className="project-card-media-overlay" />
         {isLoading && <Skeleton className="absolute inset-0" />}
         <img
@@ -37,7 +37,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
           alt={title}
           className="project-card-image"
           loading="lazy"
-        />
+          />
         {project.pinned && (
           <div className="project-card-pin">
             <Pin className="h-4 w-4 fill-current" />
@@ -74,7 +74,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
             variant="outline" 
             onClick={() => onClick(project)}
           >
-            <ExternalLink className="mr-2 h-4 w-4" />
+            <Eye className="mr-2 h-4 w-4" />
             {t('projects.details')}
           </Button>
         </div>

@@ -34,7 +34,7 @@ export function PortfolioGrid() {
           </div>
           
           <Button
-            variant={showAll ? 'primary' : 'outline'}
+            variant={showAll ? 'outline' : 'primary'}
             onClick={() => setShowAll(!showAll)}
             className="md:self-end"
           >
