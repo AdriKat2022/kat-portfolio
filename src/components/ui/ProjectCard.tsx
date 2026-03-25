@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Pin, ExternalLink } from 'lucide-react';
 import type { Project } from '@/types/project';
 import { TechBadge } from '@components/ui/TechBadge';
+import { Skeleton } from '@components/ui/Skeleton';
 import { Button } from '@components/ui/Button';
+import { useLazyImage } from '@/hooks/useLazyImage';
 
 interface ProjectCardProps {
   project: Project;
@@ -13,12 +15,14 @@ interface ProjectCardProps {
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
   const { i18n } = useTranslation();
   const currentLang = i18n.language as 'en' | 'fr';
+  const { imageSrc, isLoading, ref } = useLazyImage(project.cover_img);
 
   const title = project.title[currentLang];
   const date = project.date?.[currentLang];
 
   return (
     <motion.div
+      ref={ref}
       whileHover={{ y: -8 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -27,10 +31,12 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
     >
       <div className="relative aspect-video overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.42)_100%)] z-10" />
+        {isLoading && <Skeleton className="absolute inset-0" />}
         <img
-          src={project.cover_img}
+          src={imageSrc}
           alt={title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
         />
         {project.pinned && (
           <div className="absolute right-3 top-3 z-20 rounded-full border border-[var(--accent-border)] bg-[var(--accent)] p-1.5 text-slate-950 shadow-[0_0_20px_rgba(88,243,255,0.5)]">

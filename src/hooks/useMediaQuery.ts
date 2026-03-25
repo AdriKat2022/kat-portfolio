@@ -1,0 +1,34 @@
+import { useEffect, useState } from 'react';
+
+/**
+ * Hook to check if a media query matches
+ * Useful for responsive animations and performance optimizations
+ * 
+ * @param query - CSS media query string
+ * @returns boolean indicating if media query matches
+ * 
+ * @example
+ * const isMobile = useMediaQuery('(max-width: 768px)');
+ * const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+ */
+export function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(query);
+    setMatches(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => {
+      setMatches(e.matches);
+    };
+
+    // Modern API
+    mediaQuery.addEventListener('change', handler);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handler);
+    };
+  }, [query]);
+
+  return matches;
+}

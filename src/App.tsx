@@ -6,13 +6,15 @@ import { Seeking } from '@/components/layout/Seeking';
 import { PortfolioGrid } from '@/components/layout/PortfolioGrid';
 import { About } from '@/components/layout/About';
 import { Contact } from '@/components/layout/Contact';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 function App() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
+  const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
   return (
-    <div className="cosmic-shell min-h-screen overflow-x-hidden bg-[var(--bg)] text-[var(--text)]">
+    <div className={`cosmic-shell min-h-screen overflow-x-hidden bg-[var(--bg)] text-[var(--text)] ${prefersReducedMotion ? 'no-animations' : ''}`}>
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute left-[8%] top-[12%] h-60 w-60 rounded-full bg-[radial-gradient(circle,_rgba(88,243,255,0.18)_0%,_transparent_70%)] blur-3xl twinkle" />
         <div className="absolute right-[5%] top-[28%] h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(95,140,255,0.2)_0%,_transparent_68%)] blur-3xl drift" />

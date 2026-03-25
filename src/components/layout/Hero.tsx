@@ -2,29 +2,37 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ArrowDown, Sparkles, Rocket } from 'lucide-react';
 import { Button } from '@components/ui/Button';
+import { useInViewport } from '@/hooks/useInViewport';
 import avatarImg from '@/assets/avatar.png';
 
 export function Hero() {
   const { t } = useTranslation();
+  const inViewportRef = useInViewport();
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
+        duration: 0.5,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.3 }
+    },
   };
 
   return (
     <section 
-      id="home" 
+      id="home"
+      ref={inViewportRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-20"
     >
       <motion.div

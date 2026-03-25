@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import type { Project } from '@/types/project';
 import { Button } from '@components/ui/Button';
 import { TechBadge } from '@components/ui/TechBadge';
+import { Skeleton } from '@components/ui/Skeleton';
+import { useLazyImage } from '@/hooks/useLazyImage';
 
 interface ModalProps {
   isOpen: boolean;
@@ -54,12 +56,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
               {/* Image Gallery */}
               <div className="mb-8 flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
                 {project.imgs.map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt={`${title} - screenshot ${idx + 1}`}
-                    className="h-64 w-auto rounded-xl border border-[var(--border)] bg-[var(--social-bg)] object-contain sm:h-96"
-                  />
+                  <ModalImage key={idx} src={img} alt={`${title} - screenshot ${idx + 1}`} />
                 ))}
               </div>
 
@@ -118,5 +115,27 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
         </div>
       )}
     </AnimatePresence>
+  );
+}
+
+/**
+ * Lazy-loaded image for modal gallery
+ */
+function ModalImage({ src, alt }: { src: string; alt: string }) {
+  const { imageSrc, isLoading, ref } = useLazyImage(src);
+
+  return (
+    <div
+      ref={ref}
+      className="relative h-64 w-auto rounded-xl border border-[var(--border)] bg-[var(--social-bg)] overflow-hidden sm:h-96 flex-shrink-0"
+    >
+      {isLoading && <Skeleton className="absolute inset-0" />}
+      <img
+        src={imageSrc}
+        alt={alt}
+        className="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </div>
   );
 }
