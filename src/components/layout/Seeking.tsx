@@ -1,8 +1,45 @@
 import { useTranslation } from 'react-i18next';
 import { Calendar, MapPin, Gamepad2 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 export function Seeking() {
   const { t } = useTranslation();
+
+  const cards = [
+    {
+      icon: Gamepad2,
+      titleKey: 'sections.seeking.position-title',
+      valueKey: 'sections.seeking.position-subtitle',
+    },
+    {
+      icon: Calendar,
+      titleKey: 'sections.seeking.availability-title',
+      valueKey: 'sections.seeking.date',
+    },
+    {
+      icon: MapPin,
+      titleKey: 'sections.seeking.location-title',
+      valueKey: 'sections.seeking.locations',
+    },
+  ] as const;
+
+  const renderSeekingCard = (
+    Icon: LucideIcon,
+    titleKey: string,
+    valueKey: string
+  ) => (
+    <div className="surface-card surface-card-hover flex flex-col items-center p-8">
+      <div className="icon-chip mb-6">
+        <Icon className="h-6 w-6" />
+      </div>
+      <h3 className="text-theme-strong mb-2 text-xl font-bold">
+        {t(titleKey)}
+      </h3>
+      <p className="mt-auto text-right">
+        {t(valueKey)}
+      </p>
+    </div>
+  );
 
   return (
     <section id="seeking" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
@@ -13,41 +50,11 @@ export function Seeking() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
-            <div className="surface-card surface-card-hover flex flex-col items-center p-8">
-              <div className="icon-chip mb-6">
-                <Gamepad2 className="h-6 w-6" />
+            {cards.map((card) => (
+              <div key={card.titleKey}>
+                {renderSeekingCard(card.icon, card.titleKey, card.valueKey)}
               </div>
-              <h3 className="text-theme-strong mb-2 text-xl font-bold">
-                {t('sections.seeking.position-title')}
-              </h3>
-              <p className="text-theme">
-                {t('sections.seeking.position-subtitle')}
-              </p>
-            </div>
-
-            <div className="surface-card surface-card-hover flex flex-col items-center p-8">
-              <div className="icon-chip mb-6">
-                <Calendar className="h-6 w-6" />
-              </div>
-              <h3 className="text-theme-strong mb-2 text-xl font-bold">
-                {t('sections.seeking.availability-title')}
-              </h3>
-              <p className="text-theme">
-                {t('sections.seeking.date')}
-              </p>
-            </div>
-
-            <div className="surface-card surface-card-hover flex flex-col items-center p-8">
-              <div className="icon-chip mb-6">
-                <MapPin className="h-6 w-6" />
-              </div>
-              <h3 className="text-theme-strong mb-2 text-xl font-bold">
-                {t('sections.seeking.location-title')}
-              </h3>
-              <p className="text-theme">
-                {t('sections.seeking.locations')}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>

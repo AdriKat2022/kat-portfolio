@@ -50,23 +50,21 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
-        isScrolled 
-          ? 'border-b border-[var(--border)] bg-[rgba(6,9,20,0.76)] py-2 backdrop-blur-md shadow-[0_10px_30px_rgba(3,8,18,0.45)]' 
-          : 'bg-transparent py-4'
+        'nav-shell',
+        isScrolled ? 'nav-shell-scrolled' : 'nav-shell-top'
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="nav-container container mx-auto px-4">
         {/* Logo/Brand */}
         <button 
           onClick={() => scrollTo('home')}
-          className="text-xl font-extrabold tracking-wider text-[var(--text-h)] text-glow transition-opacity hover:opacity-85"
+          className="nav-brand text-glow"
         >
           @AdriKat
         </button>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="nav-desktop-links">
           {navItems.map((item) => (
             <Button
               key={item.id}
@@ -74,23 +72,23 @@ export function Navbar() {
               size="sm"
               onClick={() => scrollTo(item.id)}
               className={cn(
-                'relative px-4',
-                activeSection === item.id ? 'text-[var(--accent)] text-glow' : 'text-[var(--text)]'
+                'nav-link-button',
+                activeSection === item.id ? 'nav-link-active' : 'nav-link-inactive'
               )}
             >
               {item.label}
               {activeSection === item.id && (
-                <span className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-[linear-gradient(90deg,var(--accent),var(--accent-2))]" />
+                <span className="nav-active-indicator" />
               )}
             </Button>
           ))}
-          <div className="ml-4 pl-4 border-l border-[var(--border)]">
+          <div className="nav-divider">
             <LanguageSwitcher />
           </div>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="nav-mobile-controls">
           <LanguageSwitcher />
           <Button
             variant="ghost"
@@ -105,20 +103,20 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'absolute left-0 right-0 top-full origin-top border-b border-[var(--border)] bg-[rgba(6,9,20,0.95)] p-4 backdrop-blur-md transition-all duration-300 md:hidden',
-          isMobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'
+          'nav-mobile-panel',
+          isMobileMenuOpen ? 'nav-mobile-panel-open' : 'nav-mobile-panel-closed'
         )}
       >
-        <div className="flex flex-col gap-2">
+        <div className="nav-mobile-list">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
               className={cn(
-                'flex items-center gap-4 p-3 rounded-lg transition-colors',
+                'nav-mobile-item',
                 activeSection === item.id 
-                  ? 'bg-[var(--accent-bg)] text-[var(--accent)]' 
-                  : 'text-[var(--text)] hover:bg-[var(--social-bg)]'
+                  ? 'nav-mobile-item-active' 
+                  : 'nav-mobile-item-inactive'
               )}
             >
               <item.icon className="h-5 w-5" />
