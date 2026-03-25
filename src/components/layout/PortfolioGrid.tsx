@@ -39,7 +39,7 @@ export function PortfolioGrid() {
             className="md:self-end"
           >
             <Filter className="mr-2 h-4 w-4" />
-            {showAll ? (t('nav.profile') === 'Mon Profil' ? 'Voir épinglés' : 'Show Pinned') : (t('nav.profile') === 'Mon Profil' ? 'Voir tout' : 'Show All')}
+            {showAll ? t('sections.portfolio.show-pinned') : t('sections.portfolio.show-all')}
           </Button>
         </div>
 
@@ -79,7 +79,7 @@ export function PortfolioGrid() {
               {t('sections.portfolio.other-games-subsection')}...
             </p>
             <Button variant="ghost" onClick={() => setShowAll(true)}>
-              {t('nav.profile') === 'Mon Profil' ? 'Découvrir tous mes jeux' : 'Explore all my games'}
+              {t('sections.portfolio.explore-all-games')}
             </Button>
           </motion.div>
         )}

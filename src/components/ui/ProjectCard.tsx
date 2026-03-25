@@ -13,7 +13,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLang = i18n.language as 'en' | 'fr';
   const { imageSrc, isLoading, ref } = useLazyImage(project.cover_img);
 
@@ -75,7 +75,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
             onClick={() => onClick(project)}
           >
             <ExternalLink className="mr-2 h-4 w-4" />
-            {currentLang === 'fr' ? 'Détails' : 'Details'}
+            {t('projects.details')}
           </Button>
         </div>
       </div>

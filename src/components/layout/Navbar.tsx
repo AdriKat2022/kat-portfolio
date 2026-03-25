@@ -33,7 +33,7 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { id: 'home', label: t('nav.home') || 'Home', icon: Home },
+    { id: 'home', label: t('nav.home'), icon: Home },
     { id: 'portfolio', label: t('nav.games'), icon: Briefcase },
     { id: 'about', label: t('nav.about'), icon: User },
     { id: 'contact', label: t('nav.contact'), icon: Mail },

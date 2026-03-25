@@ -67,7 +67,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                     <div>
                       <h4 className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--text)]">
                         <Calendar className="h-4 w-4" />
-                        {currentLang === 'fr' ? 'Période' : 'Period'}
+                        {t('projects.period')}
                       </h4>
                       <p className="text-[var(--text-h)]">{date}</p>
                     </div>
@@ -94,7 +94,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                         disabled={action.type === 'UNAVAILABLE'}
                       >
                         <span>
-                          {action.type === 'DOWNLOAD' ? (currentLang === 'fr' ? 'Télécharger' : 'Download') : (currentLang === 'fr' ? 'Consulter' : 'View Project')}
+                          {action.type === 'DOWNLOAD' ? t('projects.download') : t('projects.view-project')}
                         </span>
                         {action.type === 'DOWNLOAD' ? <Download className="h-4 w-4" /> : <ExternalLink className="h-4 w-4" />}
                       </Button>

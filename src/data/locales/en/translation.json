@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "title": "Adrien Schroedel | Developer Portfolio"
+  },
   "common": {
     "last-updated": "Last update: ",
     "cv-button": "Interested ? Take the shortcut to my resume !"
@@ -26,6 +29,8 @@
     "seeking": {
       "position-title": "Game Developer Position",
       "position-subtitle": "Full-time, Permanent",
+      "availability-title": "Availability",
+      "location-title": "Location",
       "date": "From october 2025",
       "locations": "France, Ile-de-France (preferred but not limited to)"
     },
@@ -52,6 +57,9 @@
     "portfolio": {
       "description": "My portfolio is filled with the projects I have been able to carry out, alone or in teams, during my digital engineering studies at Télécom SudParis, as a school or personal project. You will mainly find video games in this section!",
       "pinned-subsection": "Pinned Games <i class=\"ms-2 fa-solid fa-thumbtack\"></i>",
+      "show-pinned": "Show Pinned",
+      "show-all": "Show All",
+      "explore-all-games": "Explore all my games",
       "other-games-subsection": "My Other Games",
       "warning": "Warning: The projects might not load correctly, please <a href=\".\">refresh the page</a> if that's the case."
     },
@@ -62,11 +70,19 @@
       "resume-title": "My resume"
     },
     "contact": {
-      "subtitle": "A question in a particular field such as video games, software or even something else ? <br/>Engage the discussion, I will be happy to discuss it with you !"
+      "subtitle": "A question in a particular field such as video games, software or even something else ? <br/>Engage the discussion, I will be happy to discuss it with you !",
+      "email-label": "Email",
+      "phone-label": "Phone",
+      "rights-reserved": "All rights reserved.",
+      "back-to-top": "Back to top"
     }
   },
   "projects": {
     "technologies": "Skills and technologies used",
-    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Close"
+    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Close",
+    "details": "Details",
+    "period": "Period",
+    "download": "Download",
+    "view-project": "View Project"
   }
 }

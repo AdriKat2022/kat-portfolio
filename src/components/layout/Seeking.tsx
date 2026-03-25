@@ -30,7 +30,7 @@ export function Seeking() {
                 <Calendar className="h-6 w-6" />
               </div>
               <h3 className="mb-2 text-xl font-bold text-[var(--text-h)]">
-                {t('nav.profile') === 'Mon Profil' ? 'Disponibilité' : 'Availability'}
+                {t('sections.seeking.availability-title')}
               </h3>
               <p className="text-[var(--text)]">
                 {t('sections.seeking.date')}
@@ -42,7 +42,7 @@ export function Seeking() {
                 <MapPin className="h-6 w-6" />
               </div>
               <h3 className="mb-2 text-xl font-bold text-[var(--text-h)]">
-                {t('nav.profile') === 'Mon Profil' ? 'Localisation' : 'Location'}
+                {t('sections.seeking.location-title')}
               </h3>
               <p className="text-[var(--text)]">
                 {t('sections.seeking.locations')}

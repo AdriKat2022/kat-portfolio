@@ -35,7 +35,7 @@ export function Contact() {
                 <Mail className="h-6 w-6" />
               </div>
               <div className="text-left">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text)]">Email</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text)]">{t('sections.contact.email-label')}</p>
                 <p className="text-[var(--text-h)] font-medium truncate">adrien.schroedel.pro@gmail.com</p>
               </div>
             </a>
@@ -48,7 +48,7 @@ export function Contact() {
                 <Phone className="h-6 w-6" />
               </div>
               <div className="text-left">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text)]">{t('nav.profile') === 'Mon Profil' ? 'Téléphone' : 'Phone'}</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text)]">{t('sections.contact.phone-label')}</p>
                 <p className="text-[var(--text-h)] font-medium">+33 7 81 56 56 95</p>
               </div>
             </a>
@@ -71,11 +71,11 @@ export function Contact() {
 
           <div className="w-full pt-12 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-[var(--text)] text-sm">
-              © {new Date().getFullYear()} @AdriKat. {t('nav.profile') === 'Mon Profil' ? 'Tous droits réservés.' : 'All rights reserved.'}
+              © {new Date().getFullYear()} @AdriKat. {t('sections.contact.rights-reserved')}
             </p>
             
             <Button variant="ghost" size="sm" onClick={scrollToTop} className="group">
-              {t('nav.profile') === 'Mon Profil' ? 'Retour en haut' : 'Back to top'}
+              {t('sections.contact.back-to-top')}
               <ArrowUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
             </Button>
           </div>

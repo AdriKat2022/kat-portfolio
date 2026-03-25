@@ -21,7 +21,7 @@ function App() {
         <div className="absolute bottom-[4%] left-[32%] h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(95,140,255,0.16)_0%,_transparent_70%)] blur-3xl twinkle" />
       </div>
       <Helmet>
-        <title>{currentLang === 'fr' ? 'Adrien Schroedel | Portfolio Développeur' : 'Adrien Schroedel | Developer Portfolio'}</title>
+        <title>{t('meta.title')}</title>
         <meta name="description" content={t('hero.job-subtitle')} />
         <html lang={currentLang} />
       </Helmet>

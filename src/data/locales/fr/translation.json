@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "title": "Adrien Schroedel | Portfolio Développeur"
+  },
   "common": {
     "last-updated": "Dernière mise à jour : ",
     "cv-button": "Intéressé ? Prenez le raccourci vers mon CV !"
@@ -26,6 +29,8 @@
     "seeking": {
       "position-title": "Développeur de Jeux vidéo",
       "position-subtitle": "Temps plein, CDI",
+      "availability-title": "Disponibilité",
+      "location-title": "Localisation",
       "date": "Dès que possible en 2026",
       "locations": "France, Ile-de-France (préféré mais non limité à)"
     },
@@ -52,6 +57,9 @@
     "portfolio": {
       "description": "Mon portfolio regorge des projets importants auxquels j'ai participé, seul ou en équipe, durant mes études d'ingénieur du numérique à Télécom SudParis, en tant que projet scolaire ou personnel. Vous y trouverez principalement des jeux vidéo dans cette section !",
       "pinned-subsection": "Jeux épinglés <i class=\"ms-2 fa-solid fa-thumbtack\"></i>",
+      "show-pinned": "Voir épinglés",
+      "show-all": "Voir tout",
+      "explore-all-games": "Découvrir tous mes jeux",
       "other-games-subsection": "Mes autres jeux",
       "warning": "Attention : Si le chargement des projets ne s'est pas faite correctement, veuillez <a href=\".\">rafraîchir la page</a>."
     },
@@ -62,11 +70,19 @@
       "resume-title": "Mon CV"
     },
     "contact": {
-      "subtitle": "Une question dans un domaine particulier comme le jeu vidéo, logiciel ou même tout autre chose ? <br/>N'hésitez pas à me contacter, je serai ravi d'en discuter avec vous !"
+      "subtitle": "Une question dans un domaine particulier comme le jeu vidéo, logiciel ou même tout autre chose ? <br/>N'hésitez pas à me contacter, je serai ravi d'en discuter avec vous !",
+      "email-label": "Email",
+      "phone-label": "Téléphone",
+      "rights-reserved": "Tous droits réservés.",
+      "back-to-top": "Retour en haut"
     }
   },
   "projects": {
     "technologies": "Compétences et technologies utilisées",
-    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Fermer"
+    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Fermer",
+    "details": "Détails",
+    "period": "Période",
+    "download": "Télécharger",
+    "view-project": "Consulter"
   }
 }
