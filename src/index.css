@@ -108,6 +108,113 @@ a {
 	box-shadow: var(--shadow-neon);
 }
 
+@layer components {
+	.project-card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border-radius: 1rem;
+		border: 1px solid var(--border);
+		background: linear-gradient(165deg, rgba(16, 25, 45, 0.92), rgba(9, 14, 28, 0.95));
+		box-shadow: 0 16px 40px rgba(4, 8, 18, 0.5);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.project-card:hover {
+		border-color: var(--accent-border);
+		box-shadow: 0 18px 48px rgba(88, 243, 255, 0.2);
+	}
+
+	.project-card-media {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+	}
+
+	.project-card-media-overlay {
+		position: absolute;
+		inset: 0;
+		z-index: 10;
+		background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.42) 100%);
+	}
+
+	.project-card-image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+
+	.project-card:hover .project-card-image {
+		transform: scale(1.1);
+	}
+
+	.project-card-pin {
+		position: absolute;
+		right: 0.75rem;
+		top: 0.75rem;
+		z-index: 20;
+		border-radius: 9999px;
+		border: 1px solid var(--accent-border);
+		background: var(--accent);
+		padding: 0.375rem;
+		color: rgb(2 6 23);
+		box-shadow: 0 0 20px rgba(88, 243, 255, 0.5);
+	}
+
+	.project-card-body {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		padding: 1.25rem;
+	}
+
+	.project-card-header {
+		margin-bottom: 0.5rem;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.project-card-title {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: var(--text-h);
+	}
+
+	.project-card-date {
+		margin-left: 0.5rem;
+		white-space: nowrap;
+		font-size: 0.75rem;
+		color: var(--text);
+	}
+
+	.project-card-tech {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+	}
+
+	.project-card-more-tech {
+		margin-left: 0.25rem;
+		align-self: center;
+		font-size: 0.75rem;
+		color: var(--text);
+	}
+
+	.project-card-actions {
+		margin-top: auto;
+		display: flex;
+		gap: 0.5rem;
+	}
+}
+
 .scanline-overlay {
 	position: relative;
 }

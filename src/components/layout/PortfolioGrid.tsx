@@ -75,9 +75,6 @@ export function PortfolioGrid() {
             whileInView={{ opacity: 1 }}
             className="mt-12 text-center"
           >
-            <p className="text-[var(--text)] mb-6">
-              {t('sections.portfolio.other-games-subsection')}...
-            </p>
             <Button variant="ghost" onClick={() => setShowAll(true)}>
               {t('sections.portfolio.explore-all-games')}
             </Button>

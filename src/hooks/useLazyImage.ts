@@ -27,18 +27,23 @@ export function useLazyImage(
   src: string,
   placeholder?: string
 ): UseLazyImageReturn {
-  const [imageSrc, setImageSrc] = useState(
-    placeholder || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3C/svg%3E'
-  );
+  const fallbackPlaceholder = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3C/svg%3E';
+  const initialPlaceholder = placeholder ?? fallbackPlaceholder;
+  const [imageSrc, setImageSrc] = useState(initialPlaceholder);
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
+  const hasStartedLoadingRef = useRef(false);
 
   useEffect(() => {
+    hasStartedLoadingRef.current = false;
+    setImageSrc(initialPlaceholder);
+    setIsLoading(true);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && imageSrc === placeholder) {
-            // Only load when intersecting and not already loaded
+          if (entry.isIntersecting && !hasStartedLoadingRef.current) {
+            hasStartedLoadingRef.current = true;
             const img = new Image();
             
             img.onload = () => {
@@ -69,8 +74,9 @@ export function useLazyImage(
       if (containerRef.current) {
         observer.unobserve(containerRef.current);
       }
+      observer.disconnect();
     };
-  }, [src, placeholder, imageSrc]);
+  }, [src, initialPlaceholder]);
 
   return { imageSrc, isLoading, ref: containerRef as React.RefObject<HTMLDivElement> };
 }

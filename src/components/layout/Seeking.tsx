@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Target, Calendar, MapPin } from 'lucide-react';
+import { Target, Calendar, MapPin, Gamepad2 } from 'lucide-react';
 
 export function Seeking() {
   const { t } = useTranslation();
@@ -15,7 +15,7 @@ export function Seeking() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
             <div className="flex flex-col items-center rounded-2xl border border-[var(--border)] bg-[rgba(20,30,54,0.7)] p-8 transition-all hover:border-[var(--accent-border)] hover:bg-[rgba(26,40,74,0.75)]">
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-bg)] text-[var(--accent)] shadow-[0_0_24px_rgba(88,243,255,0.2)]">
-                <Target className="h-6 w-6" />
+                <Gamepad2 className="h-6 w-6" />
               </div>
               <h3 className="mb-2 text-xl font-bold text-[var(--text-h)]">
                 {t('sections.seeking.position-title')}

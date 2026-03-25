@@ -1,7 +1,13 @@
 import type { Project } from '@/types/project';
 
-const getAssetUrl = (name: string) => {
-  return new URL(`@assets/portfolio/${name}`, import.meta.url).href;
+const portfolioAssets = import.meta.glob('../assets/portfolio/*', {
+  eager: true,
+  import: 'default'
+}) as Record<string, string>;
+
+const getAssetUrl = (name: string): string => {
+  const key = `../assets/portfolio/${name}`;
+  return portfolioAssets[key] ?? '';
 };
 
 export const projects: Project[] = [

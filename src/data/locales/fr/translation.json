@@ -12,7 +12,7 @@
   },
   "nav": {
     "home": "Accueil",
-    "seeking": "Recherches actuelles",
+    "seeking": "Recherches Actuelles",
     "profile": "Mon Profil",
     "games": "Mes Jeux",
     "about": "À propos",
@@ -20,7 +20,7 @@
   },
   "sections": {
     "titles": {
-      "seeking": "Recherches actuelles",
+      "seeking": "Recherches Actuelles",
       "profile": "Mon Profil",
       "games": "Mes Jeux",
       "about": "À propos",
@@ -31,8 +31,8 @@
       "position-subtitle": "Temps plein, CDI",
       "availability-title": "Disponibilité",
       "location-title": "Localisation",
-      "date": "Dès que possible en 2026",
-      "locations": "France, Ile-de-France (préféré mais non limité à)"
+      "date": "Maintenant",
+      "locations": "France, Ile-de-France, Strasbourg"
     },
     "profile": {
       "subtitle": "Vous avez un projet en tête dans le domaine du game dev ou du software ?<br>N'hésitez pas à me contacter par <a href=\"mailto:adrien.schroedel.pro@gmail.com\">mail</a> ou par <a href=\"tel:+33781565695\">téléphone</a> !",
@@ -60,7 +60,6 @@
       "show-pinned": "Voir épinglés",
       "show-all": "Voir tout",
       "explore-all-games": "Découvrir tous mes jeux",
-      "other-games-subsection": "Mes autres jeux",
       "warning": "Attention : Si le chargement des projets ne s'est pas faite correctement, veuillez <a href=\".\">rafraîchir la page</a>."
     },
     "about": {

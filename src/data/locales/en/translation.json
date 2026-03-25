@@ -12,7 +12,7 @@
   },
   "nav": {
     "home": "Home",
-    "seeking": "Currently seeking",
+    "seeking": "Currently Seeking",
     "profile": "My Profile",
     "games": "My Games",
     "about": "About Me",
@@ -20,7 +20,7 @@
   },
   "sections": {
     "titles": {
-      "seeking": "Currently seeking",
+      "seeking": "Currently Seeking",
       "profile": "My Profile",
       "games": "My Games",
       "about": "About Me",
@@ -31,8 +31,8 @@
       "position-subtitle": "Full-time, Permanent",
       "availability-title": "Availability",
       "location-title": "Location",
-      "date": "From october 2025",
-      "locations": "France, Ile-de-France (preferred but not limited to)"
+      "date": "Now",
+      "locations": "France, Ile-de-France, Strasbourg"
     },
     "profile": {
       "subtitle": "Have a project in mind in the field of game or software development ?<br>Do not hesitate to contact me by <a href=\"tel:+33781565695\">phone</a> or <a href=\"mailto:adrien.schroedel.pro@gmail.com\">email</a> !",
@@ -60,7 +60,6 @@
       "show-pinned": "Show Pinned",
       "show-all": "Show All",
       "explore-all-games": "Explore all my games",
-      "other-games-subsection": "My Other Games",
       "warning": "Warning: The projects might not load correctly, please <a href=\".\">refresh the page</a> if that's the case."
     },
     "about": {

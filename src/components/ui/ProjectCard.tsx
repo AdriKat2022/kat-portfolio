@@ -27,48 +27,48 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="scanline-overlay group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[linear-gradient(165deg,rgba(16,25,45,0.92),rgba(9,14,28,0.95))] shadow-[0_16px_40px_rgba(4,8,18,0.5)] transition-all hover:border-[var(--accent-border)] hover:shadow-[0_18px_48px_rgba(88,243,255,0.2)]"
+      className="scanline-overlay project-card group"
     >
-      <div className="relative aspect-video overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.42)_100%)] z-10" />
+      <div className="project-card-media">
+        <div className="project-card-media-overlay" />
         {isLoading && <Skeleton className="absolute inset-0" />}
         <img
           src={imageSrc}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="project-card-image"
           loading="lazy"
         />
         {project.pinned && (
-          <div className="absolute right-3 top-3 z-20 rounded-full border border-[var(--accent-border)] bg-[var(--accent)] p-1.5 text-slate-950 shadow-[0_0_20px_rgba(88,243,255,0.5)]">
+          <div className="project-card-pin">
             <Pin className="h-4 w-4 fill-current" />
           </div>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="mb-2 flex items-start justify-between">
-          <h3 className="line-clamp-1 text-lg font-bold text-[var(--text-h)]">
+      <div className="project-card-body">
+        <div className="project-card-header">
+          <h3 className="project-card-title">
             {title}
           </h3>
           {date && (
-            <span className="ml-2 whitespace-nowrap text-xs text-[var(--text)]">
+            <span className="project-card-date">
               {date}
             </span>
           )}
         </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5">
+        <div className="project-card-tech">
           {project.technologies.slice(0, 3).map((tech) => (
             <TechBadge key={tech}>{tech}</TechBadge>
           ))}
           {project.technologies.length > 3 && (
-            <span className="text-xs text-[var(--text)] self-center ml-1">
+            <span className="project-card-more-tech">
               +{project.technologies.length - 3}
             </span>
           )}
         </div>
 
-        <div className="mt-auto flex gap-2">
+        <div className="project-card-actions">
           <Button 
             className="w-full" 
             variant="outline" 
