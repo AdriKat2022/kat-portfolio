@@ -41,18 +41,18 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative z-10 max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--accent-border)] bg-[linear-gradient(170deg,rgba(13,21,39,0.98),rgba(7,11,22,0.98))] shadow-[0_18px_70px_rgba(3,7,16,0.85)]"
+            className="modal-shell"
           >
             {/* Header */}
-            <div className="sticky top-0 z-20 flex items-center justify-between border-b border-[var(--border)] bg-[rgba(7,11,22,0.85)] p-4 backdrop-blur-md">
-              <h2 className="text-xl font-bold text-[var(--text-h)] line-clamp-1">{title}</h2>
+            <div className="modal-header">
+              <h2 className="text-theme-strong line-clamp-1 text-xl font-bold">{title}</h2>
               <Button variant="ghost" size="icon" onClick={onClose} aria-label={t('projects.button-close')}>
                 <X className="h-5 w-5" />
               </Button>
             </div>
 
             {/* Body */}
-            <div className="overflow-y-auto p-4 sm:p-8 max-h-[calc(90vh-70px)]">
+            <div className="modal-body">
               {/* Image Gallery */}
               <div className="mb-8 flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
                 {project.imgs.map((img, idx) => (
@@ -65,16 +65,16 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                 <div className="lg:col-span-1 space-y-6">
                   {date && (
                     <div>
-                      <h4 className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--text)]">
+                      <h4 className="modal-label">
                         <Calendar className="h-4 w-4" />
                         {t('projects.period')}
                       </h4>
-                      <p className="text-[var(--text-h)]">{date}</p>
+                      <p className="modal-copy">{date}</p>
                     </div>
                   )}
 
                   <div>
-                    <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[var(--text)]">
+                    <h4 className="modal-label">
                       {t('projects.technologies')}
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -105,7 +105,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                 {/* Description */}
                 <div className="lg:col-span-2">
                   <div 
-                    className="prose max-w-none text-[var(--text)] leading-relaxed prose-headings:text-[var(--text-h)] prose-strong:text-[var(--text-h)] prose-a:text-[var(--accent)]"
+                    className="prose-theme prose max-w-none"
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
                 </div>
@@ -127,7 +127,7 @@ function ModalImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div
       ref={ref}
-      className="relative h-64 w-auto rounded-xl border border-[var(--border)] bg-[var(--social-bg)] overflow-hidden sm:h-96 flex-shrink-0"
+      className="modal-media"
     >
       {isLoading && <Skeleton className="absolute inset-0" />}
       <img
