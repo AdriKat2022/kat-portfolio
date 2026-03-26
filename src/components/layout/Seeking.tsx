@@ -28,14 +28,14 @@ export function Seeking() {
     titleKey: string,
     valueKey: string
   ) => (
-    <div className="surface-card surface-card-hover flex h-full flex-col items-center p-8">
+    <div className="surface-card surface-card-hover flex flex-col h-full items-center p-8">
       <div className="icon-chip mb-6">
         <Icon className="h-6 w-6" />
       </div>
-      <h3 className="text-theme-strong mb-2 text-xl font-bold">
+      <h3 className="text-theme-strong mb-3 text-xl font-bold">
         {t(titleKey)}
       </h3>
-      <p className="text-theme mt-auto text-right">
+      <p className="text-theme mt-auto text-lg">
         {t(valueKey)}
       </p>
     </div>
@@ -49,9 +49,9 @@ export function Seeking() {
             {t('sections.titles.seeking')}
           </h2>
 
-          <div className="grid w-full max-w-5xl grid-cols-1 items-stretch gap-8 md:grid-cols-3">
+          <div className="grid w-full max-w-6xl grid-cols-1 items-stretch gap-8 md:grid-cols-3">
             {cards.map((card) => (
-              <div key={card.titleKey} className="h-full">
+              <div key={card.titleKey}>
                 {renderSeekingCard(card.icon, card.titleKey, card.valueKey)}
               </div>
             ))}
