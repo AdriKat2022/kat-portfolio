@@ -4,6 +4,7 @@ import { ArrowDown, Sparkles, Rocket } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import { useInViewport } from '@/hooks/useInViewport';
 import avatarImg from '@/assets/avatar.png';
+import { FullName } from '@/data/contact';
 
 export function Hero() {
   const { t } = useTranslation();
@@ -46,7 +47,7 @@ export function Hero() {
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 10, delay: 0.2 }}
             className="relative z-10"
           >
             <div className="h-40 w-40 overflow-hidden rounded-3xl border border-[var(--accent-border)] bg-[var(--social-bg)] shadow-[0_14px_45px_rgba(2,7,18,0.7)] md:h-48 md:w-48">
@@ -60,14 +61,16 @@ export function Hero() {
 
         <motion.h1 
           variants={itemVariants}
-          className="mb-4 text-4xl font-extrabold tracking-tight text-[var(--text-h)] text-glow md:text-6xl"
+          className="mb-5 text-4xl font-extrabold tracking-tight text-glow md:text-6xl"
         >
-          {t('hero.job-title')}
+          <div className="text-accent mb-4">{FullName}</div>
+          <div>{t('hero.job-title')}</div>
+          
         </motion.h1>
 
         <motion.p 
           variants={itemVariants}
-          className="mx-auto mb-8 max-w-2xl text-xl leading-relaxed text-[var(--text)] md:text-2xl"
+          className="mx-auto mb-8 max-w-3xl text-2xl leading-relaxed"
         >
           {t('hero.job-subtitle')}
         </motion.p>

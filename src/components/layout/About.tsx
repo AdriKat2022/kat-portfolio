@@ -3,10 +3,13 @@ import { Download, CheckCircle2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import cvFile from '@/assets/docs/CV_GAME_FIELD.pdf';
 import { aboutSkills } from '@/data/skills';
+import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
 
 export function About() {
   const { t } = useTranslation();
-  const skills = aboutSkills.filter((skill) => skill.skillType !== 'tool');
+  const skills = aboutSkills.filter(
+    (skill) => skill.skillType === 'language' || skill.skillType === 'framework'
+  );
   const tools = aboutSkills.filter((skill) => skill.skillType === 'tool');
 
   return (
@@ -19,13 +22,13 @@ export function About() {
               {t('sections.titles.about')}
             </h2>
             <div className="text-theme space-y-6 text-lg leading-relaxed">
-              <p dangerouslySetInnerHTML={{ __html: t('sections.about.p1') }} />
-              <p dangerouslySetInnerHTML={{ __html: t('sections.about.p2') }} />
-              <p dangerouslySetInnerHTML={{ __html: t('sections.about.p3') }} />
+              <p dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.about.p1')) }} />
+              <p dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.about.p2')) }} />
+              <p dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.about.p3')) }} />
             </div>
             
             <div className="mt-10">
-              <Button size="lg" onClick={() => window.open(cvFile, '_blank')}>
+              <Button size="lg" onClick={() => openExternalLink(cvFile)}>
                 <Download className="mr-2 h-5 w-5" />
                 {t('sections.about.resume-title')}
               </Button>
@@ -37,7 +40,7 @@ export function About() {
             <div className="surface-card p-8">
               <h3 
                 className="text-theme-strong mb-6 text-xl font-bold"
-                dangerouslySetInnerHTML={{ __html: t('sections.profile.column-1-head') }}
+                dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.profile.column-1-head')) }}
               />
               <ul className="skill-grid">
                 {skills.map((skill) => (
@@ -52,7 +55,7 @@ export function About() {
             <div className="surface-card p-8">
               <h3 
                 className="text-theme-strong mb-6 text-xl font-bold"
-                dangerouslySetInnerHTML={{ __html: t('sections.profile.column-2-head') }}
+                dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.profile.column-2-head')) }}
               />
               <ul className="skill-grid">
                 {tools.map((tool) => (

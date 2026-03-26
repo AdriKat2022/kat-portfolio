@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUp, Atom } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { contactMethods, socials, type ContactMethod, type SocialLink } from '@/data/contact';
+import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
 
 function ContactMethodCard({ method }: { method: ContactMethod }) {
   const { t } = useTranslation();
@@ -12,6 +13,8 @@ function ContactMethodCard({ method }: { method: ContactMethod }) {
   return (
     <a
       href={method.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="surface-card surface-card-hover contact-link-card group"
     >
       <div className="icon-chip">
@@ -34,7 +37,7 @@ function SocialIconButton({ social }: { social: SocialLink }) {
         variant="outline"
         size="icon"
         className="social-icon-btn"
-        onClick={() => window.open(social.href, '_blank', 'noopener,noreferrer')}
+        onClick={() => openExternalLink(social.href)}
         aria-label={social.label}
       >
         <social.icon className="h-5 w-5" />
@@ -69,7 +72,7 @@ export function Contact() {
           </h2>
           
           <p className="text-theme mb-12 max-w-4xl text-xl leading-relaxed" 
-             dangerouslySetInnerHTML={{ __html: t('sections.contact.subtitle') }} 
+             dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.contact.subtitle')) }} 
           />
 
           {/* Contact Cards */}

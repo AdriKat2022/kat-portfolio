@@ -22,4 +22,5 @@ export interface Project {
   title: LocalizedContent;
   description: LocalizedContent;
   date?: LocalizedContent;
+  developmentTime?: LocalizedContent | null;
 }

@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, ExternalLink, Download } from 'lucide-react';
+import { X, Calendar, ExternalLink, Download, TimerIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Project } from '@/types/project';
 import { Button } from '@components/ui/Button';
 import { TechBadge } from '@components/ui/TechBadge';
 import { Skeleton } from '@components/ui/Skeleton';
 import { useLazyImage } from '@/hooks/useLazyImage';
+import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
 
 interface ModalProps {
   isOpen: boolean;
@@ -21,6 +22,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
 
   const title = project.title[currentLang];
   const date = project.date?.[currentLang];
+  const developmentTime = project.developmentTime?.[currentLang];
   const description = project.description[currentLang];
 
   return (
@@ -73,6 +75,16 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                     </div>
                   )}
 
+                  {developmentTime && (
+                    <div>
+                      <h4 className="modal-label">
+                        <TimerIcon className="h-4 w-4" />
+                        {t('projects.development-time')}
+                      </h4>
+                      <p className="modal-copy">{developmentTime}</p>
+                    </div>
+                  )}
+
                   <div>
                     <h4 className="modal-label">
                       {t('projects.technologies')}
@@ -90,7 +102,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                         key={idx}
                         className="w-full justify-between"
                         variant={idx === 0 ? 'primary' : 'outline'}
-                        onClick={() => window.open(action.link, '_blank')}
+                        onClick={() => openExternalLink(action.link)}
                         disabled={action.type === 'UNAVAILABLE'}
                       >
                         <span>
@@ -106,7 +118,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                 <div className="lg:col-span-2">
                   <div 
                     className="prose-theme prose max-w-none"
-                    dangerouslySetInnerHTML={{ __html: description }}
+                    dangerouslySetInnerHTML={{ __html: enforceExternalLinks(description) }}
                   />
                 </div>
               </div>

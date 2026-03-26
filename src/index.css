@@ -94,6 +94,11 @@ a {
 }
 
 @layer components {
+
+	.text-accent {
+		color: var(--accent);
+	}
+
 	.text-theme {
 		color: var(--text);
 	}
