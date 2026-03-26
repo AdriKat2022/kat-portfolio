@@ -24,15 +24,15 @@
     },
     "seeking": {
       "position-title": "Développeur logiciel / jeu vidéo",
-      "position-subtitle": "Temps plein, CDI",
+      "position-subtitle": "Temps plein, CDI / Freelance",
       "availability-title": "Disponibilité",
       "location-title": "Localisation",
       "date": "Immédiate",
       "locations": "France (Île-de-France, Strasbourg)"
     },
     "profile": {
-      "column-1-head": "Solide maîtrise de <emphasis>langages de programmation et frameworks</emphasis>, notamment :",
-      "column-2-head": "Solide maîtrise des <emphasis>outils et workflows de production</emphasis>, notamment :"
+      "column-1-head": "Solide maîtrise de <emphasis>langages de programmation et frameworks</emphasis> :",
+      "column-2-head": "Solide maîtrise des <emphasis>outils et workflows de production</emphasis> :"
     },
     "portfolio": {
       "description": "Ce portfolio met en avant les projets que j'ai menés seul ou en équipe pendant mes études d'ingénieur du numérique à Télécom SudParis, dans des contextes académiques comme personnels. Vous y trouverez principalement des projets orientés jeu vidéo.",
@@ -55,7 +55,6 @@
     }
   },
   "projects": {
-    "technologies": "Compétences et technologies utilisées",
     "button-close": "Fermer",
     "details": "Détails",
     "period": "Période",
