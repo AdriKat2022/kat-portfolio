@@ -11,6 +11,12 @@ const getAssetUrl = (name: string): string => {
   return portfolioAssets[key] ?? '';
 };
 
+// Project description :
+// <nl> creates a new paragraph
+// *this bit* will be emphasised (italic)
+// _this bit_ will have a <span className="text_accent"></span> around it
+// [this bit](#i) will be a link to the ith link of additionalLinks.
+
 export const projects: Project[] = [
   {
     id: 'medieval-racing',

@@ -21,6 +21,7 @@ export interface Project {
   actions: ProjectAction[];
   title: LocalizedContent;
   description: LocalizedContent;
+  additionalLinks?: string[];
   date?: LocalizedContent;
   developmentTime?: LocalizedContent | null;
 }
