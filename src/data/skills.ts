@@ -2,24 +2,25 @@ import type { Skill } from '@/types/skill';
 
 export const skills: Skill[] = [
   // Languages
+  { id: 'typescript', name: 'TypeScript', skillType: 'language', percentage: 70, showInAbout: true },
+  { id: 'javascript', name: 'JavaScript', skillType: 'language', percentage: 76, showInAbout: true },
   { id: 'cpp', name: 'C++', skillType: 'language', percentage: 90, showInAbout: true },
   { id: 'csharp', name: 'C#', skillType: 'language', percentage: 92, showInAbout: true },
   { id: 'c', name: 'C', skillType: 'language', percentage: 75, showInAbout: true },
   { id: 'python', name: 'Python', skillType: 'language', percentage: 82, showInAbout: true },
   { id: 'java', name: 'Java', skillType: 'language', percentage: 78, showInAbout: true },
+  { id: 'php', name: 'PHP', skillType: 'language', percentage: 65, showInAbout: true },
+  { id: 'html', name: 'HTML', skillType: 'language', percentage: 80, showInAbout: true },
+  { id: 'css', name: 'CSS', skillType: 'language', percentage: 78, showInAbout: true },
   { id: 'bash', name: 'Bash', skillType: 'language', percentage: 70, showInAbout: true },
   { id: 'dart', name: 'Dart', skillType: 'language', percentage: 72, showInAbout: false },
 
-  // Frontend
-  { id: 'html', name: 'HTML', skillType: 'frontend', percentage: 80, showInAbout: true },
-  { id: 'css', name: 'CSS', skillType: 'frontend', percentage: 78, showInAbout: true },
-  { id: 'javascript', name: 'JavaScript', skillType: 'frontend', percentage: 76, showInAbout: true },
-  { id: 'flutter', name: 'Flutter', skillType: 'frontend', percentage: 70, showInAbout: false },
-
-  // Backend
-  { id: 'php', name: 'PHP', skillType: 'backend', percentage: 65, showInAbout: true },
-  { id: 'symfony', name: 'Symfony', skillType: 'backend', percentage: 62, showInAbout: true },
-  { id: 'mirror-networking', name: 'Mirror Networking', skillType: 'backend', percentage: 72, showInAbout: false },
+  // Frameworks
+  { id: 'react', name: 'React', skillType: 'framework', percentage: 72, showInAbout: true },
+  { id: 'tailwind', name: 'Tailwind CSS', skillType: 'framework', percentage: 68, showInAbout: true },
+  { id: 'flutter', name: 'Flutter', skillType: 'framework', percentage: 70, showInAbout: false },
+  { id: 'symfony', name: 'Symfony', skillType: 'framework', percentage: 62, showInAbout: true },
+  { id: 'mirror-networking', name: 'Mirror Networking', skillType: 'framework', percentage: 72, showInAbout: false },
 
   // Tools
   { id: 'unity', name: 'Unity', skillType: 'tool', percentage: 90, showInAbout: true },

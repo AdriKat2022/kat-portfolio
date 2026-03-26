@@ -3,17 +3,14 @@
     "title": "Adrien Schroedel | Portfolio Développeur"
   },
   "common": {
-    "last-updated": "Dernière mise à jour : ",
-    "cv-button": "Intéressé ? Prenez le raccourci vers mon CV !"
+    "last-updated": "Dernière mise à jour :"
   },
   "hero": {
-    "job-title": "@AdriKat - Développeur",
-    "job-subtitle": "Ingénieur du numérique - Développeur et concepteur de jeux - Développeur de logiciels"
+    "job-title": "Développeur logiciel & jeu vidéo",
+    "job-subtitle": "Diplômé en ingénierie du numérique, spécialisé en développement de jeux, ingénierie logicielle et conception technique."
   },
   "nav": {
     "home": "Accueil",
-    "seeking": "Recherches Actuelles",
-    "profile": "Mon Profil",
     "games": "Mes Jeux",
     "about": "À propos",
     "contact": "Contact"
@@ -21,40 +18,36 @@
   "sections": {
     "titles": {
       "seeking": "Recherches Actuelles",
-      "profile": "Mon Profil",
       "games": "Mes Jeux",
       "about": "À propos",
       "contact": "Contact"
     },
     "seeking": {
-      "position-title": "Ingénieur Développeur",
+      "position-title": "Développeur logiciel / jeu vidéo",
       "position-subtitle": "Temps plein, CDI",
       "availability-title": "Disponibilité",
       "location-title": "Localisation",
-      "date": "Maintenant",
-      "locations": "France, Ile-de-France, Strasbourg"
+      "date": "Immédiate",
+      "locations": "France (Ile-de-France, Strasbourg)"
     },
     "profile": {
-      "subtitle": "Vous avez un projet en tête dans le domaine du game dev ou du software ?<br>N'hésitez pas à me contacter par <a href=\"mailto:adrien.schroedel.pro@gmail.com\">mail</a> ou par <a href=\"tel:+33781565695\">téléphone</a> !",
-      "column-1-head": "Maîtrise de multiples <strong>languages de programmation</strong> parmi...",
-      "column-2-head": "Maîtrise de multiples <strong>outils</strong> de gestion de projet et burautique parmi..."
+      "column-1-head": "Maîtrise de plusieurs <emphasis>langages de programmation et frameworks</emphasis>, notamment :",
+      "column-2-head": "Maîtrise de plusieurs <emphasis>outils et pratiques de production</emphasis>, notamment :"
     },
     "portfolio": {
       "description": "Mon portfolio regorge des projets importants auxquels j'ai participé, seul ou en équipe, durant mes études d'ingénieur du numérique à Télécom SudParis, en tant que projet scolaire ou personnel. Vous y trouverez principalement des jeux vidéo dans cette section !",
-      "pinned-subsection": "Jeux épinglés <i class=\"ms-2 fa-solid fa-thumbtack\"></i>",
       "show-pinned": "Voir épinglés",
       "show-all": "Voir tout",
-      "explore-all-games": "Découvrir tous mes jeux",
-      "warning": "Attention : Si le chargement des projets ne s'est pas faite correctement, veuillez <a href=\".\">rafraîchir la page</a>."
+      "explore-all-games": "Découvrir tous mes jeux"
     },
     "about": {
-      "p1": "Bonjour et bienvenue sur mon portfolio ! Je m'appelle Adrien Schroedel, passionné par le software et le game dev, j'ai tout naturellement intégré une école (Télécom SudParis) pour devenir ingénieur du numérique...<br/>Tout au long de ma formation, j'ai participé à de nombreux <a href=\"#portfolio\">projets de création de jeux vidéo</a>.",
-      "p2": "Mon plaisir vient non seulement d'apporter mon expertise sur les moteurs de jeu les plus utilisés sur le marché, mais aussi de collaborer harmonieusement avec une équipe pluridisciplinaire pour offrir une œuvre digne du 10me art à tout type de publics.",
-      "p3": "Mon rêve est d'intégrer une équipe ambitieuse partageant des valeurs fortes et une cohésion hors du commun. Dès lors que la motivation est présente, je pense que nous pouvons accomplir des merveilles.",
+      "p1": "Je m'appelle Adrien Schroedel, développeur logiciel et jeu vidéo, formé à Télécom SudParis.<nl/>Au cours de mon parcours, j'ai contribué à de nombreux <portfolioLink>projets de création de jeux vidéo</portfolioLink>, académiques et personnels.",
+      "p2": "J'apprécie l'alliance entre rigueur technique et collaboration. Je contribue à la programmation gameplay, aux outils de production et aux workflows d'équipe avec une approche orientée qualité.",
+      "p3": "Mon objectif est de rejoindre une équipe ambitieuse, alignée sur des valeurs fortes, afin de concevoir des expériences numériques utiles et marquantes.",
       "resume-title": "Mon CV"
     },
     "contact": {
-      "subtitle": "Une question dans un domaine particulier comme le jeu vidéo, logiciel ou même tout autre chose ? <br/>N'hésitez pas à me contacter, je serai ravi d'en discuter avec vous !",
+      "subtitle": "Une question sur le jeu vidéo, l'ingénierie logicielle ou un autre sujet ?<br/>Échangeons ensemble : je serai ravi d'en discuter avec vous.",
       "email-label": "Email",
       "phone-label": "Téléphone",
       "rights-reserved": "Tous droits réservés.",
@@ -63,10 +56,14 @@
   },
   "projects": {
     "technologies": "Compétences et technologies utilisées",
-    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Fermer",
+    "button-close": "Fermer",
     "details": "Détails",
     "period": "Période",
+    "development-time": "Temps de développement",
     "download": "Télécharger",
-    "view-project": "Consulter"
+    "play-in-browser": "Jouer dans le navigateur",
+    "view-project": "Consulter",
+    "view-project-itch": "Ouvrir la page Itch.io",
+    "view-project-github": "Ouvrir sur GitHub"
   }
 }

@@ -1,6 +1,7 @@
 import { Mail, Phone, Link, Gamepad2Icon } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
+export const FullName = "Adrien SCHROEDEL";
 export interface ContactMethod {
   href: string;
   icon: LucideIcon;
@@ -40,7 +41,7 @@ export const contactMethods: ContactMethod[] = [
     href: 'https://github.com/AdriKat2022/',
     icon: Link,
     labelKey: 'GitHub',
-    value: 'Adrien SCHROEDEL',
+    value: 'AdriKat2022',
   },
 ];
 

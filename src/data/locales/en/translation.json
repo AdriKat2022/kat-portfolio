@@ -3,17 +3,14 @@
     "title": "Adrien Schroedel | Developer Portfolio"
   },
   "common": {
-    "last-updated": "Last update: ",
-    "cv-button": "Interested ? Take the shortcut to my resume !"
+    "last-updated": "Last update:"
   },
   "hero": {
-    "job-title": "@AdriKat - Developer",
-    "job-subtitle": "Digital engineer - Game developer and designer - Software developer"
+    "job-title": "Software & Game Developer",
+    "job-subtitle": "Digital engineering graduate focused on game development, software engineering, and technical design."
   },
   "nav": {
     "home": "Home",
-    "seeking": "Currently Seeking",
-    "profile": "My Profile",
     "games": "My Games",
     "about": "About Me",
     "contact": "Contact"
@@ -21,40 +18,36 @@
   "sections": {
     "titles": {
       "seeking": "Currently Seeking",
-      "profile": "My Profile",
       "games": "My Games",
       "about": "About Me",
       "contact": "Contact"
     },
     "seeking": {
-      "position-title": "Engineer Developer",
+      "position-title": "Software / Game Developer",
       "position-subtitle": "Full-time, Permanent",
       "availability-title": "Availability",
       "location-title": "Location",
-      "date": "Now",
-      "locations": "France, Ile-de-France, Strasbourg"
+      "date": "Immediate",
+      "locations": "France (Ile-de-France, Strasbourg)"
     },
     "profile": {
-      "subtitle": "Have a project in mind in the field of game or software development ?<br>Do not hesitate to contact me by <a href=\"tel:+33781565695\">phone</a> or <a href=\"mailto:adrien.schroedel.pro@gmail.com\">email</a> !",
-      "column-1-head": "Mastery of multiple <strong>programming languages</strong> including...",
-      "column-2-head": "Mastery of multiple <strong>project management and office tools</strong> including..."
+      "column-1-head": "Proficiency in several <emphasis>programming languages and frameworks</emphasis>, including:",
+      "column-2-head": "Proficiency in several <emphasis>tools and production workflows</emphasis>, including:"
     },
     "portfolio": {
       "description": "My portfolio is filled with the projects I have been able to carry out, alone or in teams, during my digital engineering studies at Télécom SudParis, as a school or personal project. You will mainly find video games in this section!",
-      "pinned-subsection": "Pinned Games <i class=\"ms-2 fa-solid fa-thumbtack\"></i>",
       "show-pinned": "Show Pinned",
       "show-all": "Show All",
-      "explore-all-games": "Explore all my games",
-      "warning": "Warning: The projects might not load correctly, please <a href=\".\">refresh the page</a> if that's the case."
+      "explore-all-games": "Explore all my games"
     },
     "about": {
-      "p1": "Hello and welcome to my portfolio ! My name is Adrien Schroedel, passionate about software and game development, I managed to join a digital engineer school (Télécom SudParis) to become one...<br/>Throughout my training, I participated (and still participating) in many <a href=\"#portfolio\">video game creation projects</a>.",
-      "p2": "My pleasure comes not only from bringing my expertise on the most used game engines on the market, but also from harmoniously collaborating with a multidisciplinary team to offer a work worthy of the 10th art to all types of audiences.",
-      "p3": "My dream is to join an ambitious team sharing strong values and an extraordinary cohesion. As long as motivation is present, I think we can accomplish wonders.",
+      "p1": "My name is Adrien Schroedel, I'm a software and game developer trained at Télécom SudParis. Throughout my studies, I contributed to multiple <portfolioLink>game development projects</portfolioLink> in both academic and personal contexts.",
+      "p2": "I enjoy combining strong technical execution with collaborative work. I contribute to gameplay systems, tooling, and production workflows while working closely with multidisciplinary teams.",
+      "p3": "My objective is to join a team with high standards, clear values, and a strong collective culture to deliver impactful digital experiences.",
       "resume-title": "My resume"
     },
     "contact": {
-      "subtitle": "A question in a particular field such as video games, software or even something else ? <br/>Engage the discussion, I will be happy to discuss it with you !",
+      "subtitle": "Do you have a question about game development, software engineering, or another topic?<br/><span class=\"text-accent\">Let's connect.</span> I will be glad to discuss your needs.",
       "email-label": "Email",
       "phone-label": "Phone",
       "rights-reserved": "All rights reserved.",
@@ -63,10 +56,14 @@
   },
   "projects": {
     "technologies": "Skills and technologies used",
-    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Close",
+    "button-close": "Close",
     "details": "Details",
     "period": "Period",
+    "development-time": "Development time",
     "download": "Download",
-    "view-project": "View Project"
+    "play-in-browser": "Play in the Browser",
+    "view-project": "View Project",
+    "view-project-itch": "Open Itch.io page",
+    "view-project-github": "Browse on GitHub"
   }
 }

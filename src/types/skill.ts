@@ -1,4 +1,4 @@
-export type SkillType = 'tool' | 'skill' | 'frontend' | 'backend' | 'language';
+export type SkillType = 'tool' | 'skill' | 'language' | 'framework';
 
 export interface Skill {
 	id: string;
