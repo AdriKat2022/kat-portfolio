@@ -25,8 +25,7 @@ export const skills: Skill[] = [
   // Tools
   { id: 'unity', name: 'Unity', skillType: 'tool', percentage: 90, showInAbout: true },
   { id: 'unreal-engine-5', name: 'Unreal Engine 5', skillType: 'tool', percentage: 70, showInAbout: true },
-  { id: 'flame', name: 'Flame', skillType: 'tool', percentage: 68, showInAbout: false },
-  { id: 'linux', name: 'Linux', skillType: 'tool', percentage: 80, showInAbout: true },
+  { id: 'flame', name: 'Flame', skillType: 'tool', percentage: 68, showInAbout: true },
   { id: 'ci-cd', name: 'CI/CD', skillType: 'tool', percentage: 74, showInAbout: false },
   { id: 'git', name: 'GIT', skillType: 'tool', percentage: 88, showInAbout: true },
   { id: 'git-lfs', name: 'GIT LFS', skillType: 'tool', percentage: 70, showInAbout: true },
