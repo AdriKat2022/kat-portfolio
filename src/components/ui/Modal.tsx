@@ -3,9 +3,8 @@ import { X, Calendar, ExternalLink, Download, TimerIcon } from 'lucide-react';
 import { Trans, useTranslation } from 'react-i18next';
 import type { Project } from '@/types/project';
 import { Button } from '@components/ui/Button';
+import { ImageCarousel } from '@components/ui/ImageCarousel';
 import { TechBadge } from '@components/ui/TechBadge';
-import { Skeleton } from '@components/ui/Skeleton';
-import { useLazyImage } from '@/hooks/useLazyImage';
 import { openExternalLink } from '@/lib/utils';
 import { getLocalizedValue, getOptionalLocalizedValue } from '@/lib/i18n-utils';
 import {
@@ -61,11 +60,14 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
             {/* Body */}
             <div className="modal-body">
               {/* Image Gallery */}
-              <div className="mb-4 flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                {project.imgs.map((img, idx) => (
-                  <ModalImage key={idx} src={img} alt={`${title} - screenshot ${idx + 1}`} />
-                ))}
-              </div>
+              <ImageCarousel
+                className="mb-4"
+                images={project.imgs.map((img, idx) => ({
+                  src: img,
+                  alt: `${title} - screenshot ${idx + 1}`,
+                  key: `${project.id}-image-${idx}`,
+                }))}
+              />
 
               {/* Tags */}
               <div className="mb-4 flex justify-center">
@@ -123,11 +125,11 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                 {/* Description */}
                 <div className="lg:col-span-2">
                   <div className="prose-theme prose max-w-none space-y-4">
-                    {descriptionParagraphs.map((paragraph) => {
+                    {descriptionParagraphs.map((paragraph, idx) => {
                       const { template, components } = parseProjectParagraph(paragraph, project.additionalLinks);
 
                       return (
-                        <p>
+                        <p key={`${project.id}-paragraph-${idx}`}>
                           <Trans defaults={template} components={components} />
                         </p>
                       );
@@ -140,27 +142,5 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
         </div>
       )}
     </AnimatePresence>
-  );
-}
-
-/**
- * Lazy-loaded image for modal gallery
- */
-function ModalImage({ src, alt }: { src: string; alt: string }) {
-  const { imageSrc, isLoading, ref } = useLazyImage(src);
-
-  return (
-    <div
-      ref={ref}
-      className="modal-media scrollbar-hide"
-    >
-      {isLoading && <Skeleton className="absolute inset-0" />}
-      <img
-        src={imageSrc}
-        alt={alt}
-        className="h-full w-full object-contain"
-        loading="lazy"
-      />
-    </div>
   );
 }
