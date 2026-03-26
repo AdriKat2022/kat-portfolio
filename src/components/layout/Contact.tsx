@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUp, Atom } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { contactMethods, socials, type ContactMethod, type SocialLink } from '@/data/contact';
-import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
+import { openExternalLink } from '@/lib/utils';
+import { SafeRichText } from '@components/ui/SafeRichText';
 
 function ContactMethodCard({ method }: { method: ContactMethod }) {
   const { t } = useTranslation();
@@ -71,8 +72,9 @@ export function Contact() {
             {t('sections.titles.contact')}
           </h2>
           
-          <p className="text-theme mb-12 max-w-4xl text-xl leading-relaxed" 
-             dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.contact.subtitle')) }} 
+          <SafeRichText
+            html={t('sections.contact.subtitle')}
+            className="text-theme mb-12 max-w-4xl text-xl leading-relaxed"
           />
 
           {/* Contact Cards */}

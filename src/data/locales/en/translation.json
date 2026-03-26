@@ -31,8 +31,8 @@
       "locations": "France (Ile-de-France, Strasbourg)"
     },
     "profile": {
-      "column-1-head": "Proficiency in several <strong>programming languages and frameworks</strong>, including:",
-      "column-2-head": "Proficiency in several <strong>tools and production workflows</strong>, including:"
+      "column-1-head": "Proficiency in several <emphasis>programming languages and frameworks</emphasis>, including:",
+      "column-2-head": "Proficiency in several <emphasis>tools and production workflows</emphasis>, including:"
     },
     "portfolio": {
       "description": "My portfolio is filled with the projects I have been able to carry out, alone or in teams, during my digital engineering studies at Télécom SudParis, as a school or personal project. You will mainly find video games in this section!",
@@ -41,7 +41,7 @@
       "explore-all-games": "Explore all my games"
     },
     "about": {
-      "p1": "Hello and welcome to my portfolio. I am Adrien Schroedel, a software and game developer trained at Télécom SudParis.<br/>Throughout my studies, I contributed to multiple <a href=\"#portfolio\">game development projects</a> in both academic and personal contexts.",
+      "p1": "My name is Adrien Schroedel, I'm a software and game developer trained at Télécom SudParis. Throughout my studies, I contributed to multiple <portfolioLink>game development projects</portfolioLink> in both academic and personal contexts.",
       "p2": "I enjoy combining strong technical execution with collaborative work. I contribute to gameplay systems, tooling, and production workflows while working closely with multidisciplinary teams.",
       "p3": "My objective is to join a team with high standards, clear values, and a strong collective culture to deliver impactful digital experiences.",
       "resume-title": "My resume"
@@ -56,11 +56,14 @@
   },
   "projects": {
     "technologies": "Skills and technologies used",
-    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Close",
+    "button-close": "Close",
     "details": "Details",
     "period": "Period",
     "development-time": "Development time",
     "download": "Download",
-    "view-project": "View Project"
+    "play-in-browser": "Play in the Browser",
+    "view-project": "View Project",
+    "view-project-itch": "Open Itch.io page",
+    "view-project-github": "Browse on GitHub"
   }
 }
