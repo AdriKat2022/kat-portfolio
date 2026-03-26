@@ -50,7 +50,7 @@ export function Hero() {
             transition={{ type: 'spring', stiffness: 260, damping: 10, delay: 0.2 }}
             className="relative z-10"
           >
-            <div className="h-40 w-40 overflow-hidden rounded-3xl border border-[var(--accent-border)] bg-[var(--social-bg)] shadow-[0_14px_45px_rgba(2,7,18,0.7)] md:h-48 md:w-48">
+            <div className="h-40 w-40 overflow-hidden rounded-3xl md:h-48 md:w-48">
               <img src={avatarImg} alt="Adrien Schroedel" className="w-full h-full object-cover" />
             </div>
           </motion.div>

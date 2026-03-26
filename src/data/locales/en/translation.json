@@ -24,7 +24,7 @@
     },
     "seeking": {
       "position-title": "Software / Game Developer",
-      "position-subtitle": "Full-time, Permanent",
+      "position-subtitle": "Full-time, Permanent / Freelance",
       "availability-title": "Availability",
       "location-title": "Location",
       "date": "Immediate",
@@ -55,7 +55,6 @@
     }
   },
   "projects": {
-    "technologies": "Skills and technologies used",
     "button-close": "Close",
     "details": "Details",
     "period": "Period",
