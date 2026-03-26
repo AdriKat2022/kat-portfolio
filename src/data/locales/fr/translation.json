@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Adrien Schroedel | Portfolio Développeur"
+    "title": "Adrien Schroedel | Portfolio développeur"
   },
   "common": {
     "last-updated": "Dernière mise à jour :"
@@ -17,7 +17,7 @@
   },
   "sections": {
     "titles": {
-      "seeking": "Recherches Actuelles",
+      "seeking": "Actuellement à la recherche",
       "games": "Mes Jeux",
       "about": "À propos",
       "contact": "Contact"
@@ -28,26 +28,26 @@
       "availability-title": "Disponibilité",
       "location-title": "Localisation",
       "date": "Immédiate",
-      "locations": "France (Ile-de-France, Strasbourg)"
+      "locations": "France (Île-de-France, Strasbourg)"
     },
     "profile": {
-      "column-1-head": "Maîtrise de plusieurs <emphasis>langages de programmation et frameworks</emphasis>, notamment :",
-      "column-2-head": "Maîtrise de plusieurs <emphasis>outils et pratiques de production</emphasis>, notamment :"
+      "column-1-head": "Solide maîtrise de <emphasis>langages de programmation et frameworks</emphasis>, notamment :",
+      "column-2-head": "Solide maîtrise des <emphasis>outils et workflows de production</emphasis>, notamment :"
     },
     "portfolio": {
-      "description": "Mon portfolio regorge des projets importants auxquels j'ai participé, seul ou en équipe, durant mes études d'ingénieur du numérique à Télécom SudParis, en tant que projet scolaire ou personnel. Vous y trouverez principalement des jeux vidéo dans cette section !",
+      "description": "Ce portfolio met en avant les projets que j'ai menés seul ou en équipe pendant mes études d'ingénieur du numérique à Télécom SudParis, dans des contextes académiques comme personnels. Vous y trouverez principalement des projets orientés jeu vidéo.",
       "show-pinned": "Voir épinglés",
       "show-all": "Voir tout",
       "explore-all-games": "Découvrir tous mes jeux"
     },
     "about": {
-      "p1": "Je m'appelle Adrien Schroedel, développeur logiciel et jeu vidéo, formé à Télécom SudParis.<nl/>Au cours de mon parcours, j'ai contribué à de nombreux <portfolioLink>projets de création de jeux vidéo</portfolioLink>, académiques et personnels.",
+      "p1": "Je m'appelle Adrien Schroedel, développeur logiciel et jeu vidéo, formé à Télécom SudParis. Au cours de mon parcours, j'ai contribué à de nombreux <portfolioLink>projets de développement de jeux vidéo</portfolioLink>, académiques et personnels.",
       "p2": "J'apprécie l'alliance entre rigueur technique et collaboration. Je contribue à la programmation gameplay, aux outils de production et aux workflows d'équipe avec une approche orientée qualité.",
-      "p3": "Mon objectif est de rejoindre une équipe ambitieuse, alignée sur des valeurs fortes, afin de concevoir des expériences numériques utiles et marquantes.",
+      "p3": "Mon objectif est de rejoindre une équipe exigeante, portée par des valeurs fortes, afin de concevoir des expériences numériques utiles et marquantes.",
       "resume-title": "Mon CV"
     },
     "contact": {
-      "subtitle": "Une question sur le jeu vidéo, l'ingénierie logicielle ou un autre sujet ?<br/>Échangeons ensemble : je serai ravi d'en discuter avec vous.",
+      "subtitle": "Une question sur le jeu vidéo, l'ingénierie logicielle ou un autre sujet ?<br/>Échangeons : je serai ravi d'en discuter avec vous.",
       "email-label": "Email",
       "phone-label": "Téléphone",
       "rights-reserved": "Tous droits réservés.",
@@ -62,7 +62,7 @@
     "development-time": "Temps de développement",
     "download": "Télécharger",
     "play-in-browser": "Jouer dans le navigateur",
-    "view-project": "Consulter",
+    "view-project": "Voir le projet",
     "view-project-itch": "Ouvrir la page Itch.io",
     "view-project-github": "Ouvrir sur GitHub"
   }
