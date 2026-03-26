@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Download, CheckCircle2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
-import cvFile from '@/assets/docs/CV_GAME_FIELD.pdf';
+import cvFile from '@/assets/docs/Adrien_Schroedel_CV_2026_03.pdf';
 import { aboutSkills } from '@/data/skills';
 import { openExternalLink } from '@/lib/utils';
 import { SafeRichText } from '@components/ui/SafeRichText';
