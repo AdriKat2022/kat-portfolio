@@ -3,7 +3,8 @@ import { Download, CheckCircle2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import cvFile from '@/assets/docs/CV_GAME_FIELD.pdf';
 import { aboutSkills } from '@/data/skills';
-import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
+import { openExternalLink } from '@/lib/utils';
+import { SafeRichText } from '@components/ui/SafeRichText';
 
 export function About() {
   const { t } = useTranslation();
@@ -21,11 +22,9 @@ export function About() {
             <h2 className="text-theme-strong mb-8 text-3xl font-bold text-glow md:text-4xl">
               {t('sections.titles.about')}
             </h2>
-            <div className="text-theme space-y-6 text-lg leading-relaxed">
-              <p dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.about.p1')) }} />
-              <p dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.about.p2')) }} />
-              <p dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.about.p3')) }} />
-            </div>
+            <SafeRichText html={t('sections.about.p1')} className="text-theme text-lg leading-relaxed" />
+            <SafeRichText html={t('sections.about.p2')} className="mt-6 text-theme text-lg leading-relaxed" />
+            <SafeRichText html={t('sections.about.p3')} className="mt-6 text-theme text-lg leading-relaxed" />
             
             <div className="mt-10">
               <Button size="lg" onClick={() => openExternalLink(cvFile)}>
@@ -38,9 +37,9 @@ export function About() {
           {/* Right Column: Skills & Tools */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
             <div className="surface-card p-8">
-              <h3 
+              <SafeRichText
+                html={t('sections.profile.column-1-head')}
                 className="text-theme-strong mb-6 text-xl font-bold"
-                dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.profile.column-1-head')) }}
               />
               <ul className="skill-grid">
                 {skills.map((skill) => (
@@ -53,9 +52,9 @@ export function About() {
             </div>
 
             <div className="surface-card p-8">
-              <h3 
+              <SafeRichText
+                html={t('sections.profile.column-2-head')}
                 className="text-theme-strong mb-6 text-xl font-bold"
-                dangerouslySetInnerHTML={{ __html: enforceExternalLinks(t('sections.profile.column-2-head')) }}
               />
               <ul className="skill-grid">
                 {tools.map((tool) => (

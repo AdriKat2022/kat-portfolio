@@ -6,8 +6,9 @@ import { Button } from '@components/ui/Button';
 import { TechBadge } from '@components/ui/TechBadge';
 import { Skeleton } from '@components/ui/Skeleton';
 import { useLazyImage } from '@/hooks/useLazyImage';
-import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
+import { openExternalLink } from '@/lib/utils';
 import { getLocalizedValue, getOptionalLocalizedValue } from '@/lib/i18n-utils';
+import { SafeRichText } from '@components/ui/SafeRichText';
 
 interface ModalProps {
   isOpen: boolean;
@@ -116,10 +117,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
 
                 {/* Description */}
                 <div className="lg:col-span-2">
-                  <div 
-                    className="prose-theme prose max-w-none"
-                    dangerouslySetInnerHTML={{ __html: enforceExternalLinks(description) }}
-                  />
+                  <SafeRichText html={description} className="prose-theme prose max-w-none" />
                 </div>
               </div>
             </div>
