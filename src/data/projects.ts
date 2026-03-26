@@ -6,10 +6,18 @@ const portfolioAssets = import.meta.glob('../assets/portfolio/*', {
   import: 'default'
 }) as Record<string, string>;
 
+const portfolioDocuments = import.meta.glob('../assets/docs/*', {
+  eager: true,
+  import: 'default'
+}) as Record<string, string>;
+
 const getAssetUrl = (name: string): string => {
-  const key = `../assets/portfolio/${name}`;
-  return portfolioAssets[key] ?? '';
+  return portfolioAssets[`../assets/portfolio/${name}`] ?? '';
 };
+
+const getDocumentUrl = (name: string): string => {
+  return portfolioDocuments[`../assets/docs/${name}`] ?? '';
+}
 
 // Project description :
 // <nl> creates a new paragraph
@@ -39,7 +47,8 @@ export const projects: Project[] = [
     ]),
     actions: [
       {
-        type: 'LINK-NT',
+        customDisplay: { en: "Open Itch.io page", fr: "Ouvrir la page Itch.io" },
+        type: 'GENERAL-LINK-NEW-TAB',
         link: 'https://adrikat-1.itch.io/medieval-racing'
       }
     ],
@@ -60,8 +69,8 @@ export const projects: Project[] = [
       'https://minet.net/fr/'
     ],
     description: {
-      en: 'Medieval Racing is an online multiplayer arcade racing game that allows friends to play together on a crazy track. It was developed by a team of 5 over 5 months and taught me a lot about multiplayer architecture and project management.<nl>For this project, we chose Mirror, an excellent open-source tool based on Unity\'s NetCode for GameObjects. To host the server, we used a virtual machine provided by [Minet](#0), the student internet provider on the Télécom SudParis campus.<nl>One of the key challenges was room management, so several groups of friends could play simultaneously in separate sessions. We solved this with a Python script handling create/join room requests.<nl>I also set up continuous integration with GitHub Actions to automatically build the server executable from source and publish it to the virtual machine.<nl>Feel free to test it by downloading it from itch with the button below.',
-      fr: 'Medieval Racing est un jeu de course arcade multijoueur en ligne qui permet à des amis de jouer ensemble sur un circuit déjanté. Il a été développé dans une équipe de 5 sur 5 mois et m\'a beaucoup appris, autant sur le multijoueur que sur la gestion de projet.<nl>Pour ce projet, nous avons choisi Mirror, un excellent outil open source basé sur NetCode for GameObjects d\'Unity. Pour héberger le serveur, nous avons utilisé une machine virtuelle fournie par [Minet](#1), l\'association étudiante fournisseuse d\'internet sur le campus de Télécom SudParis.<nl>Une des principales difficultés a été la gestion des salles, afin que plusieurs groupes d\'amis puissent jouer en parallèle dans des courses séparées. Nous avons résolu cela avec un script Python qui traite les requêtes de création et de jonction de salle.<nl>J\'ai également mis en place l\'intégration continue avec GitHub Actions pour compiler automatiquement un exécutable serveur à partir de la source puis le publier sur la machine virtuelle.<nl>N\'hésitez pas à le tester en le téléchargeant depuis itch avec le bouton ci-dessous.'
+      en: 'Medieval Racing is an online multiplayer arcade racing game that allows friends to play together on a crazy track. It was developed by a team of 5 over 5 months and taught me a lot about multiplayer architecture and project management.<nl>For this project, we chose Mirror, an excellent open-source tool based on Unity\'s NetCode for GameObjects. To host the server, we used a virtual machine provided by [Minet](#0), the student internet provider on the Télécom SudParis campus.<nl>One of the key challenges was room management, so several groups of friends could play simultaneously in separate sessions. We solved this with a Python script handling create/join room requests.<nl>I also set up continuous integration with GitHub Actions to automatically build the server executable from source and publish it to the virtual machine.',
+      fr: 'Medieval Racing est un jeu de course arcade multijoueur en ligne qui permet à des amis de jouer ensemble sur un circuit déjanté. Il a été développé dans une équipe de 5 sur 5 mois et m\'a beaucoup appris, autant sur le multijoueur que sur la gestion de projet.<nl>Pour ce projet, nous avons choisi Mirror, un excellent outil open source basé sur NetCode for GameObjects d\'Unity. Pour héberger le serveur, nous avons utilisé une machine virtuelle fournie par [Minet](#1), l\'association étudiante fournisseuse d\'internet sur le campus de Télécom SudParis.<nl>Une des principales difficultés a été la gestion des salles, afin que plusieurs groupes d\'amis puissent jouer en parallèle dans des courses séparées. Nous avons résolu cela avec un script Python qui traite les requêtes de création et de jonction de salle.<nl>J\'ai également mis en place l\'intégration continue avec GitHub Actions pour compiler automatiquement un exécutable serveur à partir de la source puis le publier sur la machine virtuelle.'
     }
   },
   {
@@ -84,7 +93,8 @@ export const projects: Project[] = [
     ]),
     actions: [
       {
-        type: 'LINK-NT',
+        customDisplay: { en: "Open Itch.io page", fr: "Ouvrir la page Itch.io" },
+        type: 'ITCH',
         link: 'https://adrikat-1.itch.io/sorting-bubble'
       }
     ],
@@ -105,8 +115,8 @@ export const projects: Project[] = [
       'https://www.linkedin.com/posts/maxime-sansane_last-week-i-had-the-chance-to-organise-t%C3%A9l%C3%A9com-activity-7289918024784990209-EpaY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD18u4sBa7MoCrgRuDr8SXINMEpywk0Hbmo'
     ],
     description: {
-      en: 'Sorting Bubble was developed during the [Global Game Jam hosted at Télécom SudParis](#0), from January 24th to 26th. This edition was organized by us, students, and I want to sincerely thank [Maxime Sansané](#1) for leading the initiative and making this event happen.<nl>Sorting Bubble is a puzzle game where you play as a small bubble sorting numbers through function-based levels. With traps and tools throughout each stage, you must combine buffer mechanics to overcome obstacles like squishers that block you when you carry a number.<nl>We are very happy with the result. Even without an artist in the team, we chose a simple and efficient visual style that fits this kind of game very well.<nl>I especially enjoyed developing the different buffers and building scripts that enabled higher-level level editing. This helped teammates, and sometimes myself, work more effectively in a level designer role. I also loved implementing animation scripts and UI elements like the defeat screen.<nl>Do not hesitate to check it out with the button below.',
-      fr: 'Sorting Bubble a été développé pendant la [Global Game Jam organisée à Télécom SudParis](#0), du 24 au 26 janvier. La particularité de cette édition est qu\'elle a été organisée par nous, les étudiants, et je tiens à remercier sincèrement [Maxime Sansané](#1) pour avoir pris les devants et rendu cet évènement possible.<nl>Sorting Bubble est un jeu de puzzle où vous incarnez une petite bulle qui trie des nombres à travers des niveaux basés sur des fonctions. Entre pièges et outils, il faut trouver la bonne méthode avec différents types de buffers pour franchir des obstacles comme les squishers qui vous bloquent si vous portez un nombre.<nl>Nous sommes très satisfaits du résultat. Même sans artiste dans l\'équipe, nous avons choisi une direction visuelle simple et efficace qui fonctionne très bien pour ce type de jeu.<nl>J\'ai particulièrement apprécié développer les différents buffers et mettre à disposition des scripts permettant une édition de niveaux plus haut niveau. Cela a aidé d\'autres membres de l\'équipe, et parfois moi-même, à travailler plus facilement côté level design. J\'ai aussi aimé développer des scripts d\'animation et des éléments d\'interface comme l\'écran de défaite.<nl>N\'hésitez pas à le tester avec le bouton ci-dessous.'
+      en: 'Sorting Bubble was developed during the [Global Game Jam hosted at Télécom SudParis](#0), from January 24th to 26th. This edition was organized by us, students, and I want to sincerely thank [Maxime Sansané](#1) for leading the initiative and making this event happen.<nl>Sorting Bubble is a puzzle game where you play as a small bubble sorting numbers through function-based levels. With traps and tools throughout each stage, you must combine buffer mechanics to overcome obstacles like squishers that block you when you carry a number.<nl>We are very happy with the result. Even without an artist in the team, we chose a simple and efficient visual style that fits this kind of game very well.<nl>I especially enjoyed developing the different buffers and building scripts that enabled higher-level level editing. This helped teammates and myself work more effectively in a level designer role. I also loved implementing animation scripts and UI elements like the defeat screen.',
+      fr: 'Sorting Bubble a été développé pendant la [Global Game Jam organisée à Télécom SudParis](#0), du 24 au 26 janvier. La particularité de cette édition est qu\'elle a été organisée par nous, les étudiants, et je tiens à remercier sincèrement [Maxime Sansané](#1) pour avoir pris les devants et rendu cet évènement possible.<nl>Sorting Bubble est un jeu de puzzle où vous incarnez une petite bulle qui trie des nombres à travers des niveaux basés sur des fonctions. Entre pièges et outils, il faut trouver la bonne méthode avec différents types de buffers pour franchir des obstacles comme les squishers qui vous bloquent si vous portez un nombre.<nl>Nous sommes très satisfaits du résultat. Même sans artiste dans l\'équipe, nous avons choisi une direction visuelle simple et efficace qui fonctionne très bien pour ce type de jeu.<nl>J\'ai particulièrement apprécié développer les différents buffers et mettre à disposition des scripts permettant une édition de niveaux plus haut niveau. Cela a aidé d\'autres membres de l\'équipe et moi-même à travailler plus facilement côté level design. J\'ai aussi aimé développer des scripts d\'animation et des éléments d\'interface comme l\'écran de défaite.'
     }
   },
   {
@@ -128,7 +138,7 @@ export const projects: Project[] = [
     ]),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'ITCH',
         link: 'https://soldatspectre76.itch.io/irma-rnak'
       }
     ],
@@ -168,11 +178,11 @@ export const projects: Project[] = [
     ]),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'PLAY-IN-BROWSER',
         link: 'https://adrikat2022.github.io/test_project/'
       },
       {
-        type: 'LINK-NT',
+        type: 'GITHUB',
         link: 'https://github.com/AdriKat2022/test_project'
       }
     ],
@@ -206,7 +216,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'GITHUB',
         link: 'https://github.com/AdriKat2022/SCHMUP/tree/burgerVer'
       }
     ],
@@ -241,7 +251,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'GITHUB',
         link: 'https://github.com/AdriKat2022/find-mocha'
       }
     ],
@@ -282,8 +292,9 @@ export const projects: Project[] = [
     ]),
     actions: [
       {
-        type: 'LINK-NT',
-        link: '/assets/doc/rupture-report.pdf'
+        customDisplay: { en: "See the Report", fr: "Voir le Rapport" },
+        type: 'DOWNLOAD',
+        link: getDocumentUrl('rupture-report.pdf')
       }
     ],
     title: {
@@ -299,8 +310,8 @@ export const projects: Project[] = [
       fr: '6 mois'
     },
     description: {
-      en: '*Rupture* is a project carried out by a group of 4 students during our digital engineering training at Télécom SudParis.<nl>In this narrative game, you embody a humble robot observing society in the near future. While your initial mission is to help a young couple, your task unexpectedly evolves into something far more significant than simple entertainment.<nl>The primary objective was to learn Unreal Engine 5 and create an impactful game around Sustainable Development.<nl>The project report is available.',
-      fr: '*Rupture* est un projet réalisé par un groupe de 4 étudiants dans le cadre de la formation d\'ingénieur du numérique à Télécom SudParis.<nl>Dans ce jeu narratif, vous incarnez le point de vue d\'un modeste robot observant l\'état de la société dans un futur proche. Alors que votre mission initiale est d\'aider un jeune couple, votre tâche se transforme de manière inattendue en une mission bien plus importante qu\'un simple divertissement.<nl>L\'objectif principal était notamment d\'apprendre à utiliser Unreal Engine 5 pour créer un jeu impactant sur le thème du Développement Durable.<nl>Le rapport du projet est disponible.'
+      en: '*Rupture* is a project carried out by a group of 4 students during our digital engineering training at Télécom SudParis.<nl>In this narrative game, you embody a humble robot observing society in the near future. While your initial mission is to help a young couple, your task unexpectedly evolves into something far more significant than simple entertainment.<nl>The primary objective was to learn Unreal Engine 5 and create an impactful game around Sustainable Development.',
+      fr: '*Rupture* est un projet réalisé par un groupe de 4 étudiants dans le cadre de la formation d\'ingénieur du numérique à Télécom SudParis.<nl>Dans ce jeu narratif, vous incarnez le point de vue d\'un modeste robot observant l\'état de la société dans un futur proche. Alors que votre mission initiale est d\'aider un jeune couple, votre tâche se transforme de manière inattendue en une mission bien plus importante qu\'un simple divertissement.<nl>L\'objectif principal était notamment d\'apprendre à utiliser Unreal Engine 5 pour créer un jeu impactant sur le thème du Développement Durable.'
     }
   },
   {
@@ -313,7 +324,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'ITCH',
         link: 'https://adrikat-1.itch.io/shipping-time'
       }
     ],
@@ -347,7 +358,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'ITCH',
         link: 'https://valt7.itch.io/legendblo'
       }
     ],
@@ -381,7 +392,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['nav-mesh', 'unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'GITHUB',
         link: 'https://github.com/AdriKat2022/AMJV-CTF'
       }
     ],
@@ -412,7 +423,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'ITCH',
         link: 'https://miloderoussi.itch.io/translimation'
       }
     ],
@@ -446,7 +457,7 @@ export const projects: Project[] = [
     technologies: getSkillsByIds(['unity', 'csharp', 'git']),
     actions: [
       {
-        type: 'LINK-NT',
+        type: 'GITHUB',
         link: 'https://github.com/HugoLhuilier/ExplodingTree'
       }
     ],

@@ -61,6 +61,9 @@
     "period": "Période",
     "development-time": "Temps de développement",
     "download": "Télécharger",
-    "view-project": "Consulter"
+    "play-in-browser": "Jouer dans le navigateur",
+    "view-project": "Consulter",
+    "view-project-itch": "Ouvrir la page Itch.io",
+    "view-project-github": "Ouvrir sur GitHub"
   }
 }

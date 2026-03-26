@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, ExternalLink, Download, TimerIcon } from 'lucide-react';
+import { X, Calendar, ExternalLink, Download, TimerIcon, Gamepad2 } from 'lucide-react';
 import { Trans, useTranslation } from 'react-i18next';
-import type { Project } from '@/types/project';
+import type { Project, ProjectAction } from '@/types/project';
 import { Button } from '@components/ui/Button';
 import { ImageCarousel } from '@components/ui/ImageCarousel';
 import { TechBadge } from '@components/ui/TechBadge';
@@ -11,11 +11,63 @@ import {
   parseProjectParagraph,
   splitProjectDescription,
 } from '@/lib/project-description-trans';
+import { IoLogoGithub } from 'react-icons/io';
+import { FaItchIo } from 'react-icons/fa';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   project: Project | null;
+}
+
+function makeProjectActionButton(idx: number, action: ProjectAction, t: Function, language: string) {
+
+  let icon = <ExternalLink className="h-4 w-4" />;
+  let display = t('projects.view-project');
+  
+  switch (action.type) {
+
+    case 'GENERAL-LINK-NEW-TAB':
+      break;
+    
+    case 'GITHUB':
+      display = t('projects.view-project-github');
+      icon = <IoLogoGithub className="h-4 w-4" />
+      break;
+    
+    case 'ITCH':
+      display = t('projects.view-project-itch');
+      icon = <FaItchIo className="h-4 w-4" />
+      break;
+    
+    case 'PLAY-IN-BROWSER':
+      display = t('projects.play-in-browser');
+      icon = <Gamepad2 className="h-4 w-4" />;
+      break;
+    
+    case 'DOWNLOAD':
+      display = t('projects.download');
+      icon = <Download className="h-4 w-4" />
+      break;
+  }
+
+  if (action.customDisplay !== undefined)
+  {
+    display = getLocalizedValue(action.customDisplay, language);
+  }
+  
+  return (
+    <Button
+      key={idx}
+      className="w-full justify-between"
+      variant={idx === 0 ? 'primary' : 'outline'}
+      onClick={() => openExternalLink(action.link)}
+      disabled={action.type === 'UNAVAILABLE'}
+    >
+      {display}
+      {icon}
+    </Button>
+  );
 }
 
 export function Modal({ isOpen, onClose, project }: ModalProps) {
@@ -71,9 +123,6 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
 
               {/* Tags */}
               <div className="mb-4 flex justify-center">
-                {/* <h4 className="modal-label">
-                  {t('projects.technologies')}
-                </h4> */}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <TechBadge key={tech.id}>{tech.name}</TechBadge>
@@ -104,27 +153,14 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                     </div>
                   )}
 
-                  <div className="pt-4 space-y-3">
-                    {project.actions.map((action, idx) => (
-                      <Button
-                        key={idx}
-                        className="w-full justify-between"
-                        variant={idx === 0 ? 'primary' : 'outline'}
-                        onClick={() => openExternalLink(action.link)}
-                        disabled={action.type === 'UNAVAILABLE'}
-                      >
-                        <span>
-                          {action.type === 'DOWNLOAD' ? t('projects.download') : t('projects.view-project')}
-                        </span>
-                        {action.type === 'DOWNLOAD' ? <Download className="h-4 w-4" /> : <ExternalLink className="h-4 w-4" />}
-                      </Button>
-                    ))}
+                  <div className="flex flex-col gap-2">
+                    {project.actions.map((action, idx) => makeProjectActionButton(idx, action, t, i18n.language))}
                   </div>
                 </div>
 
                 {/* Description */}
                 <div className="lg:col-span-2">
-                  <div className="prose-theme prose max-w-none space-y-4">
+                  <div className="prose-theme prose max-w-none space-y-2">
                     {descriptionParagraphs.map((paragraph, idx) => {
                       const { template, components } = parseProjectParagraph(paragraph, project.additionalLinks);
 

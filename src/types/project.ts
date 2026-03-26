@@ -1,10 +1,11 @@
-export type ActionType = 'LINK-NT' | 'DOWNLOAD' | 'UNAVAILABLE' | 'CUSTOM';
+export type ActionType = 'PLAY-IN-BROWSER' | 'GITHUB' | 'ITCH' | 'GENERAL-LINK-NEW-TAB' | 'DOWNLOAD' | 'UNAVAILABLE' | 'CUSTOM';
 
 import type { Skill } from '@/types/skill';
 
 export interface ProjectAction {
   type: ActionType;
   link: string;
+  customDisplay?: LocalizedContent;
 }
 
 export interface LocalizedContent {
