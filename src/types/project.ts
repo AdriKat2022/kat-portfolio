@@ -1,4 +1,4 @@
-export type ActionType = 'LINK-NT' | 'DOWNLOAD' | 'UNAVAILABLE';
+export type ActionType = 'LINK-NT' | 'DOWNLOAD' | 'UNAVAILABLE' | 'CUSTOM';
 
 import type { Skill } from '@/types/skill';
 

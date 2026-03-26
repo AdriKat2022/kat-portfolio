@@ -28,7 +28,7 @@ export function About() {
                 i18nKey="sections.about.p1"
                 t={t}
                 components={{
-                  lineBreak: <br />,
+                  nl: <br />,
                   portfolioLink: <a href="javascript:void(0);" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })} className="underline decoration-dotted underline-offset-4" />,
                 }}
               />

@@ -56,7 +56,7 @@
   },
   "projects": {
     "technologies": "Skills and technologies used",
-    "button-close": "<i class=\"fas fa-xmark fa-fw\"></i>Close",
+    "button-close": "Close",
     "details": "Details",
     "period": "Period",
     "development-time": "Development time",
