@@ -10,6 +10,27 @@ export default defineConfig({
     tailwindcss(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) {
+            return undefined;
+          }
+
+          if (id.includes('framer-motion')) {
+            return 'framer-motion';
+          }
+
+          if (id.includes('react-i18next') || id.includes('i18next')) {
+            return 'i18n';
+          }
+
+          return 'vendor';
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

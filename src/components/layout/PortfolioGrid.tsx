@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { lazy, Suspense, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { Filter } from 'lucide-react';
@@ -6,17 +6,29 @@ import type { Project } from '@/types/project';
 import { projects } from '@/data/projects';
 import { ProjectCard } from '@components/ui/ProjectCard';
 import { Button } from '@components/ui/Button';
-import { Modal } from '@components/ui/Modal';
+
+const ProjectModal = lazy(() => import('@components/ui/Modal').then((module) => ({ default: module.Modal })));
 
 export function PortfolioGrid() {
   const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const pinnedProjects = projects.filter((p) => p.pinned);
-  const otherProjects = projects.filter((p) => !p.pinned);
+  const pinnedProjects = useMemo(() => projects.filter((p) => p.pinned), []);
+  const otherProjects = useMemo(() => projects.filter((p) => !p.pinned), []);
+  const displayedProjects = useMemo(() => (showAll ? projects : pinnedProjects), [showAll, pinnedProjects]);
 
-  const displayedProjects = showAll ? projects : pinnedProjects;
+  const toggleShowAll = useCallback(() => {
+    setShowAll((current) => !current);
+  }, []);
+
+  const handleOpenProject = useCallback((project: Project) => {
+    setSelectedProject(project);
+  }, []);
+
+  const handleCloseProject = useCallback(() => {
+    setSelectedProject(null);
+  }, []);
 
   return (
     <section id="portfolio" className="py-24 bg-[var(--bg)]">
@@ -35,7 +47,7 @@ export function PortfolioGrid() {
           
           <Button
             variant={showAll ? 'outline' : 'primary'}
-            onClick={() => setShowAll(!showAll)}
+            onClick={toggleShowAll}
             className="md:self-end"
           >
             <Filter className="mr-2 h-4 w-4" />
@@ -61,7 +73,7 @@ export function PortfolioGrid() {
                 >
                   <ProjectCard
                     project={project}
-                    onClick={(p) => setSelectedProject(p)}
+                    onClick={handleOpenProject}
                   />
                 </motion.div>
               ))}
@@ -83,11 +95,13 @@ export function PortfolioGrid() {
         </div>
       </div>
 
-      <Modal
-        isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
-        project={selectedProject}
-      />
+      <Suspense fallback={null}>
+        <ProjectModal
+          isOpen={!!selectedProject}
+          onClose={handleCloseProject}
+          project={selectedProject}
+        />
+      </Suspense>
     </section>
   );
 }

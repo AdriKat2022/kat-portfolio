@@ -1,12 +1,14 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '@/components/layout/Navbar';
 import { Hero } from '@/components/layout/Hero';
 import { Seeking } from '@/components/layout/Seeking';
 import { PortfolioGrid } from '@/components/layout/PortfolioGrid';
-import { About } from '@/components/layout/About';
-import { Contact } from '@/components/layout/Contact';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+
+const AboutSection = lazy(() => import('@/components/layout/About').then((module) => ({ default: module.About })));
+const ContactSection = lazy(() => import('@/components/layout/Contact').then((module) => ({ default: module.Contact })));
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -30,8 +32,10 @@ function App() {
         <Hero />
         <Seeking />
         <PortfolioGrid />
-        <About />
-        <Contact />
+        <Suspense fallback={null}>
+          <AboutSection />
+          <ContactSection />
+        </Suspense>
       </main>
     </div>
   );

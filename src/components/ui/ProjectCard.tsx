@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Pin, Eye } from 'lucide-react';
@@ -13,7 +14,7 @@ interface ProjectCardProps {
   onClick: (project: Project) => void;
 }
 
-export function ProjectCard({ project, onClick }: ProjectCardProps) {
+export const ProjectCard = memo(function ProjectCard({ project, onClick }: ProjectCardProps) {
   const { t, i18n } = useTranslation();
   const { imageSrc, isLoading, ref } = useLazyImage(project.cover_img);
 
@@ -37,7 +38,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
           alt={title}
           className="project-card-image"
           loading="lazy"
-          />
+        />
         {project.pinned && (
           <div className="project-card-pin">
             <Pin className="h-4 w-4 fill-current" />
@@ -81,4 +82,4 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       </div>
     </motion.div>
   );
-}
+});
