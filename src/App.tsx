@@ -15,11 +15,11 @@ function App() {
 
   return (
     <div className={`cosmic-shell min-h-screen overflow-x-hidden bg-[var(--bg)] text-[var(--text)] ${prefersReducedMotion ? 'no-animations' : ''}`}>
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute left-[8%] top-[12%] h-60 w-60 rounded-full bg-[radial-gradient(circle,_rgba(88,243,255,0.18)_0%,_transparent_70%)] blur-3xl twinkle" />
-        <div className="absolute right-[5%] top-[28%] h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(95,140,255,0.2)_0%,_transparent_68%)] blur-3xl drift" />
-        <div className="absolute bottom-[4%] left-[32%] h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(95,140,255,0.16)_0%,_transparent_70%)] blur-3xl twinkle" />
-      </div>
+      {/* <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="h-60 w-60 rounded-full bg-[radial-gradient(circle,_var(--ambient-1)_55%,_transparent_70%)] twinkle" />
+        <div className="h-72 w-72 rounded-full bg-[radial-gradient(circle,_var(--ambient-2)_55%,_transparent_68%)] drift" />
+        <div className="h-56 w-56 rounded-full bg-[radial-gradient(circle,_var(--ambient-3)_55%,_transparent_70%)] twinkle" />
+      </div> */}
       <Helmet>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('hero.job-subtitle')} />
