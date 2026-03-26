@@ -103,7 +103,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
           >
             {/* Header */}
             <div className="modal-header">
-              <h2 className="text-theme-strong line-clamp-1 text-xl font-bold">{title}</h2>
+              <h2 className="ml-auto mr-auto text-theme-strong line-clamp-1 text-xl font-bold">{title}</h2>
               <Button variant="ghost" size="icon" onClick={onClose} aria-label={t('projects.button-close')}>
                 <X className="h-5 w-5" />
               </Button>
@@ -139,7 +139,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                         <Calendar className="h-4 w-4" />
                         {t('projects.period')}
                       </h4>
-                      <p className="modal-copy">{date}</p>
+                      <p className="text-muted">{date}</p>
                     </div>
                   )}
 
@@ -149,11 +149,11 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
                         <TimerIcon className="h-4 w-4" />
                         {t('projects.development-time')}
                       </h4>
-                      <p className="modal-copy">{developmentTime}</p>
+                      <p className="text-muted">{developmentTime}</p>
                     </div>
                   )}
 
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                     {project.actions.map((action, idx) => makeProjectActionButton(idx, action, t, i18n.language))}
                   </div>
                 </div>
