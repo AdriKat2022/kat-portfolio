@@ -56,37 +56,6 @@ export function Hero() {
 
           <Sparkles className="absolute -left-6 top-0 h-5 w-5 text-[var(--accent)] twinkle" />
           <Rocket className="absolute -right-6 bottom-4 h-5 w-5 text-[var(--accent-2)] twinkle" />
-
-          {/* Floating Logos */}
-          {/* <motion.img
-            src={reactLogo}
-            alt="React"
-            className="absolute -top-4 -right-4 w-12 h-12 md:w-16 md:h-16 z-20 drop-shadow-lg"
-            animate={{ 
-              y: [0, -10, 0],
-              rotate: [0, 5, 0]
-            }}
-            transition={{ 
-              duration: 4, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-          />
-          <motion.img
-            src={viteLogo}
-            alt="Vite"
-            className="absolute -bottom-4 -left-4 w-12 h-12 md:w-16 md:h-16 z-20 drop-shadow-lg"
-            animate={{ 
-              y: [0, 10, 0],
-              rotate: [0, -5, 0]
-            }}
-            transition={{ 
-              duration: 5, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 0.5
-            }}
-          /> */}
         </div>
 
         <motion.h1 
