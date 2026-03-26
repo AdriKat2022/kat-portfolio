@@ -13,9 +13,9 @@
 
 ### P0 - Bugs and correctness
 
-- [ ] Fix malformed HTML in project descriptions (example: inconsistent quotes/classes in `exploding-tree` FR content) to avoid rendering issues.
-- [ ] Add runtime fallback for unknown i18n language values before indexing localized content (`en` fallback).
-- [ ] Validate every project action link at build-time with a lightweight URL/schema check to prevent broken buttons.
+- [x] Fix malformed HTML in project descriptions (example: inconsistent quotes/classes in `exploding-tree` FR content) to avoid rendering issues.
+- [x] Add runtime fallback for unknown i18n language values before indexing localized content (`en` fallback).
+- [x] Validate every project action link at build-time with a lightweight URL/schema check to prevent broken buttons.
 
 ### P1 - Security and code quality
 

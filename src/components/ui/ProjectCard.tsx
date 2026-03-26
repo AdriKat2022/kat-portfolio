@@ -6,6 +6,7 @@ import { TechBadge } from '@components/ui/TechBadge';
 import { Skeleton } from '@components/ui/Skeleton';
 import { Button } from '@components/ui/Button';
 import { useLazyImage } from '@/hooks/useLazyImage';
+import { getLocalizedValue, getOptionalLocalizedValue } from '@/lib/i18n-utils';
 
 interface ProjectCardProps {
   project: Project;
@@ -14,11 +15,10 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
   const { t, i18n } = useTranslation();
-  const currentLang = i18n.language as 'en' | 'fr';
   const { imageSrc, isLoading, ref } = useLazyImage(project.cover_img);
 
-  const title = project.title[currentLang];
-  const date = project.date?.[currentLang];
+  const title = getLocalizedValue(project.title, i18n.language);
+  const date = getOptionalLocalizedValue(project.date, i18n.language);
 
   return (
     <motion.div

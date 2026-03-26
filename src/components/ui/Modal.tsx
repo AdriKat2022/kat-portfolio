@@ -7,6 +7,7 @@ import { TechBadge } from '@components/ui/TechBadge';
 import { Skeleton } from '@components/ui/Skeleton';
 import { useLazyImage } from '@/hooks/useLazyImage';
 import { enforceExternalLinks, openExternalLink } from '@/lib/utils';
+import { getLocalizedValue, getOptionalLocalizedValue } from '@/lib/i18n-utils';
 
 interface ModalProps {
   isOpen: boolean;
@@ -16,14 +17,13 @@ interface ModalProps {
 
 export function Modal({ isOpen, onClose, project }: ModalProps) {
   const { t, i18n } = useTranslation();
-  const currentLang = i18n.language as 'en' | 'fr';
 
   if (!project) return null;
 
-  const title = project.title[currentLang];
-  const date = project.date?.[currentLang];
-  const developmentTime = project.developmentTime?.[currentLang];
-  const description = project.description[currentLang];
+  const title = getLocalizedValue(project.title, i18n.language);
+  const date = getOptionalLocalizedValue(project.date, i18n.language);
+  const developmentTime = getOptionalLocalizedValue(project.developmentTime, i18n.language);
+  const description = getLocalizedValue(project.description, i18n.language);
 
   return (
     <AnimatePresence>
