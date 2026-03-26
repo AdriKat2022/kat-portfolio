@@ -4,6 +4,7 @@ import { Menu, X, Home, Briefcase, User, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@components/ui/Button';
 import { LanguageSwitcher } from '@components/ui/LanguageSwitcher';
+import { ThemeToggle } from '@components/ui/ThemeToggle';
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -82,13 +83,15 @@ export function Navbar() {
               )}
             </Button>
           ))}
-          <div className="nav-divider">
+          <div className="nav-divider flex items-center justify-center gap-3">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="nav-mobile-controls">
+          <ThemeToggle />
           <LanguageSwitcher />
           <Button
             variant="ghost"

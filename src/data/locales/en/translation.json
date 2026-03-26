@@ -13,7 +13,9 @@
     "home": "Home",
     "games": "My Games",
     "about": "About Me",
-    "contact": "Contact"
+    "contact": "Contact",
+    "switch-to-light-mode": "Switch to light mode (flashbang warning)",
+    "switch-to-dark-mode": "Switch to dark mode"
   },
   "sections": {
     "titles": {

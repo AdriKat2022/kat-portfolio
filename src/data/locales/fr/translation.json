@@ -13,7 +13,9 @@
     "home": "Accueil",
     "games": "Mes Jeux",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "switch-to-light-mode": "Passer au mode clair (attention les yeux)",
+    "switch-to-dark-mode": "Passer au mode sombre"
   },
   "sections": {
     "titles": {
