@@ -344,7 +344,6 @@ a {
 		--skill-badge-bg: hsl(var(--skill-hue) 100% var(--skill-lightness-bg) / 0.15);
 		--skill-badge-text: hsl(var(--skill-hue) 100% var(--skill-lightness-text));
 
-		display: inline-flex;
 		align-items: center;
 		background: var(--skill-badge-bg);
 		color: var(--skill-badge-text);
