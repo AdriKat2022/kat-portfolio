@@ -3,7 +3,7 @@ import { Download, CheckCircle2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import cvFile from '@/assets/docs/Adrien_Schroedel_CV_2026_03.pdf';
 import { aboutSkills } from '@/data/skills';
-import { openExternalLink } from '@/lib/utils';
+import { cn, openExternalLink } from '@/lib/utils';
 
 export function About() {
   const { t, i18n } = useTranslation();
@@ -60,6 +60,7 @@ export function About() {
                   <li key={skill.id} className="skill-grid-item">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
                     <span>{skill.name}</span>
+                    <span className={cn("ml-auto","skill-type-badge", skill.skillType)}>{ skill.skillType }</span>
                   </li>
                 ))}
               </ul>
