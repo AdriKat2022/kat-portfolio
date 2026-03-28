@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowDown, Sparkles, Rocket } from 'lucide-react';
+import { ArrowDown, Code2, Gamepad2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import { useInViewport } from '@/hooks/useInViewport';
 import avatarImg from '@/assets/avatar.png';
@@ -55,8 +55,8 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <Sparkles className="absolute -left-6 top-0 h-5 w-5 text-[var(--accent)] twinkle" />
-          <Rocket className="absolute -right-6 bottom-4 h-5 w-5 text-[var(--accent-2)] twinkle" />
+          <Code2 className="absolute -left-6 top-0 h-7 w-7 text-accent twinkle" />
+          <Gamepad2 className="absolute -right-6 bottom-0 h-7 w-7 text-accent twinkle" />
         </div>
 
         <motion.h1 
