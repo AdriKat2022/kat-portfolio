@@ -50,9 +50,7 @@
     "contact": {
       "subtitle": "Envie de discuter jeu vidéo, ingénierie logicielle ou autre ?<br/><span class=\"text-accent\">Discutons-en.</span> Toujours partant pour échanger !",
       "email-label": "Email",
-      "phone-label": "Téléphone",
-      "rights-reserved": "Tous droits réservés.",
-      "back-to-top": "Retour en haut"
+      "phone-label": "Téléphone"
     }
   },
   "projects": {
@@ -65,5 +63,10 @@
     "view-project": "Voir le projet",
     "view-project-itch": "Ouvrir la page Itch.io",
     "view-project-github": "Ouvrir sur GitHub"
+  },
+  "footer": {
+      "rights-reserved": "Tous droits réservés.",
+      "back-to-top": "Retour en haut",
+      "made-with": "Fait par mes soins avec React en TS"
   }
 }

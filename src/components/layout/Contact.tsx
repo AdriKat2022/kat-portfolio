@@ -93,25 +93,31 @@ export function Contact() {
             ))}
           </div>
 
-          <div className="w-full pt-12 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <p className="text-theme text-sm">
-                © {new Date().getFullYear()} @AdriKat. {t('sections.contact.rights-reserved')}
-              </p>
-              <span className="react-badge">
-                <Atom className="h-3.5 w-3.5" />
-                Made with React
-              </span>
-            </div>
+          {/* Footer */}
 
-            <p className="text-theme text-xs md:ml-auto">
-              {t('common.last-updated')} {lastUpdated}
-            </p>
+          <div className="w-full pt-12 border-t border-[var(--border)]">
+
+            <span className="react-badge mb-6">
+              <Atom className="h-3.5 w-3.5" />
+              {t('footer.made-with')}
+            </span>
             
-            <Button variant="ghost" size="sm" onClick={scrollToTop} className="group">
-              {t('sections.contact.back-to-top')}
-              <ArrowUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
-            </Button>
+            <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <p className="text-theme text-sm">
+                  © {new Date().getFullYear()} @AdriKat. {t('footer.rights-reserved')}
+                </p>
+              </div>
+
+              <p className="text-theme text-xs md:ml-auto">
+                {t('common.last-updated')} {lastUpdated}
+              </p>
+              
+              <Button variant="ghost" size="sm" onClick={scrollToTop} className="group">
+                {t('footer.back-to-top')}
+                <ArrowUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>

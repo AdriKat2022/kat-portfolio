@@ -50,9 +50,7 @@
     "contact": {
       "subtitle": "Do you have a question about game development, software engineering, or another topic?<br/><span class=\"text-accent\">Let's connect.</span> I'd love to hear about your project.",
       "email-label": "Email",
-      "phone-label": "Phone",
-      "rights-reserved": "All rights reserved.",
-      "back-to-top": "Back to top"
+      "phone-label": "Phone"
     }
   },
   "projects": {
@@ -65,5 +63,10 @@
     "view-project": "View Project",
     "view-project-itch": "Open Itch.io page",
     "view-project-github": "Browse on GitHub"
+  },
+  "footer": {
+      "rights-reserved": "All rights reserved.",
+      "back-to-top": "Back to top",
+      "made-with": "Made by me with React in TS"
   }
 }
