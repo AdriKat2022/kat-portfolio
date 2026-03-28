@@ -7,7 +7,7 @@
 	--bg-soft: #e9efff;
 	--text-h: #0f1b33;
 	--text: #30425f;
-	--accent: #166091;
+	--accent: hsl(204, 100%, 40%);
 	--accent-2: #3f6be8;
 	--accent-bg: rgba(15, 183, 212, 0.14);
 	--accent-border: rgba(15, 183, 212, 0.36);
@@ -22,7 +22,7 @@
 	--body-gradient-3: #dfe8ff;
 	--selection-bg: rgba(15, 183, 212, 0.25);
 	--selection-text: #081426;
-	--grid-line: rgba(93, 122, 186, 0.12);
+	--grid-line: rgba(93, 122, 186, 0.055);
 	--shell-glow-1: rgba(15, 183, 212, 0.12);
 	--shell-glow-2: rgba(63, 107, 232, 0.14);
 	--section-bg-from: rgba(255, 255, 255, 0.88);
@@ -145,6 +145,32 @@
 	--skill-hue: 0;
 }
 
+[data-bright=false] {
+	transition: all 0.5s;
+	filter: brightness(1);
+}
+
+[data-bright=true] {
+	transition: all 0.5s;
+	filter: brightness(1.2);
+    -moz-box-shadow: 0px 0px 20px 3px var(--accent);
+    -webkit-box-shadow: 0px 0px 20px 3px var(--accent);
+    box-shadow: 0px 0px 50px 3px var(--accent);
+}
+
+[data-aura=false] {
+	transition: all 0.5s;
+}
+
+[data-aura=true] {
+	transition: all 0.5s;
+    -moz-box-shadow: inset 0px 0px 20px 3px var(--accent);
+    -webkit-box-shadow: inset 0px 0px 20px 3px var(--accent);
+    box-shadow: inset 0px 0px 0px 2px var(--accent);
+	scale: 1.2;
+}
+
+
 * {
 	box-sizing: border-box;
 }
@@ -159,12 +185,6 @@ body {
 	margin: 0;
 	color: var(--text);
 	font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-	background:
-		radial-gradient(circle at 15% 20%, var(--body-radial-1), transparent 32%),
-		radial-gradient(circle at 88% 8%, var(--body-radial-2), transparent 26%),
-		radial-gradient(circle at 80% 84%, var(--body-radial-3), transparent 28%),
-		linear-gradient(135deg, var(--body-gradient-1) 0%, var(--body-gradient-2) 38%, var(--body-gradient-3) 100%);
-	background-attachment: fixed;
 }
 
 h1,
