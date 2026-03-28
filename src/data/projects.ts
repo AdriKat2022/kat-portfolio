@@ -49,7 +49,7 @@ export const projects: Project[] = [
       {
         customDisplay: { en: "Open Itch.io page", fr: "Ouvrir la page Itch.io" },
         type: 'GENERAL-LINK-NEW-TAB',
-        link: 'https://adrikat-1.itch.io/medieval-racing'
+        link: 'https://greenreeper.itch.io/medieval-racing'
       }
     ],
     title: {
@@ -179,11 +179,11 @@ export const projects: Project[] = [
     actions: [
       {
         type: 'PLAY-IN-BROWSER',
-        link: 'https://adrikat2022.github.io/test_project/'
+        link: 'https://adrikat2022.github.io/Flutter-Space-Shooter/'
       },
       {
         type: 'GITHUB',
-        link: 'https://github.com/AdriKat2022/test_project'
+        link: 'https://github.com/AdriKat2022/Flutter-Space-Shooter'
       }
     ],
     title: {

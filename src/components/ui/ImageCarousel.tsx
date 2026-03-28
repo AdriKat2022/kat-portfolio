@@ -84,9 +84,9 @@ export function ImageCarousel({ images, className, viewportClassName }: ImageCar
         <>
           <Button
             type="button"
-            variant="ghost"
+            variant="secondary"
             size="icon"
-            className="absolute left-3 top-1/2 z-10 -translate-y-1/2 border border-[var(--border)] bg-[rgba(7,11,22,0.76)]"
+            className="carousel-button left"
             onClick={() => scrollToIndex(activeIndex - 1)}
             disabled={activeIndex === 0}
             aria-label="Previous image"
@@ -96,9 +96,9 @@ export function ImageCarousel({ images, className, viewportClassName }: ImageCar
 
           <Button
             type="button"
-            variant="ghost"
+            variant="secondary"
             size="icon"
-            className="absolute right-3 top-1/2 z-10 -translate-y-1/2 border border-[var(--border)] bg-[rgba(7,11,22,0.76)]"
+            className="carousel-button right"
             onClick={() => scrollToIndex(activeIndex + 1)}
             disabled={activeIndex === slides.length - 1}
             aria-label="Next image"

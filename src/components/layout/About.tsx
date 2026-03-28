@@ -3,15 +3,14 @@ import { Download, CheckCircle2 } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import cvFile from '@/assets/docs/Adrien_Schroedel_CV_2026_03.pdf';
 import { aboutSkills } from '@/data/skills';
-import { openExternalLink } from '@/lib/utils';
+import { cn, openExternalLink } from '@/lib/utils';
 
 export function About() {
   const { t, i18n } = useTranslation();
   const activeLanguage = i18n.resolvedLanguage || i18n.language;
   const skills = aboutSkills.filter(
-    (skill) => skill.skillType === 'language' || skill.skillType === 'framework'
+    (skill) => skill.skillType === 'language' || skill.skillType === 'framework' || skill.skillType === "tool"
   );
-  const tools = aboutSkills.filter((skill) => skill.skillType === 'tool');
 
   return (
     <section id="about" className="bg-[var(--social-bg)] py-24">
@@ -45,7 +44,7 @@ export function About() {
           </div>
 
           {/* Right Column: Skills & Tools */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
             <div className="surface-card p-8">
               <p className="text-theme-strong mb-6 text-xl font-bold">
                 <Trans
@@ -57,28 +56,10 @@ export function About() {
               </p>
               <ul className="skill-grid">
                 {skills.map((skill) => (
-                  <li key={skill.id} className="skill-grid-item">
+                  <li key={skill.id} className="skill-grid-item min-w-0">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
-                    <span>{skill.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="surface-card p-8">
-              <p className="text-theme-strong mb-6 text-xl font-bold">
-                <Trans
-                  key={`profile-col2-${activeLanguage}`}
-                  i18nKey="sections.profile.column-2-head"
-                  t={t}
-                  components={{ emphasis: <strong /> }}
-                />
-              </p>
-              <ul className="skill-grid">
-                {tools.map((tool) => (
-                  <li key={tool.id} className="skill-grid-item">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--accent)]" />
-                    <span>{tool.name}</span>
+                    <span className="truncate" title={skill.name}>{skill.name}</span>
+                    <span className={cn("ml-auto", "truncate", "skill-type-badge", skill.skillType)}>{ skill.skillType }</span>
                   </li>
                 ))}
               </ul>

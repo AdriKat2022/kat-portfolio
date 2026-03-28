@@ -766,29 +766,6 @@ if ('serviceWorker' in navigator) {
 - Extract above-the-fold CSS
 - Load remaining CSS asynchronously
 
----
-
-## Implementation Timeline - ✅ CRITICAL COMPLETE
-
-### Week 1 - Critical Issues ✅ COMPLETE (Expected Improvements: 1.5-2.5s LCP)
-1. ✅ Implemented lazy image loading + useLazyImage hook
-2. ✅ Reduced animation complexity (twinkle/drift on-demand)
-3. ✅ Optimized CSS effects (removed masks, simplified gradients)
-4. ✅ Removed `motion` package, Tailwind config created, build tests passed
-
-### Week 2 - High Priority (Expected Improvements: additional 800ms)
-1. ⬜ Add Code Splitting (lazy load Modal, bottom sections)
-2. ⬜ Implement Memoization (React.memo, useMemo)
-3. ⬜ Optimize Tailwind CSS output (replace inline utilities)
-4. ⬜ Test all optimizations, measure impact
-
-### Week 3 - Medium Priority (Expected Improvements: additional 300-500ms)
-1. ⬜ Optimize Font Loading
-2. ⬜ Add Service Worker
-3. ⬜ Testing, refinement, documentation
-
----
-
 ## Measurement Strategy
 
 ### Use Chrome DevTools Lighthouse

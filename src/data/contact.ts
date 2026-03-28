@@ -1,10 +1,13 @@
-import { Mail, Phone, Link, Gamepad2Icon } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
+import { IoLogoGithub } from 'react-icons/io';
 import type { LucideIcon } from 'lucide-react';
+import type { IconType } from 'react-icons';
+import { FaItchIo, FaLinkedinIn } from 'react-icons/fa';
 
 export const FullName = "Adrien SCHROEDEL";
 export interface ContactMethod {
   href: string;
-  icon: LucideIcon;
+  icon: LucideIcon | IconType;
   labelKey: string;
   value: string;
   truncateValue?: boolean;
@@ -14,7 +17,7 @@ export interface SocialLink {
   key: string;
   href: string;
   label: string;
-  icon: LucideIcon;
+  icon: LucideIcon | IconType;
 }
 
 export const contactMethods: ContactMethod[] = [
@@ -33,18 +36,18 @@ export const contactMethods: ContactMethod[] = [
   },
   {
     href: 'https://linkedin.com/in/adrien-schroedel',
-    icon: Link,
+    icon: FaLinkedinIn,
     labelKey: 'LinkedIn',
     value: 'Adrien SCHROEDEL',
   },
   {
     href: 'https://github.com/AdriKat2022/',
-    icon: Link,
+    icon: IoLogoGithub,
     labelKey: 'GitHub',
     value: 'AdriKat2022',
   },
 ];
 
 export const socials: SocialLink[] = [
-  { icon: Gamepad2Icon, href: 'https://adrikat-1.itch.io', label: 'Itch.io', key: 'itchio' },
+  { icon: FaItchIo, href: 'https://adrikat-1.itch.io', label: 'Itch.io', key: 'itchio' },
 ];
