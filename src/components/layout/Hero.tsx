@@ -104,7 +104,7 @@ export function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="section-shell scanline-overlay container text-center mx-auto px-5 md:px-10 md:pb-10 md:pt-5"
+        className="section-shell scanline-overlay container text-center mx-auto px-5 md:px-10 pb-10 md:pt-5"
       >
         {/* Avatar Area with floating icons */}
         <div className="relative inline-block p-[3.75rem] mb-5">
