@@ -7,6 +7,7 @@ export const skills: Skill[] = [
   { id: 'cpp', name: 'C++', skillType: 'language', percentage: 90, showInAbout: true },
   { id: 'csharp', name: 'C#', skillType: 'language', percentage: 92, showInAbout: true },
   { id: 'c', name: 'C', skillType: 'language', percentage: 75, showInAbout: true },
+  { id: 'go', name: 'Go', skillType: 'language', percentage: 50, showInAbout: true },
   { id: 'python', name: 'Python', skillType: 'language', percentage: 82, showInAbout: true },
   { id: 'java', name: 'Java', skillType: 'language', percentage: 78, showInAbout: true },
   { id: 'php', name: 'PHP', skillType: 'language', percentage: 65, showInAbout: true },
