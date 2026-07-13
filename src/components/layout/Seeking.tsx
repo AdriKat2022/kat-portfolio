@@ -42,7 +42,7 @@ export function Seeking() {
   );
 
   return (
-    <section id="seeking" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
+    <section id="seeking" className="border-t border-(--border) bg-(--bg) py-24">
       <div className="container mx-auto px-4">
         <div className="section-shell flex flex-col items-center px-6 py-12 text-center md:px-10">
           <h2 className="text-theme-strong mb-12 text-3xl font-bold text-glow md:text-4xl">

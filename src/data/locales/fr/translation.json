@@ -30,7 +30,7 @@
       "availability-title": "Disponibilité",
       "location-title": "Localisation",
       "date": "Immédiate",
-      "locations": "France (Île-de-France, Strasbourg)"
+      "locations": "Toute la France"
     },
     "profile": {
       "column-1-head": "Une solide maîtrise d'un large éventail de technologies"
@@ -45,7 +45,10 @@
       "p1": "Je m'appelle Adrien Schroedel, développeur logiciel et jeu vidéo, formé à Télécom SudParis. Au cours de mon parcours, j'ai contribué à de nombreux <portfolioLink>projets de développement de jeux vidéo</portfolioLink>, académiques et personnels.",
       "p2": "J'apprécie l'alliance entre rigueur technique et collaboration. Je contribue à la programmation gameplay, aux outils de production et aux workflows d'équipe avec une approche orientée qualité.",
       "p3": "Mon objectif est de rejoindre une équipe exigeante, portée par des valeurs fortes, afin de concevoir des expériences numériques utiles et marquantes.",
-      "resume-title": "Mon CV"
+      "resume-title": "Mon CV",
+      "resume-title-web": "CV Web",
+      "resume-title-software": "CV Logiciel",
+      "resume-title-game": "CV Jeu vidéo"
     },
     "contact": {
       "subtitle": "Envie de discuter jeu vidéo, ingénierie logicielle ou autre ?<br/><span class=\"text-accent\">Discutons-en.</span> Toujours partant pour échanger !",

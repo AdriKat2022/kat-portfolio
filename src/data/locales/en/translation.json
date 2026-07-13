@@ -30,7 +30,7 @@
       "availability-title": "Availability",
       "location-title": "Location",
       "date": "Immediate",
-      "locations": "France (Ile-de-France, Strasbourg)"
+      "locations": "All France"
     },
     "profile": {
       "column-1-head": "Comfortable working across a variety of technologies"
@@ -45,7 +45,10 @@
       "p1": "My name is Adrien Schroedel, I'm a software and game developer trained at Télécom SudParis. Throughout my studies, I contributed to multiple <portfolioLink>game development projects</portfolioLink> in both academic and personal contexts.",
       "p2": "I enjoy combining strong technical execution with collaborative work. I contribute to gameplay systems, tooling, and production workflows while working closely with multidisciplinary teams.",
       "p3": "My objective is to join a team with high standards, clear values, and a strong collective culture to deliver impactful digital experiences.",
-      "resume-title": "My resume"
+      "resume-title": "My resume",
+      "resume-title-web": "Web resume",
+      "resume-title-software": "Software resume",
+      "resume-title-game": "Game resume"
     },
     "contact": {
       "subtitle": "Do you have a question about game development, software engineering, or another topic?<br/><span class=\"text-accent\">Let's connect.</span> I'd love to hear about your project.",
