@@ -1,28 +1,29 @@
 import { animate, motion, useMotionValue, useMotionValueEvent, useTransform, type AnimationPlaybackControls } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowDown, Code2, Gamepad2 } from 'lucide-react';
+import { ArrowDown, Code2, Gamepad2, Globe } from 'lucide-react';
 import { Button } from '@components/ui/Button';
 import { useInViewport } from '@/hooks/useInViewport';
 import avatarImg from '@/assets/avatar.png';
 import { FullName } from '@/data/contact';
 import type React from 'react';
-import { cn } from '@/lib/utils';
 import { useEffect, useRef, useState } from 'react';
 
-const Positions = {
-  "top-left": "top-0",
-  "bottom-right": "bottom-0"
-};
-
-type Position = "top-left" | "bottom-right";
+const ORBIT_RADIUS = 130;
+const ORBIT_ITEMS = [
+  { angle: -90, labelKey: 'hero.orbs.web', icon: Globe },
+  { angle: 30, labelKey: 'hero.orbs.software', icon: Code2 },
+  { angle: 150, labelKey: 'hero.orbs.game', icon: Gamepad2 },
+] as const;
 
 // Make an element orbit around the parent div. Adjust the parent's padding to control the orbit's radius.
-const OrbitingElement = ({ startingPosition, children, isHovering }: { startingPosition: Position, children: React.ReactNode, isHovering: Boolean}) => {
+const OrbitingElement = ({ angle, children, isHovering }: { angle: number, children: React.ReactNode, isHovering: boolean}) => {
   const controlsRef = useRef<AnimationPlaybackControls | null>(null);
-  const classPosition = Positions[startingPosition];
   const globalRotation = useMotionValue(0);
   useMotionValueEvent(globalRotation, "change", () => {});
   const counterRotation = useTransform(globalRotation, [0, 360], [360, 0]);
+  const orbitRadians = (angle * Math.PI) / 180;
+  const orbitX = Math.cos(orbitRadians) * ORBIT_RADIUS;
+  const orbitY = Math.sin(orbitRadians) * ORBIT_RADIUS;
 
   useEffect(() => {
     const controls = animate(globalRotation, 360, {
@@ -40,7 +41,7 @@ const OrbitingElement = ({ startingPosition, children, isHovering }: { startingP
 
     animate(
       { animationSpeed: controlsRef.current.speed },
-      { animationSpeed: isHovering ? 0.1 : 1 },
+      { animationSpeed: isHovering ? 0.2 : 1 },
       {
         duration: 0.5,
         ease: "easeOut",
@@ -56,15 +57,17 @@ const OrbitingElement = ({ startingPosition, children, isHovering }: { startingP
 
   return (
     <motion.div
-      className="absolute inset-0"
+      className="absolute inset-0 pointer-events-none z-20"
       style={{rotate: globalRotation}}
     >
-      <motion.div
-        className={cn("absolute", classPosition, "left-1/2", "-translate-x-1/2")}
-        style={{rotate: counterRotation}}
+      <div
+        className="absolute left-1/2 top-1/2"
+        style={{ left: `calc(50% + ${orbitX}px)`, top: `calc(50% + ${orbitY}px)`, transform: 'translate(-50%, -50%)' }}
       >
-        {children}
-      </motion.div>
+        <motion.div style={{ rotate: counterRotation }}>
+          {children}
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -107,7 +110,7 @@ export function Hero() {
         className="section-shell scanline-overlay container text-center mx-auto px-5 md:px-10 pb-10 md:pt-5"
       >
         {/* Avatar Area with floating icons */}
-        <div className="relative inline-block p-[3.75rem] mb-5">
+        <div className="relative inline-block p-15 mb-5">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -125,15 +128,28 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Orbit 1 */}
-          <OrbitingElement startingPosition="top-left" isHovering={isHovering}>
-            <Code2 className="z-0 h-12 w-12 p-2 text-accent rounded-2xl" data-aura={isHovering ? "true" : "false"}/>
-          </OrbitingElement>
+          {ORBIT_ITEMS.map(({ angle, labelKey, icon: Icon }) => {
+            const label = t(labelKey);
 
-          {/* Orbit 2 */}
-          <OrbitingElement startingPosition="bottom-right" isHovering={isHovering}>
-            <Gamepad2 className="z-0 h-12 w-12 p-2 text-accent rounded-2xl" data-aura={isHovering ? "true" : "false"}/>
-          </OrbitingElement>
+            return (
+            <OrbitingElement key={labelKey} angle={angle} isHovering={isHovering}>
+              <div className="relative flex flex-col items-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-(--card-bg)/80 shadow-lg ring-1 ring-(--accent)/20 backdrop-blur-sm">
+                  <Icon className="h-6 w-6 text-accent" data-aura={isHovering ? "true" : "false"} />
+                </div>
+                <motion.span
+                  aria-hidden="true"
+                  initial={false}
+                  animate={isHovering ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
+                  transition={{ duration: 0.22, ease: 'easeOut' }}
+                  className="absolute top-full mt-2 whitespace-nowrap text-[0.65rem] font-bold tracking-[0.24em] text-theme-strong uppercase"
+                >
+                  {label}
+                </motion.span>
+              </div>
+            </OrbitingElement>
+            );
+          })}
         </div>
 
         {/* Title and intro */}

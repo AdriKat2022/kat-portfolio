@@ -6,8 +6,13 @@
     "last-updated": "Dernière mise à jour :"
   },
   "hero": {
-    "job-title": "Développeur logiciel & jeu vidéo",
-    "job-subtitle": "Diplômé en ingénierie du numérique, spécialisé en développement de jeux, ingénierie logicielle et conception technique."
+    "job-title": "Développeur web, logiciel & jeux vidéo",
+    "job-subtitle": "Diplômé en ingénierie du numérique, spécialisé en développement de jeux, ingénierie logicielle et web.",
+    "orbs": {
+      "web": "Web",
+      "software": "Logiciel",
+      "game": "Jeux"
+    }
   },
   "nav": {
     "home": "Accueil",
@@ -19,13 +24,13 @@
   },
   "sections": {
     "titles": {
-      "seeking": "Actuellement à la recherche",
+      "seeking": "Actuellement en recherche",
       "games": "Mes Jeux",
       "about": "À propos",
       "contact": "Contact"
     },
     "seeking": {
-      "position-title": "Développeur logiciel / jeu vidéo",
+      "position-title": "Développeur web / logiciel / jeux vidéo",
       "position-subtitle": "Temps plein, CDI / Freelance",
       "availability-title": "Disponibilité",
       "location-title": "Localisation",

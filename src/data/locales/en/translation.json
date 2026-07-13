@@ -6,8 +6,13 @@
     "last-updated": "Last update:"
   },
   "hero": {
-    "job-title": "Software & Game Developer",
-    "job-subtitle": "Digital engineering graduate focused on game development, software engineering, and technical design."
+    "job-title": "Web/Software/Game Developer",
+    "job-subtitle": "Digital engineering graduate focused on game development, software engineering, and technical design.",
+    "orbs": {
+      "web": "Web",
+      "software": "Software",
+      "game": "Game"
+    }
   },
   "nav": {
     "home": "Home",
@@ -25,7 +30,7 @@
       "contact": "Contact"
     },
     "seeking": {
-      "position-title": "Software / Game Developer",
+      "position-title": "Web/Software/Game Developer",
       "position-subtitle": "Full-time, Permanent / Freelance",
       "availability-title": "Availability",
       "location-title": "Location",
