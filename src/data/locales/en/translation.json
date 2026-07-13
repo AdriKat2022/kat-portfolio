@@ -6,49 +6,57 @@
     "last-updated": "Last update:"
   },
   "hero": {
-    "job-title": "Software & Game Developer",
-    "job-subtitle": "Digital engineering graduate focused on game development, software engineering, and technical design."
+    "job-title": "Web, Software, and Game Developer",
+    "job-subtitle": "Digital engineering graduate focused on game development, software engineering, and web development.",
+    "orbs": {
+      "web": "Web",
+      "software": "Software",
+      "game": "Game"
+    }
   },
   "nav": {
     "home": "Home",
-    "games": "My Games",
-    "about": "About Me",
+    "games": "My Projects",
+    "about": "About",
     "contact": "Contact",
-    "switch-to-light-mode": "Switch to light mode (flashbang warning)",
+    "switch-to-light-mode": "Switch to light mode",
     "switch-to-dark-mode": "Switch to dark mode"
   },
   "sections": {
     "titles": {
-      "seeking": "Currently Seeking",
-      "games": "My Games",
-      "about": "About Me",
+      "seeking": "Open to opportunities",
+      "games": "My Projects",
+      "about": "About",
       "contact": "Contact"
     },
     "seeking": {
-      "position-title": "Software / Game Developer",
-      "position-subtitle": "Full-time, Permanent / Freelance",
+      "position-title": "Web, Software, and Game Developer",
+      "position-subtitle": "Full-time, permanent, or freelance",
       "availability-title": "Availability",
       "location-title": "Location",
-      "date": "Immediate",
-      "locations": "France (Ile-de-France, Strasbourg)"
+      "date": "Available immediately",
+      "locations": "Across France"
     },
     "profile": {
-      "column-1-head": "Comfortable working across a variety of technologies"
+      "column-1-head": "Comfortable across a broad range of technologies"
     },
     "portfolio": {
-      "description": "My portfolio is filled with the projects I have been able to carry out, alone or in teams, during my digital engineering studies at Télécom SudParis, as a school or personal project. You will mainly find video games in this section!",
-      "show-pinned": "Show Pinned",
-      "show-all": "Show All",
-      "explore-all-games": "Explore all my games"
+      "description": "This portfolio highlights a selection of projects I completed alone or in teams during my digital engineering studies at Télécom SudParis. You will find mostly game development work, along with web and software projects.",
+      "show-pinned": "Show pinned projects",
+      "show-all": "Show all projects",
+      "explore-all-games": "Explore all projects"
     },
     "about": {
-      "p1": "My name is Adrien Schroedel, I'm a software and game developer trained at Télécom SudParis. Throughout my studies, I contributed to multiple <portfolioLink>game development projects</portfolioLink> in both academic and personal contexts.",
-      "p2": "I enjoy combining strong technical execution with collaborative work. I contribute to gameplay systems, tooling, and production workflows while working closely with multidisciplinary teams.",
-      "p3": "My objective is to join a team with high standards, clear values, and a strong collective culture to deliver impactful digital experiences.",
-      "resume-title": "My resume"
+      "p1": "My name is Adrien Schroedel. I am a software and game developer trained at Télécom SudParis, and I have contributed to many <portfolioLink>game development projects</portfolioLink> in both academic and personal settings.",
+      "p2": "I enjoy environments where technical rigor, collaboration, and product thinking move together. I work on gameplay systems, production tools, and team workflows with a strong focus on quality.",
+      "p3": "My goal is to join a high-standard team with clear values and a collaborative mindset to build digital experiences that are useful, reliable, and memorable.",
+      "resume-title": "My resume",
+      "resume-title-web": "Web resume",
+      "resume-title-software": "Software resume",
+      "resume-title-game": "Game resume"
     },
     "contact": {
-      "subtitle": "Do you have a question about game development, software engineering, or another topic?<br/><span class=\"text-accent\">Let's connect.</span> I'd love to hear about your project.",
+      "subtitle": "Have a project in mind in web, software engineering, or game development?<br/><span class=\"text-accent\">Let's talk.</span> I would be glad to hear about it.",
       "email-label": "Email",
       "phone-label": "Phone"
     }
@@ -59,14 +67,14 @@
     "period": "Period",
     "development-time": "Development time",
     "download": "Download",
-    "play-in-browser": "Play in the Browser",
+    "play-in-browser": "Play in browser",
     "view-project": "View Project",
     "view-project-itch": "Open Itch.io page",
-    "view-project-github": "Browse on GitHub"
+    "view-project-github": "View on GitHub"
   },
   "footer": {
       "rights-reserved": "All rights reserved.",
       "back-to-top": "Back to top",
-      "made-with": "Made by me with React in TS"
+      "made-with": "Built with React and TypeScript"
   }
 }

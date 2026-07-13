@@ -1,54 +1,62 @@
 {
   "meta": {
-    "title": "Adrien Schroedel | Portfolio développeur"
+    "title": "Adrien Schroedel | Portfolio de développeur"
   },
   "common": {
     "last-updated": "Dernière mise à jour :"
   },
   "hero": {
-    "job-title": "Développeur logiciel & jeu vidéo",
-    "job-subtitle": "Diplômé en ingénierie du numérique, spécialisé en développement de jeux, ingénierie logicielle et conception technique."
+    "job-title": "Développeur web, logiciel et jeu vidéo",
+    "job-subtitle": "Diplômé en ingénierie du numérique, je me spécialise dans le développement de jeux, l'ingénierie logicielle et le web.",
+    "orbs": {
+      "web": "Web",
+      "software": "Logiciel",
+      "game": "Jeux"
+    }
   },
   "nav": {
     "home": "Accueil",
-    "games": "Mes Jeux",
+    "games": "Mes projets",
     "about": "À propos",
     "contact": "Contact",
-    "switch-to-light-mode": "Passer au mode clair (attention les yeux)",
+    "switch-to-light-mode": "Passer en mode clair",
     "switch-to-dark-mode": "Passer au mode sombre"
   },
   "sections": {
     "titles": {
-      "seeking": "Actuellement à la recherche",
-      "games": "Mes Jeux",
+      "seeking": "En recherche d'opportunités",
+      "games": "Mes projets",
       "about": "À propos",
       "contact": "Contact"
     },
     "seeking": {
-      "position-title": "Développeur logiciel / jeu vidéo",
-      "position-subtitle": "Temps plein, CDI / Freelance",
+      "position-title": "Développeur web, logiciel et jeu vidéo",
+      "position-subtitle": "Temps plein, CDI ou freelance",
       "availability-title": "Disponibilité",
       "location-title": "Localisation",
-      "date": "Immédiate",
-      "locations": "France (Île-de-France, Strasbourg)"
+      "date": "Disponible immédiatement",
+      "locations": "Toute la France"
     },
     "profile": {
-      "column-1-head": "Une solide maîtrise d'un large éventail de technologies"
+      "column-1-head": "À l'aise sur un large éventail de technologies"
     },
     "portfolio": {
-      "description": "Ce portfolio met en avant les projets que j'ai menés seul ou en équipe pendant mes études d'ingénieur du numérique à Télécom SudParis, dans des contextes académiques comme personnels. Vous y trouverez principalement des projets orientés jeu vidéo.",
-      "show-pinned": "Voir épinglés",
-      "show-all": "Voir tout",
-      "explore-all-games": "Découvrir tous mes jeux"
+      "description": "Ce portfolio présente une sélection de projets que j'ai réalisés seul ou en équipe pendant mes études d'ingénieur du numérique à Télécom SudParis. Vous y trouverez surtout des projets de jeu vidéo, ainsi que des travaux en développement web et logiciel.",
+      "show-pinned": "Voir les projets épinglés",
+      "show-all": "Voir tous les projets",
+      "explore-all-games": "Découvrir tous les projets"
     },
     "about": {
-      "p1": "Je m'appelle Adrien Schroedel, développeur logiciel et jeu vidéo, formé à Télécom SudParis. Au cours de mon parcours, j'ai contribué à de nombreux <portfolioLink>projets de développement de jeux vidéo</portfolioLink>, académiques et personnels.",
-      "p2": "J'apprécie l'alliance entre rigueur technique et collaboration. Je contribue à la programmation gameplay, aux outils de production et aux workflows d'équipe avec une approche orientée qualité.",
-      "p3": "Mon objectif est de rejoindre une équipe exigeante, portée par des valeurs fortes, afin de concevoir des expériences numériques utiles et marquantes.",
-      "resume-title": "Mon CV"
+      "p1": "Je m'appelle Adrien Schroedel. Développeur logiciel et jeu vidéo formé à Télécom SudParis, j'ai contribué à de nombreux <portfolioLink>projets de développement de jeux vidéo</portfolioLink>, académiques comme personnels.",
+      "p2": "J'apprécie les environnements où la rigueur technique, la collaboration et le sens du produit avancent ensemble. J'interviens sur la programmation gameplay, les outils de production et les workflows d'équipe avec une exigence de qualité.",
+      "p3": "Mon objectif est de rejoindre une équipe exigeante, animée par des valeurs solides, pour concevoir des expériences numériques utiles, fiables et mémorables.",
+      "resume-title": "Mon CV",
+      "resume-title-web": "CV web",
+      "resume-title-software": "CV logiciel",
+      "resume-title-game": "CV jeux vidéo"
     },
     "contact": {
-      "subtitle": "Envie de discuter jeu vidéo, ingénierie logicielle ou autre ?<br/><span class=\"text-accent\">Discutons-en.</span> Toujours partant pour échanger !",
+      "subtitle": "Vous avez un projet en tête dans le web, l'ingénierie logicielle ou le jeu vidéo ?<br/><span class=\"text-accent\">Discutons-en.</span> Je serai ravi d'échanger avec vous.",
       "email-label": "Email",
       "phone-label": "Téléphone"
     }
@@ -59,14 +67,14 @@
     "period": "Période",
     "development-time": "Temps de développement",
     "download": "Télécharger",
-    "play-in-browser": "Jouer dans le navigateur",
+    "play-in-browser": "Lancer dans le navigateur",
     "view-project": "Voir le projet",
     "view-project-itch": "Ouvrir la page Itch.io",
-    "view-project-github": "Ouvrir sur GitHub"
+    "view-project-github": "Voir sur GitHub"
   },
   "footer": {
       "rights-reserved": "Tous droits réservés.",
       "back-to-top": "Retour en haut",
-      "made-with": "Fait par mes soins avec React en TS"
+      "made-with": "Réalisé avec React et TypeScript"
   }
 }

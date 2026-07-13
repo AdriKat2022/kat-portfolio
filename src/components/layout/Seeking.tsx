@@ -28,24 +28,24 @@ export function Seeking() {
     titleKey: string,
     valueKey: string
   ) => (
-    <div className="surface-card surface-card-hover flex flex-col h-full items-center p-8">
+    <div className="surface-card surface-card-hover flex h-full flex-col items-center p-8">
       <div className="icon-chip mb-6">
         <Icon className="h-6 w-6" />
       </div>
-      <h3 className="text-theme-strong mb-3 text-xl font-bold">
+      <h3 className="card-heading-sm">
         {t(titleKey)}
       </h3>
-      <p className="text-theme mt-auto text-lg">
+      <p className="section-copy mt-auto">
         {t(valueKey)}
       </p>
     </div>
   );
 
   return (
-    <section id="seeking" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
+    <section id="seeking" className="border-t border-(--border) bg-(--bg) py-24">
       <div className="container mx-auto px-4">
         <div className="section-shell flex flex-col items-center px-6 py-12 text-center md:px-10">
-          <h2 className="text-theme-strong mb-12 text-3xl font-bold text-glow md:text-4xl">
+          <h2 className="section-heading mb-12">
             {t('sections.titles.seeking')}
           </h2>
 

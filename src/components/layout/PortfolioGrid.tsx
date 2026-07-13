@@ -25,10 +25,10 @@ export function PortfolioGrid() {
         {/* Header */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <h2 className="mb-4 text-3xl font-bold text-[var(--text-h)] text-glow md:text-4xl">
+            <h2 className="section-heading mb-4">
               {t('sections.titles.games')}
             </h2>
-            <p className="text-lg leading-relaxed text-[var(--text)]">
+            <p className="section-copy">
               {t('sections.portfolio.description')}
             </p>
           </div>

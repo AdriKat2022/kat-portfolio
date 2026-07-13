@@ -68,13 +68,13 @@ export function Contact() {
     <section id="contact" className="border-t border-[var(--border)] bg-[var(--bg)] py-24">
       <div className="container mx-auto px-4">
         <div className="section-shell flex flex-col items-center px-6 py-12 text-center md:px-10">
-          <h2 className="text-theme-strong mb-6 text-3xl font-bold text-glow md:text-4xl">
+          <h2 className="section-heading mb-6">
             {t('sections.titles.contact')}
           </h2>
           
           <SafeRichText
             html={t('sections.contact.subtitle')}
-            className="text-theme mb-12 max-w-4xl text-xl leading-relaxed"
+            className="section-copy-lg mb-12 max-w-4xl"
           />
 
           {/* Contact Cards */}
@@ -104,12 +104,12 @@ export function Contact() {
             
             <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
-                <p className="text-theme text-sm">
+                <p className="section-copy text-sm">
                   © {new Date().getFullYear()} @AdriKat. {t('footer.rights-reserved')}
                 </p>
               </div>
 
-              <p className="text-theme text-xs md:ml-auto">
+              <p className="text-muted text-xs md:ml-auto">
                 {t('common.last-updated')} {lastUpdated}
               </p>
               
