@@ -253,6 +253,76 @@ a {
 		color: var(--text-h);
 	}
 
+	.text-muted {
+		color: var(--text);
+		opacity: 0.78;
+	}
+
+	.section-heading {
+		margin-bottom: 2rem;
+		font-size: 1.875rem;
+		font-weight: 700;
+		text-shadow: var(--text-glow-shadow);
+		color: var(--text-h);
+	}
+
+	@media (min-width: 768px) {
+		.section-heading {
+			font-size: 2.25rem;
+		}
+	}
+
+	.section-copy {
+		font-size: 1.125rem;
+		line-height: 1.75;
+		color: var(--text);
+	}
+
+	.section-copy-lg {
+		font-size: 1.25rem;
+		line-height: 1.75;
+		color: var(--text);
+	}
+
+	.card-heading {
+		margin-bottom: 1.5rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--text-h);
+	}
+
+	.card-heading-sm {
+		margin-bottom: 0.75rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--text-h);
+	}
+
+	.orbit-label {
+		position: absolute;
+		top: 100%;
+		margin-top: 0.5rem;
+		white-space: nowrap;
+		font-size: 0.65rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.24em;
+		color: var(--text-h);
+	}
+
+	.orbit-chip {
+		display: flex;
+		height: 3rem;
+		width: 3rem;
+		align-items: center;
+		justify-content: center;
+		border-radius: 1rem;
+		background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+		box-shadow: 0 10px 28px rgba(18, 32, 61, 0.12);
+		border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+		backdrop-filter: blur(8px);
+	}
+
 	.surface-card {
 		border-radius: 1rem;
 		border: 1px solid var(--border);
@@ -572,6 +642,17 @@ a {
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: var(--text);
+	}
+
+	.modal-title {
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--text-h);
 	}
 
 	.prose-theme {

@@ -20,10 +20,10 @@ export function About() {
         <div className="section-shell grid grid-cols-1 gap-16 px-6 py-10 lg:grid-cols-2 md:px-10 md:py-12">
           {/* Left Column: Bio */}
           <div>
-            <h2 className="text-theme-strong mb-8 text-3xl font-bold text-glow md:text-4xl">
+            <h2 className="section-heading mb-8">
               {t('sections.titles.about')}
             </h2>
-            <p className="text-theme text-lg leading-relaxed">
+            <p className="section-copy">
               {/*  */}
               <Trans
                 i18nKey="sections.about.p1"
@@ -34,8 +34,8 @@ export function About() {
                 }}
               />
             </p>
-            <p className="mt-6 text-theme text-lg leading-relaxed">{t('sections.about.p2')}</p>
-            <p className="mt-6 text-theme text-lg leading-relaxed">{t('sections.about.p3')}</p>
+            <p className="mt-6 section-copy">{t('sections.about.p2')}</p>
+            <p className="mt-6 section-copy">{t('sections.about.p3')}</p>
             
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Button className="group w-full sm:w-auto" size="lg" onClick={() => openExternalLink(cvFileWeb)}>
@@ -56,7 +56,7 @@ export function About() {
           {/* Right Column: Skills & Tools */}
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
             <div className="surface-card p-8">
-              <p className="text-theme-strong mb-6 text-xl font-bold">
+              <p className="card-heading">
                 <Trans
                   key={`profile-col1-${activeLanguage}`}
                   i18nKey="sections.profile.column-1-head"

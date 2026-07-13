@@ -103,7 +103,7 @@ export function Modal({ isOpen, onClose, project }: ModalProps) {
           >
             {/* Header */}
             <div className="modal-header">
-              <h2 className="ml-auto mr-auto text-theme-strong line-clamp-1 text-xl font-bold">{title}</h2>
+              <h2 className="modal-title">{title}</h2>
               <Button variant="ghost" size="icon" onClick={onClose} aria-label={t('projects.button-close')}>
                 <X className="h-5 w-5" />
               </Button>

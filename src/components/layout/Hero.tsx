@@ -142,7 +142,7 @@ export function Hero() {
                   initial={false}
                   animate={isHovering ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
                   transition={{ duration: 0.22, ease: 'easeOut' }}
-                  className="absolute top-full mt-2 whitespace-nowrap text-[0.65rem] font-bold tracking-[0.24em] text-theme-strong uppercase"
+                  className="orbit-label"
                 >
                   {label}
                 </motion.span>
